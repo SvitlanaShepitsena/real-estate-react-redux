@@ -60,6 +60,23 @@ export default class Footer extends Component {
                                         {l('Share this page')}
                                     </a>
                                 </li>
+                                <li>
+                                    <Link to="/terms-of-use">{l('Terms of use')}</Link>
+                                </li>
+                                <li>
+                                    <Link to="/privacy-policy">{l('Privacy policy')}</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="Footer__menu">
+                            <h3 className="Footer__menu-header">Website rules</h3>
+                            <ul className="Footer__menu-items">
+                                <li>
+                                    <Link to="/terms-of-use">{l('Terms of use')}</Link>
+                                </li>
+                                <li>
+                                    <Link to="/privacy-policy">{l('Privacy policy')}</Link>
+                                </li>
                             </ul>
                         </div>
                     </div>

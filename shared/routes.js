@@ -12,7 +12,8 @@ import UserProfilePageContainer from './containers/pages/UserProfilePage';
 import HousesForSalePageContainer from './containers/pages/HousesForSalePage.js';
 import HousesForRentPageContainer from './containers/pages/HousesForRentPage.js';
 import ArticlesPageContainer from './containers/pages/ArticlesPage.js';
-import ProjectsPageContainer from './containers/pages/ProjectsPage.js';
+import TermsOfUsePageContainer from './containers/pages/TermsOfUsePage.js';
+import PrivacyPolicyPageContainer from './containers/pages/PrivacyPolicyPage.js';
 import ContactsPageContainer from './containers/pages/ContactsPage.js';
 import HomePage from './containers/pages/HomePage';
 import AboutPageContainer from './containers/pages/AboutPage';
@@ -26,11 +27,12 @@ export default (
                 <Route component={HousesForSalePageContainer} path='/houses-for-sale'/>
                 <Route component={HousesForRentPageContainer} path='/houses-for-rent'/>
                 <Route component={ArticlesPageContainer} path='/blog'/>
-                <Route component={ProjectsPageContainer} path='/projects'/>
+                <Route component={TermsOfUsePageContainer} path='/terms-of-use'/>
+                <Route component={PrivacyPolicyPageContainer} path='/privacy-policy'/>
+                <Route component={AboutPageContainer} path='/about'/>
                 <Route component={ContactsPageContainer} path='/contacts'/>
                 <Route component={LoginPageContainer} path='/login'/>
                 <Route component={UserProfilePageContainer} path='/profile'/>
-                <Route component={AboutPageContainer} path='/about'/>
             </Route>
         </Route>
     </Route>
