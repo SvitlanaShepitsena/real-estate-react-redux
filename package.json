@@ -2,7 +2,7 @@
   "name": "real-estate-react-redux",
   "version": "0.0.1",
   "repository": "https://github.com/SvitlanaShepitsena/real-estate-react-redux",
-  "description": "Universal Isomorfic React Redux Application for Real Estate",
+  "description": "Universal (Isomorfic) React Redux Application for Real Estate",
   "author": {
     "name": "Svitlana Shepitsena",
     "email": "chicagobusinessintelligence1@gmail.com",

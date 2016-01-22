@@ -13,6 +13,7 @@
   "facebookAppId": "",
   "gaTrackingCode": "XXX",
   "companyShareLink": "http://localhost:3001",
+  "houseImageThumb": "http://res.cloudinary.com/svitlana/image/upload/v1453494429/house-picture-icon_og71rx.png",
   "ogProps": {
     "homePage": {
       "image": "http://res.cloudinary.com/svitlana/image/upload/v1453315485/react-logo_k4hgov.png",

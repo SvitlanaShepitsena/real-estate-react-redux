@@ -47,9 +47,6 @@ export default class LoginDialog extends Component {
                         </div>
                     </div>
 
-                    <h4 className='LoginDialog__title LoginDialog__title--clickable' onClick={onEmailLogin}>
-                        {l('or use your e-mail')}
-                    </h4>
                 </Dialog>
             </div>
         );

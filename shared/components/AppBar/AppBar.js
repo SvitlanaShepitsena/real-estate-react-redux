@@ -1,20 +1,19 @@
 import React, {Component, PropTypes} from 'react';
-import cx                              from 'classnames';
+import {cx} from 'classnames';
 import {Link} from 'react-router';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 
+import AppBarUser from '../AppBarUser/AppBarUser';
+import LoginDialog    from '../../containers/LoginDialogSmart';
 import LanguageSwitch from '../../containers/LanguageSwitchSmart.js';
-import LoginDialog    from '../../containers/LoginDialogSmart.js';
-import {connect} from 'react-redux';
-import AppBarUser from '../AppBarUser/AppBarUser.js';
-
 import IconButton from '../../../node_modules/react-mdl/lib/IconButton';
+import {connect} from 'react-redux';
 
 if (process.env.BROWSER) {
     require('./AppBar.less');
 }
 
-const LOGO_SRC = './static/logo.svg';
+const LOGO_SRC = 'http://res.cloudinary.com/svitlana/image/upload/v1453490978/remax-1st-class-logo_gjc14e.png';
 
 class AppBar extends Component {
     static contextTypes = {i18n: React.PropTypes.object};
@@ -54,7 +53,7 @@ class AppBar extends Component {
                     <img src={LOGO_SRC} className='AppBar__logo'/>
                 </Link>
                 <div className="AppBar__title">
-                    Chicago Web App
+                    Remax 1st Class
                 </div>
             </div>
         )
@@ -74,17 +73,19 @@ class AppBar extends Component {
                     onRequestClose={this.handleLoginDialogClose}
                 />
                 <Navigation className="AppBar__right">
+                    <div >
+                        <Link to="/houses-for-sale" className='AppBar__menu-item-nav'> houses for sale </Link>
+                    </div>
+                    {/*
+                     <div >
+                     <Link to="/blog" className='AppBar__menu-item-nav'> blog </Link>
+                     </div>
+                    */}
                     <div>
-                        <Link to="/about" className='AppBar__menu-item-nav'>{l('about us')}</Link>
+                        <Link to="/about" className='AppBar__menu-item-nav'> about us </Link>
                     </div>
                     <div >
-                        <Link to="/tutorials" className='AppBar__menu-item-nav'>{l('tutorials')}</Link>
-                    </div>
-                    <div >
-                        <Link to="/projects" className='AppBar__menu-item-nav'>{l('projects')}</Link>
-                    </div>
-                    <div >
-                        <Link to="/contacts" className='AppBar__menu-item-nav'>{l('contact')}</Link>
+                        <Link to="/contacts" className='AppBar__menu-item-nav'> contact </Link>
                     </div>
                     {/*
                      <LanguageSwitch className='AppBar__lang'/>

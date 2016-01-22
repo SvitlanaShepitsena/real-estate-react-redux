@@ -4,6 +4,10 @@ import clientConfig from './client-config.json';
 
 import PORT from '../server/port';
 export default function (host) {
+    if (!host) {
+
+        return JSON.parse(JSON.stringify(clientConfig));
+    }
     let jsSettings = JSON.stringify(clientConfig);
     if (process.env.NODE_ENV !== 'development') {
         jsSettings = jsSettings.replace(/(3001)|(8050)/g, PORT);
