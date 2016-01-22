@@ -1,7 +1,6 @@
-
-Isomorphic React Redux application
+Universal (Isomorfic) React Redux Application for Real Estate"
 ------------------------------------
-Initial Boilerplate: https://github.com/WebbyLab/itsquiz-wall
+
 
 ## Installation (development)
 
