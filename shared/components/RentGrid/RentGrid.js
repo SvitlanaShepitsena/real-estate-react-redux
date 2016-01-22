@@ -84,13 +84,13 @@ export default class RentGrid extends React.Component {
                             className='RentGrid__tabs'
                             onChange={(index) => onTabChange(CATEGORIES[index])}>
                             <Tab>{l('All Rentals')}</Tab>
-                            <Tab>{l('Houses for rent')}</Tab>
-                            <Tab>{l('Apartments for rent')}</Tab>
+                            <Tab>{l('Rent a house')}</Tab>
+                            <Tab>{l('Rent an Apartment')}</Tab>
                         </Tabs>
                     </div>
                 </div>
                 <div style={{ maxWidth: '1200', margin:' 0 auto' }}>
-                    <h2 style={{textAlign:'left'}}>Rent For Sale</h2>
+                    <h2 style={{textAlign:'left'}}>Rentals</h2>
                     <hr/>
                 </div>
                 <div className='RentGrid__content'>
