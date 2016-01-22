@@ -76,6 +76,9 @@ class AppBar extends Component {
                     <div >
                         <Link to="/houses-for-sale" className='AppBar__menu-item-nav'> houses for sale </Link>
                     </div>
+                    <div >
+                        <Link to="/houses-for-rent" className='AppBar__menu-item-nav'> houses for rent </Link>
+                    </div>
                     {/*
                      <div >
                      <Link to="/blog" className='AppBar__menu-item-nav'> blog </Link>
