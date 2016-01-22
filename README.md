@@ -1,7 +1,7 @@
 
 Isomorphic React Redux application
 ------------------------------------
-Initial Boilerplate: https://github.com/WebbyLab/itsquiz-wall
+
 
 ## Installation (development)
 
