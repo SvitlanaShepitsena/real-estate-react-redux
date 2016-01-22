@@ -1,0 +1,61 @@
+@import "../../assets/media.less";
+@import "../../assets/mixins.less";
+@import "../../assets/palette.less";
+@import '../../assets/typography.less';
+
+.HomePage {
+  width: 100%;
+  height: auto;
+  background-color: @primary-1-color;
+  color: whitesmoke;
+}
+
+.HomePage__btnContainer {
+  min-width: 1200px;
+  margin: 20px auto 0;
+}
+
+.HomePage__btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 8px 22px;
+  font-size: 16px;
+  height: 52px;
+  width: 200px;
+}
+
+.HomePage__videoContent {
+  background-color: @grey-900;
+  padding: 8px;
+  margin: 0px auto;
+  max-width: 592px;
+  max-height: 592px;
+  iframe, object, embed {
+    max-width: 100%;
+  }
+}
+
+.HomePage__Frame {
+  max-width: 100%;
+  width: 560px;
+  margin: 0px auto;
+  height: 315px;
+}
+
+.HomePage_iconsContainer {
+  background-color: @grey-200;
+}
+
+.HomePage_sliderContainer {
+  background-color: @blue-100;
+}
+
+.HomePage_slider {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.HomePage__youtube {
+  width: 100% !important;
+  height: auto !important;
+}

@@ -1,0 +1,29 @@
+@import "../../assets/media.less";
+@import "../../assets/mixins.less";
+@import "../../assets/palette.less";
+@import '../../assets/typography.less';
+
+@AVATAR_SIZE: 45px;
+
+.ArticleCard {
+  width: 100%;
+}
+
+.ArticleCard__head {
+  color: @text-color;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  .text-ellipsis;
+
+  .mdl-card__title-text {
+    marhin: auto 0;
+    font-size: 19px;
+  }
+}
+
+.ArticleCard__content {
+  margin: 0;
+  padding: 8px;
+}
+

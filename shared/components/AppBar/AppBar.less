@@ -1,0 +1,66 @@
+@import "../../assets/media.less";
+@import "../../assets/mixins.less";
+@import "../../assets/palette.less";
+@import '../../assets/typography.less';
+
+.AppBar {
+  .mdl-layout__drawer-button {
+    display: none;
+
+    @media @phone, @tablet {
+      i {
+        font-size: 30px;
+        margin-top: 5px;
+      }
+      display: block;
+    }
+  }
+  .mdl-layout__header-row {
+    padding: 5px;
+    @media @phone, @tablet {
+      padding: 0px;
+    }
+  }
+  width: 100%;
+}
+
+.AppBar__logo {
+  width: 50px;
+  vertical-align: initial;
+  @media @phone {
+    min-width: 40px;
+    width: 50px;
+    position: relative;
+    left: 54px;
+  }
+}
+
+.AppBar__title {
+  vertical-align: top;
+  line-height: 3;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  padding-left: 10px;
+  @media @phone {
+    display: none;
+  }
+}
+
+.AppBar__menu-item-nav {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-left: 5px;
+  height: 20px;
+  cursor: pointer;
+  font-weight: 400;
+  color: @white-dark;
+  font-size: 14px;
+  @media @tablet, @phone {
+    display: none;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+
