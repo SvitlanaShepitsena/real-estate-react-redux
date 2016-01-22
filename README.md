@@ -1,5 +1,4 @@
-
-Isomorphic React Redux application
+Universal (Isomorfic) React Redux Application for Real Estate"
 ------------------------------------
 
 
