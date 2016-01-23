@@ -53,7 +53,7 @@ class AppBar extends Component {
                     <img src={LOGO_SRC} className='AppBar__logo'/>
                 </Link>
                 <div className="AppBar__title">
-                    Remax 1st Class
+                    Re/Max 1st Class
                 </div>
             </div>
         )

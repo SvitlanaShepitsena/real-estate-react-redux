@@ -15,22 +15,16 @@ export default class HomeContent extends React.Component {
                 <Grid>
                     <Cell col={12}>
                         <div style={{margin:'0px auto',textAlign:'center'}}>
-                            <h1>React with Redux 201</h1>
-                            <h2>Best Practices for Production Applications</h2>
+                            <img
+                                src="http://res.cloudinary.com/svitlana/image/upload/v1453490978/remax-1st-class-logo_gjc14e.png"
+                                alt="Re/max 1st Class Logo"/>
+                            <h1 className="HomePage_h1">You need only one company <br/> for all your real estate needs
+                            </h1>
                         </div>
                     </Cell>
                     <Cell col={12}>
                         <div style={{margin:'0px auto'}} className="HomePage__videoContent">
-                            <a href="https://www.youtube.com/watch?v=DKUimZvRyqg" target="_blank">
-                                <img className="HomePage__youtube"
-                                     src={"https://img.youtube.com/vi/DKUimZvRyqg/0.jpg"}/>
-                            </a>
                         </div>
-                    </Cell>
-                    <Cell col={12}>
-                        <Button className='HomePage__btn' accent raised ripple>
-                            Sign Up for Free
-                        </Button>
                     </Cell>
 
                 </Grid>

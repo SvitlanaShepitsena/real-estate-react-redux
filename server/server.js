@@ -151,6 +151,11 @@ function renderHTML(helmet, {componentHTML, initialState, metaData, config}) {
             ${helmet.meta}
             <meta property="fb:app_id" content="${escapeHTML(config.facebookAppId)}" />
 
+            <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue-pink.min.css"/>
+            <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.2.65/css/materialdesignicons.min.css">
+            <link rel="stylesheet" href="${config.staticUrl}/static/build/main.css">
             <script>
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -161,11 +166,6 @@ function renderHTML(helmet, {componentHTML, initialState, metaData, config}) {
         </head>
         <body>
         <div id="react-view">${componentHTML}</div>
-            <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-            <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue-pink.min.css"/>
-            <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.2.65/css/materialdesignicons.min.css">
-            <link rel="stylesheet" href="${config.staticUrl}/static/build/main.css">
           <script type="application/javascript">
             window.__CONFIG__ = ${JSON.stringify(config)};
             window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
