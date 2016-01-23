@@ -1,0 +1,148 @@
+@import "../../assets/media.less";
+@import "../../assets/mixins.less";
+@import "../../assets/palette.less";
+@import "../../assets/buttons.less";
+@import '../../assets/typography.less';
+
+.SearchForm {
+  width: 100%;
+  .mdl-grid {
+    padding: 8px 16px;
+  }
+
+  &.SearchForm--focused {
+    .SearchForm__box {
+      background-color: @white-darker;
+      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+    }
+
+    .SearchForm__input {
+      color: @black-dark;
+
+      &::-webkit-input-placeholder {
+        color: @black-light;
+      }
+
+      &:-moz-placeholder {
+        color: @black-light;
+      }
+
+      &::-moz-placeholder {
+        color: @black-light;
+      }
+
+      &:-ms-input-placeholder {
+        color: @black-light;
+      }
+    }
+
+    .SearchForm__search-icon {
+      color: @black-light;
+    }
+  }
+
+  @media @phone {
+    width: auto;
+
+    .SearchForm__input-expandable {
+      display: block;
+    }
+  }
+}
+
+.SearchForm__input-expandable {
+  position: relative;
+  top: 3px;
+  display: none;
+
+  .mdl-textfield__input {
+    font-weight: 300;
+    margin-left: 5px;
+
+    &::-webkit-input-placeholder {
+      color: @white-dark;
+    }
+
+    &:-moz-placeholder {
+      color: @white-dark;
+    }
+
+    &::-moz-placeholder {
+      color: @white-dark;
+    }
+
+    &:-ms-input-placeholder {
+      color: @white-dark;
+    }
+  }
+
+  .mdl-button--icon i {
+    font-size: 28px;
+  }
+}
+
+.SearchForm__box-container {
+  display: inline-block;
+}
+
+.SearchForm__box {
+  min-width: 100px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: @white-light;
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+  padding: 3px 16px;
+  border-radius: 3px;
+  margin: 0;
+  align-items: center;
+  transition: .3s;
+  cursor: default;
+}
+
+.SearchForm__input {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  width: 100%;
+  color: @white-darker;
+
+  &::-webkit-input-placeholder {
+    color: @white-dark;
+  }
+
+  &:-moz-placeholder {
+    color: @white-dark;
+  }
+
+  &::-moz-placeholder {
+    color: @white-dark;
+  }
+
+  &:-ms-input-placeholder {
+    color: @white-dark;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.SearchForm__search-icon {
+  color: @white-darker;
+}
+
+.SearchForm__search-btn {
+  width: 100% !important;
+  height: 45px;
+}
+
+@media @phone {
+  .SearchForm__search-btn {
+    margin-top: 5px;
+  }
+}
