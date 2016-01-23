@@ -13,7 +13,7 @@ export default class HomePage extends React.Component {
     render() {
         const home = ogProps.homePage;
         return (
-            <div>
+            <div style={{minHeight:1000}}>
                 <Helmet
                     title={appTitle}
                     meta={[

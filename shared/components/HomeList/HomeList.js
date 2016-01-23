@@ -17,48 +17,45 @@ export default class HomeList extends React.Component {
                         col={4}
                         tablet={6}
                         phone={12}>
-                        <Card className="HomeList__card" shadow={1}>
-                            <CardTitle className='HomeListCard__head'>
-                                Et dolorum fuga
-                            </CardTitle>
-                            <div className='HomeListCard__content'>
-                                <p>Et harum quidem rerum facilis est et
-                                    expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque
-                                    nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
-                                </p>
-                            </div>
+                        <Card shadow={0}
+                              className="HomeList__card-image"
+                              style={{ background: 'url(http://farm3.static.flickr.com/2711/4369664710_3c94dbffbc.jpg) center / cover' }}>
+                            <CardTitle expand/>
+                            <CardActions
+                                style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
+                                    <span
+                                        style={{color: '#fff', fontSize: '18px', fontWeight: '400'}}> Skokie Real Estate </span>
+                            </CardActions>
                         </Card>
                     </Cell>
                     <Cell
                         col={4}
                         tablet={6}
                         phone={12}>
-                        <Card className="HomeList__card" shadow={1}>
-                            <CardTitle className='HomeListCard__head'>
-                                Et dolorum fuga
-                            </CardTitle>
-                            <div className='HomeListCard__content'>
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                    occaecati cupiditate non provident, similique sunt.
-                                </p>
-                            </div>
+                        <Card shadow={0}
+                              className="HomeList__card-image"
+                              style={{ background: 'url(https://c2.staticflickr.com/6/5033/5860167175_3c153d1c98_b.jpg) center / cover' }}>
+                            <CardTitle expand/>
+                            <CardActions
+                                style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
+                                    <span
+                                        style={{color: '#fff', fontSize: '18px', fontWeight: '400'}}> Northbrook Real Estate </span>
+                            </CardActions>
                         </Card>
                     </Cell>
                     <Cell
                         col={4}
                         tablet={6}
                         phone={12}>
-                        <Card className="HomeList__card" shadow={1}>
-                            <CardTitle className='HomeListCard__head'>
-                                Et dolorum fuga
-                            </CardTitle>
-                            <div className='HomeListCard__content'>
-                                <p>Et harum quidem rerum facilis est et
-                                    expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque
-                                    nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
-                                </p>
-                            </div>
+                        <Card shadow={0}
+                              className="HomeList__card-image"
+                              style={{ background: 'url(http://i287.photobucket.com/albums/ll152/urbansurfin/Chicago08013.jpg) center / cover' }}>
+                            <CardTitle expand/>
+                            <CardActions
+                                style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
+                                    <span
+                                        style={{color: '#fff', fontSize: '18px', fontWeight: '400'}}> Glenview Real Estate </span>
+                            </CardActions>
                         </Card>
                     </Cell>
                 </Grid>

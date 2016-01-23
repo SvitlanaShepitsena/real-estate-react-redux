@@ -47,11 +47,6 @@ export default class HomeContent extends React.Component {
                     </Cell>
 
                 </Grid>
-                <div className="HomePage_iconsContainer">
-                    <div className="HomePage_slider">
-                        <HomeList></HomeList>
-                    </div>
-                </div>
                 <div className="HomePage_sliderContainer">
                     <div className="HomePage_slider">
                         <HomeList></HomeList>
