@@ -15,6 +15,7 @@ class glenviewPage extends Component {
     static contextTypes = {i18n: PropTypes.object};
 
     state = {
+        city:'glenview',
         linkToShare: '',
         isSharing: false
     };
@@ -49,8 +50,8 @@ class glenviewPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const currentQuery = this.props.location.query;
-        const nextQuery = nextProps.location.query;
+        debugger;
+        const zip = nextProps.filter(zip=>zip.key === this.state.city);
 
     }
 
