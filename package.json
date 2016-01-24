@@ -50,6 +50,7 @@
     "http-proxy": "^1.12.0",
     "isomorphic-fetch": "^2.2.0",
     "jed": "^1.1.0",
+    "kerberos": "0.0.18",
     "lodash": "^3.10.1",
     "method": "^2.0.0",
     "method-override": "^2.3.5",

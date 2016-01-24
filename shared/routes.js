@@ -19,13 +19,18 @@ import HomePage from './containers/pages/HomePage';
 import AboutPageContainer from './containers/pages/AboutPage';
 import LoginPageContainer from './containers/pages/LoginPage.js';
 
+import skokiePage from './containers/realestate/skokiePage';
+
 export default (
     <Route component={App}>
         <Route component={AppLayout}>
             <Route component={HomePage} path='/'/>
             <Route component={AsideLayout}>
                 <Route component={HousesForSalePageContainer} path='/houses-for-sale'/>
-                <Route component={HousesForRentPageContainer} path='/houses-for-rent'/>
+                <Route component={skokiePage} path='/houses-for-sale/skokie'/>
+
+
+                <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>
                 <Route component={ArticlesPageContainer} path='/blog'/>
                 <Route component={TermsOfUsePageContainer} path='/terms-of-use'/>
                 <Route component={PrivacyPolicyPageContainer} path='/privacy-policy'/>
