@@ -57,7 +57,34 @@ class skokiePage extends Component {
     render() {
         return (
             <div>
-                test
+                <h3>Skokie Listings for Sale by Zip Code</h3>
+                <hr/>
+                <h4>
+                    <a>60025</a>
+                </h4>
+                <h4>
+                    <a>60026</a>
+                </h4>
+                <h3>Skokie Listings for Sale by Property Type</h3>
+                <hr/>
+                <h4>
+                    <a>Single Family Home</a>
+                </h4>
+                <h4>
+                    <a>Multi-Family Home</a>
+                </h4>
+                <h4>
+                    <a>Townhouse</a>
+                </h4>
+                <h4>
+                    <a>Duplex</a>
+                </h4>
+                <h4>
+                    <a>Condominimum Unit</a>
+                </h4>
+                <h4>
+                    <a>Raw Land</a>
+                </h4>
             </div>
         );
     }
