@@ -19,7 +19,7 @@ import HomePage from './containers/pages/HomePage';
 import AboutPageContainer from './containers/pages/AboutPage';
 import LoginPageContainer from './containers/pages/LoginPage.js';
 
-import skokiePage from './containers/realestate/skokiePage';
+import SkokiePage from './containers/realestate/skokiePage';
 
 export default (
     <Route component={App}>
@@ -27,7 +27,7 @@ export default (
             <Route component={HomePage} path='/'/>
             <Route component={AsideLayout}>
                 <Route component={HousesForSalePageContainer} path='/houses-for-sale'/>
-                <Route component={skokiePage} path='/houses-for-sale/skokie'/>
+                <Route component={SkokiePage} path='/houses-for-sale/skokie'/>
 
 
                 <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>
