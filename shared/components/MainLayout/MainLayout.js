@@ -42,7 +42,6 @@ export default class MainLayout extends Component {
                         <Link to="/contacts" className='MainLayout__drawer-nav-link'>{l('contact')}</Link>
                     </Navigation>
                 </Drawer>
-
                 <div>
                     {this.props.children}
                 </div>

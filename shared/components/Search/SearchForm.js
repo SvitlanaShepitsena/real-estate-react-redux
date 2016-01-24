@@ -73,7 +73,9 @@ export default class SearchForm extends Component {
                                 />
                             </div>
                         </Cell>
-                        <Cell col={3} tablet={4} phone={12}>
+                        <Cell col={3}
+                              tablet={3}
+                              phone={12}>
                             <Button className="SearchForm__search-btn"
                                     type="submit"
                                     raised accent ripple>
