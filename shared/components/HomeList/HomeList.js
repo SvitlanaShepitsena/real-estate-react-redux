@@ -37,7 +37,7 @@ export default class HomeList extends React.Component {
                         phone={12}>
                         <Card shadow={0}
                               className="HomeList__card-image"
-                              style={{ background: 'url(https://c2.staticflickr.com/6/5033/5860167175_3c153d1c98_b.jpg) center / cover' }}>
+                              style={{ background: 'url(http://res.cloudinary.com/svitlana/image/upload/v1453662336/northbrook-image-mockup_fksvx3.jpg) center / cover' }}>
                             <CardTitle expand/>
                             <CardActions
                                 style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
