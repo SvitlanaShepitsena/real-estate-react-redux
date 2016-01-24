@@ -35,16 +35,18 @@ export default class HomeList extends React.Component {
                         col={4}
                         tablet={6}
                         phone={12}>
-                        <Card shadow={0}
-                              className="HomeList__card-image"
-                              style={{ background: 'url(http://res.cloudinary.com/svitlana/image/upload/v1453662336/northbrook-image-mockup_fksvx3.jpg) center / cover' }}>
-                            <CardTitle expand/>
-                            <CardActions
-                                style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
+                        <Link to="/houses-for-sale/northbrook" style={{textDecoration:'none'}}>
+                            <Card shadow={0}
+                                  className="HomeList__card-image"
+                                  style={{ background: 'url(http://res.cloudinary.com/svitlana/image/upload/v1453662336/northbrook-image-mockup_fksvx3.jpg) center / cover' }}>
+                                <CardTitle expand/>
+                                <CardActions
+                                    style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
                                     <span
                                         style={{color: '#fff', fontSize: '18px', fontWeight: '400'}}> Northbrook Real Estate </span>
-                            </CardActions>
-                        </Card>
+                                </CardActions>
+                            </Card>
+                        </Link>
                     </Cell>
                     <Cell
                         col={4}

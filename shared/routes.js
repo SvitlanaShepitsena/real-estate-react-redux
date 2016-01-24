@@ -19,18 +19,19 @@ import HomePage from './containers/pages/HomePage';
 import AboutPageContainer from './containers/pages/AboutPage';
 import LoginPageContainer from './containers/pages/LoginPage.js';
 
-import SkokiePage from './containers/realestate/skokiePage';
-import GlenviewPage from './containers/realestate/glenviewPage';
+import CityPage from './containers/realestate/CityPage';
+import ZipPage from './containers/realestate/ZipPage';
 
 export default (
     <Route component={App}>
         <Route component={AppLayout}>
             <Route component={HomePage} path='/'/>
             <Route component={AsideLayout}>
-                <Route component={HousesForSalePageContainer} path='/houses-for-sale'/>
-                <Route component={SkokiePage} path='/houses-for-sale/skokie'/>
-
-                <Route component={GlenviewPage} path='/houses-for-sale/glenview'/>
+                <Route component={HousesForSalePageContainer} path='/houses-for-sale'>
+                    <Route component={CityPage} path=':city'>
+                        <Route component={ZipPage} path=':zip'/>
+                    </Route>
+                </Route>
 
 
                 <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>

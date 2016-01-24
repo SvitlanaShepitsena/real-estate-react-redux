@@ -17,7 +17,6 @@ export default function zips(state = {isFetching: false, zips: [], error: null},
             );
             break;
         case ZIPS_GET_SUCCESS:
-            console.log(action.items);
             return Object.assign(
                 {},
                 state,

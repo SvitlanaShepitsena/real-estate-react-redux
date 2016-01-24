@@ -12,7 +12,6 @@ export default function promiseMiddleware() {
             .then(req => {
                 req = objtoArray(req);
                 var items = req.data;
-                console.log(items);
                 next({items, type: SUCCESS});
                 return true;
             })

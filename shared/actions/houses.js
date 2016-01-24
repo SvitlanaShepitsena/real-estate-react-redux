@@ -10,7 +10,7 @@ export const ADD_HOUSE = 'ADD_HOUSE';
 export const REMOVE_HOUSE = 'REMOVE_HOUSE';
 
 /*Action Creator functions*/
-export function housesGet() {
+export function housesGet(zip) {
     return {
         type: HOUSES_GET,
         promise: request.get('https://real-estate-react.firebaseio.com/sale/skokie.json')
@@ -30,10 +30,10 @@ export function removeHouse(index) {
     };
 }
 
-export function getHousesIfNeeded() {
+export function getHousesIfNeeded(zip) {
     return (dispatch, getState) => {
         if (!getState().houses.length) {
-            return dispatch(housesGet());
+            return dispatch(housesGet(zip));
         }
     };
 }

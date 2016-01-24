@@ -56,18 +56,12 @@ class HousesForSalePageContainer extends Component {
 
     render() {
         return (
-            <HousesGrid
-                articles={this.props.articles}
-                search={this.props.search}
-                linkToShare={this.state.linkToShare}
-                selectedCategory={this.props.category}
-                isSharing={this.state.isSharing}
-                isEmbedded={this.props.location.query.embed}
-                isLoading={this.props.isLoading}
-                isEmpty={this.props.articles.length === 0}
-                onItemClick={this.handleQuizCardClick}
-                onTabChange={this.handleTabChange}
-            />
+            <div>
+                {this.props.params.city && <div>
+                    {this.props.children}
+
+                </div>}
+            </div>
         );
     }
 }
