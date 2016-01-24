@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
-import Link from 'react-router';
+import {Link} from 'react-router';
 
 if (process.env.BROWSER) {
     require('./HomeList.less');
@@ -18,7 +18,7 @@ export default class HomeList extends React.Component {
                         col={4}
                         tablet={6}
                         phone={12}>
-                        <Link to="/houses-for-sale/skokie">
+                        <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
                             <Card shadow={0}
                                   className="HomeList__card-image"
                                   style={{ background: 'url(http://farm3.static.flickr.com/2711/4369664710_3c94dbffbc.jpg) center / cover' }}>

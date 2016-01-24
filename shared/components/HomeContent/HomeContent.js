@@ -4,6 +4,7 @@ import Grid, {Cell} from 'react-mdl/lib/Grid';
 import Button      from 'react-mdl/lib/Button';
 import HomeList from '../HomeList/HomeList.js';
 import SearchForm from '../Search/SearchForm.js';
+import {Link} from 'react-router';
 
 if (process.env.BROWSER) {
     require('./HomeContent.less');
