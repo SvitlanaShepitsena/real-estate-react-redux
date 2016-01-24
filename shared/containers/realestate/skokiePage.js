@@ -57,7 +57,7 @@ class skokiePage extends Component {
     render() {
         return (
             <div>
-                <h3>Skokie Zip Codes</h3>
+                <h3>Skokie Listings for Sale by Zip Code</h3>
                 <hr/>
                 <h4>
                     <a>60025</a>
