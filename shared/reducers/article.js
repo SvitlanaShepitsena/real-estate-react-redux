@@ -24,7 +24,7 @@ export default function articles(state = {isFetching: false, articles: [], error
                 {
                     isFetching: false,
                     error: false,
-                    articles: action.articles
+                    articles: action.items
                 });
             break;
         case ARTICLES_GET_FAILURE:

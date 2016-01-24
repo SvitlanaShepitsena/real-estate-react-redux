@@ -23,7 +23,7 @@ export default function zips(state = {isFetching: false, zips: [], error: null},
                 {
                     isFetching: false,
                     error: false,
-                    zips: action.zips
+                    zips: action.items
                 });
             break;
         case ZIPS_GET_FAILURE:
