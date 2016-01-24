@@ -11,8 +11,8 @@ export default function promiseMiddleware() {
         return promise
             .then(req => {
                 req = objtoArray(req);
-                var articles = req.data;
-                next({articles, type: SUCCESS});
+                var items = req.data;
+                next({items, type: SUCCESS});
                 return true;
             })
             .catch(error => {

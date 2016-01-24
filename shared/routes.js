@@ -20,6 +20,7 @@ import AboutPageContainer from './containers/pages/AboutPage';
 import LoginPageContainer from './containers/pages/LoginPage.js';
 
 import skokiePage from './containers/realestate/skokiePage';
+import glenviewPage from './containers/realestate/glenviewPage';
 
 export default (
     <Route component={App}>
@@ -28,6 +29,8 @@ export default (
             <Route component={AsideLayout}>
                 <Route component={HousesForSalePageContainer} path='/houses-for-sale'/>
                 <Route component={skokiePage} path='/houses-for-sale/skokie'/>
+
+                <Route component={glenviewPage} path='/houses-for-sale/glenview'/>
 
 
                 <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>
