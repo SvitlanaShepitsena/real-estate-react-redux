@@ -50,8 +50,8 @@ class glenviewPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger;
         const zip = nextProps.filter(zip=>zip.key === this.state.city);
+        console.log(zip);
 
     }
 
