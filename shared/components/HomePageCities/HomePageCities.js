@@ -4,14 +4,14 @@ import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
 import {Link} from 'react-router';
 
 if (process.env.BROWSER) {
-    require('./HomeList.less');
+    require('./HomePageCities.less');
 }
 
-export default class HomeList extends React.Component {
+export default class HomePageCities extends React.Component {
 
     render() {
         return (
-            <div className='HomeList'>
+            <div className='HomePageCities'>
                 <Grid >
                     <Cell
                         align="top"
@@ -20,7 +20,7 @@ export default class HomeList extends React.Component {
                         phone={12}>
                         <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
                             <Card shadow={0}
-                                  className="HomeList__card-image"
+                                  className="HomePageCities__card-image"
                                   style={{ background: 'url(http://farm3.static.flickr.com/2711/4369664710_3c94dbffbc.jpg) center / cover' }}>
                                 <CardTitle expand/>
                                 <CardActions
@@ -37,7 +37,7 @@ export default class HomeList extends React.Component {
                         phone={12}>
                         <Link to="/houses-for-sale/northbrook" style={{textDecoration:'none'}}>
                             <Card shadow={0}
-                                  className="HomeList__card-image"
+                                  className="HomePageCities__card-image"
                                   style={{ background: 'url(http://res.cloudinary.com/svitlana/image/upload/v1453662336/northbrook-image-mockup_fksvx3.jpg) center / cover' }}>
                                 <CardTitle expand/>
                                 <CardActions
@@ -54,7 +54,7 @@ export default class HomeList extends React.Component {
                         phone={12}>
                         <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
                             <Card shadow={0}
-                                  className="HomeList__card-image"
+                                  className="HomePageCities__card-image"
                                   style={{ background: 'url(http://i287.photobucket.com/albums/ll152/urbansurfin/Chicago08013.jpg) center / cover' }}>
                                 <CardTitle expand/>
                                 <CardActions

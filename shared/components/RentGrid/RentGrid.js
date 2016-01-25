@@ -4,7 +4,7 @@ import {Tab, Tabs}  from 'react-mdl/lib/Tabs';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import Spinner from 'react-mdl/lib/Spinner';
 
-import HouseCard from '../HouseCard/HouseCard.js';
+import HouseCard from '../ListingThumb/ListingThumbCard.js';
 
 import config from '../../../etc/settings';
 const settings = config();

@@ -1,6 +1,7 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
+import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
 
@@ -9,7 +10,7 @@ import {sendEvent}                          from '../../utils/googleAnalytics';
 
 import {bindActionCreators} from 'redux';
 import * as housesActions from '../../actions/houses';
-import HousesGrid from '../../components/HousesGrid/HousesGrid.js';
+import ListingThumbCard from '../../components/ListingThumb/ListingThumbCard.js';
 
 class ZipPage extends Component {
     constructor(props) {
@@ -47,34 +48,32 @@ class ZipPage extends Component {
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
         this.props.getHousesIfNeeded(this.saleRent, this.city, this.zip);
-
     }
 
     componentWillReceiveProps(nextProps) {
         console.log(this.props.route);
         console.log(this.props.routes);
-
     }
 
     render() {
         return (
-            <div>
-                {this.props.houses && <ul style={{ listStyle: 'none'}}>
+            <div style={{width:'100%'}}>
+                {this.props.houses &&
+                <Grid>
                     {this.props.houses.map(house=> {
                         return (
-                            <div key={house.address.street}>
+                            <Cell
+                                key={house.mls + house.city}
+                                id={house.mls}
+                                align='top'
+                                col={12}>
 
-                                <li key={house.mls} id={house.mls}>
-                                    <div>{house.address.street}, {house.address.city},{house.address.zip}</div>
-                                    <img key={house.mls}
-                                         src={(house.images&&house.images.length)?house.images[0] : 'http://res.cloudinary.com/svitlana/image/upload/v1453494429/house-picture-icon_og71rx.png'}
-                                         alt={house.address.street} style={{width:200}}/>
-                                    <hr/>
-                                </li>
-                            </div>
+                                <ListingThumbCard house={house}/>
+                            </Cell>
                         );
                     })}
-                </ul>}
+                </Grid>
+                }
             </div>
 
         );

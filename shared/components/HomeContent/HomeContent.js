@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import cx                              from 'classnames';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import Button      from 'react-mdl/lib/Button';
-import HomeList from '../HomeList/HomeList.js';
+import HomeList from '../HomePageCities/HomePageCities.js';
 import SearchForm from '../Search/SearchForm.js';
 import {Link} from 'react-router';
 
