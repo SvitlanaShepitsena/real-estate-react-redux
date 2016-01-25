@@ -58,7 +58,7 @@ class HousePage extends Component {
                 <div>
                     <div>
 
-                        {this.props.house.mls}
+                        #{this.props.house.mls}
                     </div>
                     <div>
                         ${this.props.house.price}
@@ -68,7 +68,7 @@ class HousePage extends Component {
                     </div>
                     <br/>
                     <div>
-                        Sold by {this.props.house.agent}
+                        Listing Agent: {this.props.house.agent}
                     </div>
                 </div>}
             </div>
