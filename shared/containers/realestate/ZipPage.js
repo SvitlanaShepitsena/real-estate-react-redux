@@ -62,11 +62,16 @@ class ZipPage extends Component {
                 {this.props.houses && <ul style={{ listStyle: 'none'}}>
                     {this.props.houses.map(house=> {
                         return (
-                            <li key={house.mls}>
-                                <div>{house.address.street}, {house.address.city},{house.address.zip}</div>
-                                <img src={house.images[0]} alt={house.address.street} style={{width:200}}/>
-                                <hr/>
-                            </li>
+                            <div key={house.address.street}>
+
+                                <li key={house.mls} id={house.mls}>
+                                    <div>{house.address.street}, {house.address.city},{house.address.zip}</div>
+                                    <img key={house.mls}
+                                         src={(house.images&&house.images.length)?house.images[0] : 'http://res.cloudinary.com/svitlana/image/upload/v1453494429/house-picture-icon_og71rx.png'}
+                                         alt={house.address.street} style={{width:200}}/>
+                                    <hr/>
+                                </li>
+                            </div>
                         );
                     })}
                 </ul>}
