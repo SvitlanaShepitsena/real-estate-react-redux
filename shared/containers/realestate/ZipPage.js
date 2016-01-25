@@ -12,12 +12,9 @@ import * as housesActions from '../../actions/houses';
 import HousesGrid from '../../components/HousesGrid/HousesGrid.js';
 
 class ZipPage extends Component {
-    static contextTypes = {i18n: PropTypes.object};
-
-    state = {
-        linkToShare: '',
-        isSharing: false
-    };
+    constructor(props) {
+        super(props);
+    }
 
     handleQuizCardClick = (article) => {
         this.props.history.pushState(null, `/articles/${article.id}`, {
@@ -45,7 +42,12 @@ class ZipPage extends Component {
     };
 
     componentDidMount() {
-        this.props.getZIPsIfNeeded();
+        this.city = this.props.params.city;
+        this.zip = this.props.params.zip;
+        this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+
+        this.props.getHousesIfNeeded(this.saleRent, this.city, this.zip);
+
     }
 
     componentWillReceiveProps(nextProps) {
@@ -55,41 +57,21 @@ class ZipPage extends Component {
     }
 
     render() {
-        this.saleRent = this.props.route.path;
-        console.log(saleRent);
-        let city = this.props.params.city;
-        city = city.charAt(0).toUpperCase() + city.slice(1)
         return (
             <div>
-                <h3>{city} Listings for Sale by Zip Code</h3>
-                <hr/>
-                {this.zips && this.zips.map(zip=> {
-                    return (
-                        <h4 key={zip}>
-                            <a>{zip}</a>
-                        </h4>)
-                })}
-                <h3>{city} Listings for Sale by Property Type</h3>
-                <hr/>
-                <h4>
-                    <a>Single Family Home</a>
-                </h4>
-                <h4>
-                    <a>Multi-Family Home</a>
-                </h4>
-                <h4>
-                    <a>Townhouse</a>
-                </h4>
-                <h4>
-                    <a>Duplex</a>
-                </h4>
-                <h4>
-                    <a>Condominimum Unit</a>
-                </h4>
-                <h4>
-                    <a>Raw Land</a>
-                </h4>
+                {this.props.houses && <ul style={{ listStyle: 'none'}}>
+                    {this.props.houses.map(house=> {
+                        return (
+                            <li key={house.mls}>
+                                <div>{house.address.street}, {house.address.city},{house.address.zip}</div>
+                                <img src={house.images[0]} alt={house.address.street} style={{width:200}}/>
+                                <hr/>
+                            </li>
+                        );
+                    })}
+                </ul>}
             </div>
+
         );
     }
 }

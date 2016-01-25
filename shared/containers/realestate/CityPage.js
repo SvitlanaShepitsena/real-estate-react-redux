@@ -57,46 +57,61 @@ class cityPage extends Component {
 
     render() {
         let city = this.props.params.city;
-        city = city.charAt(0).toUpperCase() + city.slice(1)
+        city = city.charAt(0).toUpperCase() + city.slice(1);
+        let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+
         return (
             <div>
-                <h3>{city} Listings for Sale by Zip Code</h3>
-                <hr/>
-                {this.zips && this.zips.map(zip=> {
-                    return (
-                        <h4 key={zip}>
-                            <Link to="/:60630" style={{textDecoration:'none'}}>
-                                {zip}
-                            </Link>
-                        </h4>)
-                })}
-                <h3>{city} Listings for Sale by Property Type</h3>
 
-                <hr/>
-                <h4>
-                    <a>Single Family Home</a>
-                </h4>
-                <h4>
-                    <a>Multi-Family Home</a>
-                </h4>
-                <h4>
-                    <a>Townhouse</a>
-                </h4>
-                <h4>
-                    <a>Duplex</a>
-                </h4>
-                <h4>
-                    <a>Condominimum Unit</a>
-                </h4>
-                <h4>
-                    <a>Raw Land</a>
-                </h4>
-            </div>
+                {this.props.params.zip &&
+                <div>
+                    {this.props.children}
+                </div>
+                }
+
+
+                {!this.props.params.zip && <div>
+
+                    <h3>{city} Listings for Sale by Zip Code</h3>
+                    <hr/>
+                    {this.zips && this.zips.map(zip=> {
+                        return (
+                            <h4 key={zip}>
+                                <Link to={`/houses-for-${saleRent}/${city.toLowerCase()}/${zip}`}
+                                      style={{textDecoration:'none'}}>
+                                    {zip}
+                                </Link>
+                            </h4>)
+                    })}
+                    <h3>{city} Listings for Sale by Property Type</h3>
+
+                    <hr/>
+                    <h4>
+                        <a>Single Family Home</a>
+                    </h4>
+                    <h4>
+                        <a>Multi-Family Home</a>
+                    </h4>
+                    <h4>
+                        <a>Townhouse</a>
+                    </h4>
+                    <h4>
+                        <a>Duplex</a>
+                    </h4>
+                    <h4>
+                        <a>Condominimum Unit</a>
+                    </h4>
+                    <h4>
+                        <a>Raw Land</a>
+                    </h4>
+                </div>}
+            </div >
         );
     }
 }
 function mapStateToProps(state) {
     return state.zips;
+
 }
 
 function mapDispatchToProps(dispatch) {
