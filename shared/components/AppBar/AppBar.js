@@ -83,7 +83,7 @@ class AppBar extends Component {
                      <div >
                      <Link to="/blog" className='AppBar__menu-item-nav'> blog </Link>
                      </div>
-                    */}
+                     */}
                     <div>
                         <Link to="/about" className='AppBar__menu-item-nav'> about us </Link>
                     </div>

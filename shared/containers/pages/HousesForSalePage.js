@@ -1,11 +1,14 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
+import Grid, {Cell} from 'react-mdl/lib/Grid';
+import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
-
+import {Link} from 'react-router';
 import config                                 from '../../config';
 import {sendEvent}                          from '../../utils/googleAnalytics';
+import CityCard from '../../components/City/CityCard';
 
 import {bindActionCreators} from 'redux';
 import * as articleActions from '../../actions/article';
@@ -56,11 +59,60 @@ class HousesForSalePageContainer extends Component {
 
     render() {
         return (
-            <div>
-                {this.props.params.city && <div>
+            <div style={{maxWidth:"100%"}}>
+                {!this.props.params.city &&
+                <Grid >
+                    <Cell
+                        style={{backgroundColor:'green'}}
+                        align="top"
+                        col={3}>
+                        <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
+                            <CityCard/>
+                        </Link>
+                    </Cell>
+                    <Cell
+                        style={{backgroundColor:'green'}}
+                        col={3}>
+                        <Link to="/houses-for-sale/northbrook" style={{textDecoration:'none'}}>
+                            <CityCard/>
+                        </Link>
+                    </Cell>
+                    <Cell
+                        style={{backgroundColor:'green'}}
+                        col={3}>
+                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
+                            <CityCard/>
+                        </Link>
+                    </Cell>
+                    <Cell
+                        style={{backgroundColor:'green'}}
+                        col={3}>
+                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
+                            <CityCard/>
+                        </Link>
+                    </Cell>
+                    <Cell
+                        style={{backgroundColor:'green'}}
+                        col={3}>
+                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
+                            <CityCard/>
+                        </Link>
+                    </Cell>
+                    <Cell
+                        style={{backgroundColor:'green'}}
+                        col={3}>
+                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
+                            <CityCard/>
+                        </Link>
+                    </Cell>
+                </Grid>
+                }
+                {this.props.params.city &&
+                <div>
                     {this.props.children}
 
-                </div>}
+                </div>
+                }
             </div>
         );
     }
