@@ -1,7 +1,6 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
 
@@ -59,19 +58,19 @@ class ZipPage extends Component {
         return (
             <div style={{width:'100%'}}>
                 {this.props.houses &&
-                <Grid>
+                <ul style={{listStyle:'none'}}>
                     {this.props.houses.map(house=> {
                         return (
-                            <Cell
+                            <li style={{marginBottom:16}}
                                 key={house.mls + house.city}
                                 id={house.mls}
                                 align='top'
                                 col={12}>
                                 <ListingThumbCard house={house}/>
-                            </Cell>
+                            </li>
                         );
                     })}
-                </Grid>
+                </ul>
                 }
             </div>
 
