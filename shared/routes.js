@@ -32,8 +32,6 @@ export default (
                         <Route component={ZipPage} path=':zip'/>
                     </Route>
                 </Route>
-
-
                 <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>
                 <Route component={ArticlesPageContainer} path='/blog'/>
                 <Route component={TermsOfUsePageContainer} path='/terms-of-use'/>
