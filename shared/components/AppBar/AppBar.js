@@ -49,12 +49,12 @@ class AppBar extends Component {
     renderCompanyLogo = () => {
         return (
             <div>
-                <Link to="/">
+                <Link to="/" style={{color:'white',textDecoration:'none'}}>
                     <img src={LOGO_SRC} className='AppBar__logo'/>
+                    <div className="AppBar__title">
+                        Re/Max 1st Class
+                    </div>
                 </Link>
-                <div className="AppBar__title">
-                    Re/Max 1st Class
-                </div>
             </div>
         )
 
