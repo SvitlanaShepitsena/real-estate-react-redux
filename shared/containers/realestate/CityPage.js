@@ -14,35 +14,6 @@ import * as zipsActions from '../../actions/zips';
 class cityPage extends Component {
     static contextTypes = {i18n: PropTypes.object};
 
-    state = {
-        linkToShare: '',
-        isSharing: false
-    };
-
-    handleQuizCardClick = (article) => {
-        this.props.history.pushState(null, `/articles/${article.id}`, {
-            embed: this.props.location.query.embed,
-            assigneeId: this.props.location.query.assigneeId
-        });
-
-    };
-
-    handleTabChange = (category) => {
-        this.props.history.pushState(null, this.props.location.pathname, {
-            ...this.props.location.query,
-            category: category !== 'ALL' ? category : undefined
-        });
-
-        sendEvent('articles page', 'category', category);
-    };
-
-    handleStopSharing = () => {
-        this.setState({
-            linkToShare: '',
-            isSharing: false
-        });
-    };
-
     componentDidMount() {
         this.props.getZIPsIfNeeded();
     }

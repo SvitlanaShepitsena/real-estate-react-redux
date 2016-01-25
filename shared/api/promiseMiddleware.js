@@ -1,7 +1,7 @@
 export default function promiseMiddleware() {
     return next => action => {
 
-        const { promise, type, ...rest } = action;
+        const {promise, obj, type, ...rest} = action;
 
         if (!promise) return next(action);
 
@@ -10,7 +10,9 @@ export default function promiseMiddleware() {
         const FAILURE = type + '_FAILURE';
         return promise
             .then(req => {
-                req = objtoArray(req);
+                if (!obj) {
+                    req = objtoArray(req);
+                }
                 var items = req.data;
                 next({items, type: SUCCESS});
                 return true;
@@ -29,7 +31,9 @@ var objtoArray = (req)=> {
     }
     req.data = Object.keys(req.data).map(key=> {
         let item = req.data[key];
-        item.key = key;
+        if (typeof item === 'object') {
+            item.key = key;
+        }
         return item;
     });
     return req;

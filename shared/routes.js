@@ -21,6 +21,7 @@ import LoginPageContainer from './containers/pages/LoginPage.js';
 
 import CityPage from './containers/realestate/CityPage';
 import ZipPage from './containers/realestate/ZipPage';
+import HousePage from './containers/realestate/HousePage';
 
 export default (
     <Route component={App}>
@@ -29,18 +30,21 @@ export default (
             <Route component={AsideLayout}>
                 <Route component={HousesForSalePageContainer} path='/houses-for-sale'>
                     <Route component={CityPage} path=':city'>
-                        <Route component={ZipPage} path=':zip'/>
+                        <Route component={ZipPage} path=':zip'>
+                            <Route component={HousePage} path=':street'/>
+
+                            </Route>
+                        </Route>
                     </Route>
+                    <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>
+                    <Route component={ArticlesPageContainer} path='/blog'/>
+                    <Route component={TermsOfUsePageContainer} path='/terms-of-use'/>
+                    <Route component={PrivacyPolicyPageContainer} path='/privacy-policy'/>
+                    <Route component={AboutPageContainer} path='/about'/>
+                    <Route component={ContactsPageContainer} path='/contacts'/>
+                    <Route component={LoginPageContainer} path='/login'/>
+                    <Route component={UserProfilePageContainer} path='/profile'/>
                 </Route>
-                <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>
-                <Route component={ArticlesPageContainer} path='/blog'/>
-                <Route component={TermsOfUsePageContainer} path='/terms-of-use'/>
-                <Route component={PrivacyPolicyPageContainer} path='/privacy-policy'/>
-                <Route component={AboutPageContainer} path='/about'/>
-                <Route component={ContactsPageContainer} path='/contacts'/>
-                <Route component={LoginPageContainer} path='/login'/>
-                <Route component={UserProfilePageContainer} path='/profile'/>
             </Route>
         </Route>
-    </Route>
-);
+        );
