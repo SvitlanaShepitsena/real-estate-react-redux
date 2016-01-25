@@ -12,13 +12,14 @@ export default class CityCard extends Component {
 
     render() {
         return (
-            <div
+            <Card
                 className="CityCard"
                 style={{ background: 'url(http://farm3.static.flickr.com/2711/4369664710_3c94dbffbc.jpg) center / cover' }}>
-                <span>
-                    City
-                </span>
-            </div>
+                <CardTitle expand/>
+                <CardActions style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
+                    <span className="CityCard__city-name"> City </span>
+                </CardActions>
+            </Card>
         );
     }
 }
