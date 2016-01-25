@@ -14,7 +14,7 @@ export default class MainLayout extends Component {
 
     static propTypes = {
         showFooter: PropTypes.bool,
-        footerLinks: PropTypes.object
+        footerLinks: PropTypes.object,
     };
 
     toggleDrawer(e) {

@@ -19,6 +19,15 @@ class HousesForRentPageContainer extends Component {
         isSharing: false
     };
 
+    handleQuizCardClick = (article) => {
+        this.props.history.pushState(null, `/articles/${article.id}`, {
+            embed: this.props.location.query.embed,
+            assigneeId: this.props.location.query.assigneeId
+        });
+
+        sendEvent('article card', 'view details');
+    };
+
     handleTabChange = (category) => {
         this.props.history.pushState(null, this.props.location.pathname, {
             ...this.props.location.query,
@@ -27,6 +36,23 @@ class HousesForRentPageContainer extends Component {
 
         sendEvent('articles page', 'category', category);
     };
+
+    handleStopSharing = () => {
+        this.setState({
+            linkToShare: '',
+            isSharing: false
+        });
+    };
+
+    componentDidMount() {
+        this.props.getArticlesIfNeeded();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const currentQuery = this.props.location.query;
+        const nextQuery = nextProps.location.query;
+
+    }
 
     render() {
         return (
