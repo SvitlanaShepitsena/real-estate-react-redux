@@ -19,6 +19,15 @@ class ArticlesPageContainer extends Component {
         isSharing: false
     };
 
+    handleQuizCardClick = (article) => {
+        this.props.history.pushState(null, `/articles/${article.id}`, {
+            embed: this.props.location.query.embed,
+            assigneeId: this.props.location.query.assigneeId
+        });
+
+        sendEvent('article card', 'view details');
+    };
+
     handleTabChange = (category) => {
         this.props.history.pushState(null, this.props.location.pathname, {
             ...this.props.location.query,
@@ -27,6 +36,26 @@ class ArticlesPageContainer extends Component {
 
         sendEvent('articles page', 'category', category);
     };
+
+    handleStopSharing = () => {
+        this.setState({
+            linkToShare: '',
+            isSharing: false
+        });
+    };
+
+    componentDidMount() {
+        this.props.getArticlesIfNeeded();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const currentQuery = this.props.location.query;
+        const nextQuery = nextProps.location.query;
+
+
+
+
+    }
 
     render() {
         return (
@@ -39,6 +68,7 @@ class ArticlesPageContainer extends Component {
                 isEmbedded={this.props.location.query.embed}
                 isLoading={this.props.isLoading}
                 isEmpty={this.props.articles.length === 0}
+                onItemClick={this.handleQuizCardClick}
                 onTabChange={this.handleTabChange}
             />
         );

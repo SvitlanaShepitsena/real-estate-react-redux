@@ -19,6 +19,41 @@ class cityPage extends Component {
         isSharing: false
     };
 
+    handleQuizCardClick = (article) => {
+        this.props.history.pushState(null, `/articles/${article.id}`, {
+            embed: this.props.location.query.embed,
+            assigneeId: this.props.location.query.assigneeId
+        });
+
+    };
+
+    handleTabChange = (category) => {
+        this.props.history.pushState(null, this.props.location.pathname, {
+            ...this.props.location.query,
+            category: category !== 'ALL' ? category : undefined
+        });
+
+        sendEvent('articles page', 'category', category);
+    };
+
+    handleStopSharing = () => {
+        this.setState({
+            linkToShare: '',
+            isSharing: false
+        });
+    };
+
+    componentDidMount() {
+        this.props.getZIPsIfNeeded();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        //console.log(nextProps);
+        const zip = nextProps.zips.filter(zip=>zip.key === this.props.params.city)[0];
+        this.zips = Object.keys(zip).filter(code=>code.length === 5);
+
+    }
+
     render() {
         let city = this.props.params.city;
         city = city.charAt(0).toUpperCase() + city.slice(1);

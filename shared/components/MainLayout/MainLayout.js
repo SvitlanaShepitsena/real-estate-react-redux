@@ -3,6 +3,7 @@ import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import {Link} from 'react-router';
 
 import AppBar      from '../AppBar/AppBar.js';
+import WelcomeDialog from '../../containers/WelcomeDialogSmart.js';
 import Footer        from '../../containers/FooterSmart.js';
 
 if (process.env.BROWSER) {
@@ -13,8 +14,10 @@ export default class MainLayout extends Component {
     static contextTypes = {i18n: React.PropTypes.object};
 
     static propTypes = {
+        showWelcomeScreen: PropTypes.bool,
         showFooter: PropTypes.bool,
-        footerLinks: PropTypes.object
+        footerLinks: PropTypes.object,
+        onWelcomeScreenClose: PropTypes.func
     };
 
     toggleDrawer(e) {
