@@ -61,9 +61,8 @@ class HousesForSalePageContainer extends Component {
         return (
             <div style={{maxWidth:"100%"}}>
                 {!this.props.params.city &&
-                <Grid >
+                <Grid style={{backgroundColor:'#F4F4F4'}}>
                     <Cell
-                        style={{backgroundColor:'green'}}
                         align="top"
                         col={3}>
                         <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
@@ -71,35 +70,12 @@ class HousesForSalePageContainer extends Component {
                         </Link>
                     </Cell>
                     <Cell
-                        style={{backgroundColor:'green'}}
                         col={3}>
                         <Link to="/houses-for-sale/northbrook" style={{textDecoration:'none'}}>
                             <CityCard/>
                         </Link>
                     </Cell>
                     <Cell
-                        style={{backgroundColor:'green'}}
-                        col={3}>
-                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
-                            <CityCard/>
-                        </Link>
-                    </Cell>
-                    <Cell
-                        style={{backgroundColor:'green'}}
-                        col={3}>
-                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
-                            <CityCard/>
-                        </Link>
-                    </Cell>
-                    <Cell
-                        style={{backgroundColor:'green'}}
-                        col={3}>
-                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
-                            <CityCard/>
-                        </Link>
-                    </Cell>
-                    <Cell
-                        style={{backgroundColor:'green'}}
                         col={3}>
                         <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
                             <CityCard/>
