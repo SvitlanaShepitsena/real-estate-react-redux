@@ -19,10 +19,10 @@ export default class HouseCard extends Component {
 
         return (
             <Card className="HouseCard" shadow={1}>
-                <CardTitle className='ArticleCard__head'>
+                <CardTitle className='HouseCard__head'>
                     {name}
                 </CardTitle>
-                <div className='ArticleCard__content'>
+                <div className='HouseCard__content'>
                     {this.props.children}
                 </div>
             </Card>

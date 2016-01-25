@@ -54,7 +54,6 @@ export default class HousesGrid extends React.Component {
                                 <img className="HousesGrid__youtube"
                                      src={settings.houseImageThumb}/>
                             </div>
-
                         </HouseCard>
                     </Cell>
                 )}

@@ -64,7 +64,9 @@ class ZipPage extends Component {
                         return (
                             <li key={house.mls}>
                                 <div>{house.address.street}, {house.address.city},{house.address.zip}</div>
-                                <img src={house.images[0]} alt={house.address.street} style={{width:200}}/>
+                                <div
+                                    style={{width: 220,height:'auto',minHeight:150, background:  `url(${house.images[0]}) center / cover`} }>
+                                </div>
                                 <hr/>
                             </li>
                         );
