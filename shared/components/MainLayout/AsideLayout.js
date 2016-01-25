@@ -24,14 +24,6 @@ export default class AsideLayout extends Component {
                         col={4}
                         phone={12}>
                         <aside style={{padding:"0px 8px"}}>
-                            <a style={{textAlign:'center', color:'#393939'}}
-                               target="_blank"
-                               href="https://tleunen.github.io/react-mdl/#/cards">
-                                <h4>
-                                    React-MDL
-                                    Cards
-                                </h4>
-                            </a>
                             <div style={{textAlign:'center'}}>
                                 <Card shadow={0}
                                       className="AsideLayout__card"

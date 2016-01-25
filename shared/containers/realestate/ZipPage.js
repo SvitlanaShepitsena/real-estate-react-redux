@@ -16,14 +16,6 @@ class ZipPage extends Component {
         super(props);
     }
 
-    handleQuizCardClick = (article) => {
-        this.props.history.pushState(null, `/articles/${article.id}`, {
-            embed: this.props.location.query.embed,
-            assigneeId: this.props.location.query.assigneeId
-        });
-
-        sendEvent('article card', 'view details');
-    };
 
     handleTabChange = (category) => {
         this.props.history.pushState(null, this.props.location.pathname, {
