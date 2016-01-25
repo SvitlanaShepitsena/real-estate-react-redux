@@ -59,12 +59,14 @@ class ZipPage extends Component {
     render() {
         return (
             <div>
-                {this.props.houses && <ul>
+                {this.props.houses && <ul style={{ listStyle: 'none'}}>
                     {this.props.houses.map(house=> {
                         return (
-                           <li key={house.mls}>
-                               {house.address.street}
-                           </li>
+                            <li key={house.mls}>
+                                <div>{house.address.street}, {house.address.city},{house.address.zip}</div>
+                                <img src={house.images[0]} alt={house.address.street} style={{width:200}}/>
+                                <hr/>
+                            </li>
                         );
                     })}
                 </ul>}
