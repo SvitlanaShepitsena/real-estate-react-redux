@@ -10,7 +10,6 @@ import config                                 from '../../config';
 
 import {bindActionCreators} from 'redux';
 import * as zipsActions from '../../actions/zips';
-import HousesGrid from '../../components/HousesGrid/HousesGrid.js';
 
 class cityPage extends Component {
     static contextTypes = {i18n: PropTypes.object};

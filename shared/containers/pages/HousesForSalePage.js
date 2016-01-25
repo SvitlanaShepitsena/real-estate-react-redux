@@ -12,7 +12,6 @@ import CityCard from '../../components/City/CityCard';
 
 import {bindActionCreators} from 'redux';
 import * as articleActions from '../../actions/article';
-import HousesGrid from '../../components/HousesGrid/HousesGrid.js';
 
 class HousesForSalePageContainer extends Component {
     static contextTypes = {i18n: PropTypes.object};

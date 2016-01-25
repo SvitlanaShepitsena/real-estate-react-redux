@@ -67,7 +67,6 @@ class ZipPage extends Component {
                                 id={house.mls}
                                 align='top'
                                 col={12}>
-
                                 <ListingThumbCard house={house}/>
                             </Cell>
                         );
