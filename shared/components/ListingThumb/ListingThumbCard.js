@@ -60,6 +60,9 @@ export default class ListingThumbCard extends Component {
                             {house.mls &&
                             <span>MLS#: {house.mls} </span>
                             }
+                            {house.agent &&
+                            <span>MLS#: {house.agent} </span>
+                            }
                         </p>
                     </li>
                 </ul>

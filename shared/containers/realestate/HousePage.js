@@ -2,6 +2,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
+import {Card, CardTitle, CardText, CardActions} from 'react-mdl/lib/Card';
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
 
@@ -35,8 +36,6 @@ class HousePage extends Component {
         sendEvent('articles page', 'category', category);
     };
 
-
-
     componentDidMount() {
         this.city = this.props.params.city;
         this.zip = this.props.params.zip;
@@ -48,25 +47,59 @@ class HousePage extends Component {
 
     render() {
         return (
-            <div style={{width:'100%'}}>
+            <Card style={{width:'100%'}} shadow={0}>
                 {this.props.house &&
                 <div>
-                    <div>
+                    <Grid>
+                        <Cell
+                            align='top'
+                            col={6}>
+                            <p>
+                                {this.props.house.address.street + ' ' + this.props.house.address.city + ", " + this.props.house.address.state }
+                            </p>
+                            {this.props.house.type &&
+                            <p>
+                                {this.props.house.type}
+                            </p>
+                            }
+                        </Cell>
+                        <Cell
+                            style={{textAlign:'right'}}
+                            align='top'
+                            col={6}>
+                            <div>
+                                MLS#: {this.props.house.mls}
+                            </div>
+                            <div>
+                                ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
+                            </div>
+                            <br/>
+                            <div>
+                                Agent: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
+                            </div>
+                        </Cell>
+                    </Grid>
+                    < div >
+                        {this.props.house.images && this.props.house.images.length &&
 
-                        {this.props.house.mls}
+                        <img style={{width:'100%',height:'auto'}} src={this.props.house.images[0]} alt=""/>
+                        }
                     </div>
-                    <div>
-                        ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
-                    </div>
-                    <div>
-                        {this.props.house.address.street + ' ' + this.props.house.address.city }
-                    </div>
-                    <br/>
-                    <div>
-                        Agent: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
-                    </div>
-                </div>}
-            </div>
+                    <article style={{margin:'0px 10px'}}>
+                        {this.props.house.description &&
+                        <div>
+                            <h5 >Description</h5>
+                            <p>
+                                {this.props.house.description}
+                            </p>
+                        </div>
+                        }
+                    </article>
+
+                </div>
+
+                }
+            </Card>
 
         );
     }

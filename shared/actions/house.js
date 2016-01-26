@@ -12,7 +12,7 @@ export function houseGet(saleRent, city, zip, street) {
     return {
         type: HOUSE_GET,
         promise: request.get(`https://real-estate-react.firebaseio.com/${saleRent}/${city}/${zip}/${street}/.json`),
-        obj:true
+        obj: true
     };
 }
 
@@ -21,9 +21,7 @@ export function getHouseIfNeeded(saleRent, city, zip, street) {
         let test = getState();
         console.log(test);
 
-        if (!getState().house.house) {
-            return dispatch(houseGet(saleRent, city, zip, street));
-        }
+        return dispatch(houseGet(saleRent, city, zip, street));
     };
 }
 
