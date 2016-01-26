@@ -39,7 +39,7 @@ class ZipPage extends Component {
                                 <li style={{marginBottom:16}}
                                     key={house.mls + house.city}>
                                     <Link
-                                        to={this.props.location.pathname+'/'+house.address.street.replace(/[\.\,]/g,'').replace(/[\s+]/g,'-')}>
+                                        to={this.props.location.pathname+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-')}>
                                         <ListingThumbCard house={house}/></Link>
                                 </li>
                             );

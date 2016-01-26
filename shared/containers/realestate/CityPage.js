@@ -25,8 +25,8 @@ class cityPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const zip = nextProps.zips.filter(zip=>zip.key.trim().toLowerCase() === (this.props.params.city).replace(/-+/g, ' ').trim().toLowerCase());
-        this.zips = _.filter(_.keys(zip), zip=>zip.length === 5);
+        const zip = nextProps.zips.filter(zip=>zip.key==(this.props.params.city));
+        this.zips = _.filter(_.keys(zip[0]), zip=>zip.length === 5);
 
     }
 
@@ -50,6 +50,7 @@ class cityPage extends Component {
                         {_.capitalize(city)} Houses for Sale </h1>
                     <hr/>
                     <Grid>
+
                         <Cell col={6} phone={12}>
                             <Card shadow={0}
                                   style={{height: 'auto', width:'100%', background: '#ffffff', color: '#393939'}}>
