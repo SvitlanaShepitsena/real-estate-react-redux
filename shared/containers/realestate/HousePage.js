@@ -11,7 +11,6 @@ import {sendEvent}                          from '../../utils/googleAnalytics';
 
 import {bindActionCreators} from 'redux';
 import * as houseActions from '../../actions/house';
-import ListingThumbCard from '../../components/ListingThumb/ListingThumbCard.js';
 
 class HousePage extends Component {
     constructor(props) {

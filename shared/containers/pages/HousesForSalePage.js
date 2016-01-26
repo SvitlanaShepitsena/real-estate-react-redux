@@ -47,9 +47,6 @@ class HousesForSalePageContainer extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.cities = _.unique(_.pluck(nextProps.zips, 'key')).map(city=>city.toLowerCase().trim());
-
-
-
     }
 
     render() {
@@ -57,13 +54,13 @@ class HousesForSalePageContainer extends Component {
             <div style={{maxWidth:"100%"}}>
 
                 {this.cities &&
-                    <ul>
-                        {this.cities.map(city=>{
-                            return (
-                                <li>{city}</li>
-                            );
-                        })}
-                    </ul>
+                <ul>
+                    {this.cities.map(city=> {
+                        return (
+                            <li>{city}</li>
+                        );
+                    })}
+                </ul>
 
                 }
 
@@ -74,19 +71,7 @@ class HousesForSalePageContainer extends Component {
                         align="top"
                         col={3}>
                         <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
-                            <CityCard/>
-                        </Link>
-                    </Cell>
-                    <Cell
-                        col={3}>
-                        <Link to="/houses-for-sale/northbrook" style={{textDecoration:'none'}}>
-                            <CityCard/>
-                        </Link>
-                    </Cell>
-                    <Cell
-                        col={3}>
-                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
-                            <CityCard/>
+                            <CityCard house={house}></CityCard>/>
                         </Link>
                     </Cell>
                 </Grid>
