@@ -67,52 +67,52 @@ class HousePage extends Component {
                             </span>
                         </li>
                     </ul>
-                    <Grid>
-                        <Cell
-                            align='top'
-                            col={6}>
-                            <p>
-                                {this.props.house.address.street + ' ' + this.props.house.address.city + ", " + this.props.house.address.state }
-                            </p>
-                            {this.props.house.type &&
-                            <p>
-                                {this.props.house.type}
-                            </p>
-                            }
-                        </Cell>
-                        <Cell
-                            style={{textAlign:'right'}}
-                            align='top'
-                            col={6}>
-                            <div>
-                                MLS#: {this.props.house.mls}
-                            </div>
-                            <div>
-                                ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
-                            </div>
-                            <br/>
-                            <div>
-                                Agent: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
-                            </div>
-                        </Cell>
-                    </Grid>
-                    < div >
-                        {this.props.house.images && this.props.house.images.length &&
-
-                        <img style={{width:'100%',height:'auto'}} src={this.props.house.images[0]} alt=""/>
-                        }
-                    </div>
-                    <article style={{margin:'0px 10px'}}>
-                        {this.props.house.description &&
+                    <br/>
+                    <Card shadow={0} style={{width:'100%'}}>
+                        <ul style={{listStyle:'none',padding:0}}>
+                            <li style={{display:'block',float:'left', padding:'0px 16px'}}>
+                                <h4>
+                                    {this.props.house.address.street + ' ' + this.props.house.address.city + ", " + this.props.house.address.state }
+                                </h4>
+                                {this.props.house.type &&
+                                <h6>
+                                    {this.props.house.type}
+                                </h6>
+                                }
+                            </li>
+                            <li style={{display:'block',float:'right', padding:'0px 16px'}}>
+                                <h4>
+                                    ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
+                                </h4>
+                                <p>
+                                    MLS#: {this.props.house.mls}
+                                </p>
+                            </li>
+                        </ul>
                         <div>
-                            <h5 >Description</h5>
-                            <p>
-                                {this.props.house.description}
-                            </p>
-                        </div>
-                        }
-                    </article>
+                            {this.props.house.images && this.props.house.images.length &&
 
+                            <img style={{width:'100%',height:'auto'}} src={this.props.house.images[0]} alt=""/>
+                            }
+                        </div>
+                        <article style={{margin:'0px 10px'}}>
+                            {this.props.house.description &&
+                            <div>
+                                <h5 >Description</h5>
+                                <p>
+                                    {this.props.house.description}
+                                </p>
+                            </div>
+                            }
+                        </article>
+                        <article style={{margin:'0px 10px', textAlign:'right',paddingBottom:16, fontSize:13}}>
+                            <span>
+                                Listing
+                                Broker: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
+                            </span>
+                        </article>
+
+                    </Card>
                 </div>
 
                 }
