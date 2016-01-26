@@ -45,8 +45,6 @@ class HousesForSalePageContainer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger;
-
         const zipsQuery = this.props.location.query;
         const nextQuery = nextProps.location.query;
 
@@ -100,7 +98,4 @@ HousesForSalePageContainer.need = [
     zipsActions.getZIPsIfNeeded
 ]
 export default connect(mapStateToProps, mapDispatchToProps)(HousesForSalePageContainer);
-
-
-
 
