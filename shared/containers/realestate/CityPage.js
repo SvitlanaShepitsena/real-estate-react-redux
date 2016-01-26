@@ -13,7 +13,6 @@ import config                                 from '../../config';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions, CardText} from 'react-mdl/lib/Card';
 
-
 import {bindActionCreators} from 'redux';
 import * as zipsActions from '../../actions/zips';
 
@@ -43,9 +42,13 @@ class cityPage extends Component {
                 </div>
                 }
 
-
                 {!this.props.params.zip &&
                 <div>
+                    <ul>
+                        <li>
+                            <Link style={{fontSize:13, color:'#212121'}} to="/houses-for-sale">Houses For Sale</Link>
+                        </li>
+                    </ul>
                     <h1 style={{fontSize:28}}>
                         {_.startCase(city)} Houses for Sale </h1>
                     <hr/>
