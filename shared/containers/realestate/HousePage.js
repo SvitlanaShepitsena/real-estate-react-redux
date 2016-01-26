@@ -35,12 +35,7 @@ class HousePage extends Component {
         sendEvent('articles page', 'category', category);
     };
 
-    handleStopSharing = () => {
-        this.setState({
-            linkToShare: '',
-            isSharing: false
-        });
-    };
+
 
     componentDidMount() {
         this.city = this.props.params.city;
@@ -61,14 +56,14 @@ class HousePage extends Component {
                         {this.props.house.mls}
                     </div>
                     <div>
-                        ${this.props.house.price}
+                        ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
                     </div>
                     <div>
-                        {this.props.house.address.street + this.props.house.address.city }
+                        {this.props.house.address.street + ' ' + this.props.house.address.city }
                     </div>
                     <br/>
                     <div>
-                        Sold by {this.props.house.agent}
+                        Agent: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
                     </div>
                 </div>}
             </div>

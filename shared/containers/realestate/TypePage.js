@@ -11,7 +11,7 @@ import {bindActionCreators} from 'redux';
 import * as housesActions from '../../actions/houses';
 import ListingThumbCard from '../../components/ListingThumb/ListingThumbCard.js';
 
-class ZipPage extends Component {
+class TypePage extends Component {
     constructor(props) {
         super(props);
     }
@@ -20,10 +20,11 @@ class ZipPage extends Component {
 
 
     componentDidMount() {
-        this.city = this.props.params.city;
+        this.type = this.props.params.type;
         this.zip = this.props.params.zip;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-        this.props.getHousesIfNeeded(this.saleRent, this.city, this.zip);
+
+        this.props.getHousesIfNeeded(this.saleRent, this.city, this.type);
     }
 
 
@@ -68,10 +69,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(housesActions, dispatch);
 }
-ZipPage.need = [
+TypePage.need = [
     housesActions.getHousesIfNeeded
 ]
-export default connect(mapStateToProps, mapDispatchToProps)(ZipPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TypePage);
 
 
 

@@ -5,6 +5,7 @@ import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
 
 import {Link} from 'react-router';
+import TypeLink from './TypeLink';
 
 import config                                 from '../../config';
 
@@ -57,7 +58,7 @@ class cityPage extends Component {
 
                     <hr/>
                     <h4>
-                        <a>Single Family Home</a>
+                        <TypeLink loc={this.props.location.pathname} type="Single Family Homes"/>
                     </h4>
                     <h4>
                         <a>Multi-Family Home</a>
