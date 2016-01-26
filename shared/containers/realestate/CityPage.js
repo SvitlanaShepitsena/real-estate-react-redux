@@ -75,7 +75,7 @@ class cityPage extends Component {
                                     <h4 style={{marginTop: '0'}}> Property Types </h4>
                                 </CardTitle>
                                 <CardText border
-                                          style={{ borderColor: '#393939', boxSizing: 'border-box', color: '#393939'}}>
+                                          style={{ borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
 
                                     <h5>
                                         <TypeLink loc={this.props.location.pathname} type="Single Family Homes"/>
