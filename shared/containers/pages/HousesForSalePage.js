@@ -60,8 +60,10 @@ class HousesForSalePageContainer extends Component {
                             <Cell
                                 cols="4"
                                 key={city}>
-                                <Link to={this.props.location.pathname+ '/'+ city}>
-                                    {city}
+                                <Link to={this.props.location.pathname+ '/'+ city}
+                                      style={{textDecoration:'none', color:'#393939',fontSize:18}}
+                                >
+                                    {_.capitalize(city)}
                                 </Link>
                             </Cell>
                         );
