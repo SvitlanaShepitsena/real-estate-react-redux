@@ -47,9 +47,6 @@ class HousesForSalePageContainer extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.cities = _.unique(_.pluck(nextProps.zips, 'key').map(city=>city.toLowerCase().trim()));
-
-
-
     }
 
     render() {
