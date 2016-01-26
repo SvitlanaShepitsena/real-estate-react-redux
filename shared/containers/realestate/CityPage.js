@@ -25,7 +25,7 @@ class cityPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const zip = nextProps.zips.filter(zip=>zip.key==(this.props.params.city));
+        const zip = nextProps.zips.filter(zip=>zip.key == (this.props.params.city));
         this.zips = _.filter(_.keys(zip[0]), zip=>zip.length === 5);
 
     }
@@ -68,7 +68,6 @@ class cityPage extends Component {
                                                         style={{textDecoration:'none', color:'#393939',fontSize:18}}
                                                     >
                                                         {zip}
-                                                        <span>At vero eos et accusamus et iusto odio dignissimos ducimus</span>
                                                     </Link>
                                                 </li>
                                             )
