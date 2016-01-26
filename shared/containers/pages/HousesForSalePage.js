@@ -53,40 +53,42 @@ class HousesForSalePageContainer extends Component {
         return (
             <div style={{maxWidth:"100%"}}>
 
-                {this.cities &&
+
+                {!this.props.params.city &&
+                <div>
+
+                    {this.cities &&
                     <ul>
-                        {this.cities.map(city=>{
+                        {this.cities.map(city=> {
                             return (
                                 <li key={city}>{city}</li>
                             );
                         })}
                     </ul>
 
-                }
-
-
-                {!this.props.params.city &&
-                <Grid style={{backgroundColor:'#F4F4F4'}}>
-                    <Cell
-                        align="top"
-                        col={3}>
-                        <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
-                            <CityCard/>
-                        </Link>
-                    </Cell>
-                    <Cell
-                        col={3}>
-                        <Link to="/houses-for-sale/northbrook" style={{textDecoration:'none'}}>
-                            <CityCard/>
-                        </Link>
-                    </Cell>
-                    <Cell
-                        col={3}>
-                        <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
-                            <CityCard/>
-                        </Link>
-                    </Cell>
-                </Grid>
+                    }
+                    <Grid style={{backgroundColor:'#F4F4F4'}}>
+                        <Cell
+                            align="top"
+                            col={3}>
+                            <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
+                                <CityCard/>
+                            </Link>
+                        </Cell>
+                        <Cell
+                            col={3}>
+                            <Link to="/houses-for-sale/northbrook" style={{textDecoration:'none'}}>
+                                <CityCard/>
+                            </Link>
+                        </Cell>
+                        <Cell
+                            col={3}>
+                            <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
+                                <CityCard/>
+                            </Link>
+                        </Cell>
+                    </Grid>
+                </div>
                 }
                 {this.props.params.city &&
                 <div>

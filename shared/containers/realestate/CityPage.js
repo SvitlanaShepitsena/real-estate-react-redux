@@ -20,10 +20,9 @@ class cityPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        //console.log(nextProps);
-        const zip = nextProps.zips.filter(zip=>zip.key === this.props.params.city);
-        console.log(zip);
-        //this.zips = Object.keys(zip).filter(code=>code.length === 5);
+        const zip = nextProps.zips.filter(zip=>zip.key.trim().toLowerCase() === this.props.params.city)[0];
+        this.zips = _.filter(_.keys(zip),zip=>zip.length===5);
+
 
     }
 
