@@ -17,28 +17,10 @@ class HousePage extends Component {
         super(props);
     }
 
-    handleQuizCardClick = (article) => {
-        this.props.history.pushState(null, `/articles/${article.id}`, {
-            embed: this.props.location.query.embed,
-            assigneeId: this.props.location.query.assigneeId
-        });
-
-        sendEvent('article card', 'view details');
-    };
-
-    handleTabChange = (category) => {
-        this.props.history.pushState(null, this.props.location.pathname, {
-            ...this.props.location.query,
-            category: category !== 'ALL' ? category : undefined
-        });
-
-        sendEvent('articles page', 'category', category);
-    };
-
     componentDidMount() {
         this.city = this.props.params.city;
         this.zip = this.props.params.zip;
-        this.street = this.props.params.street.toLowerCase();
+        this.street = this.props.params.street.replace(/-+/g, '-');
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
         this.props.getHouseIfNeeded(this.saleRent, this.city, this.zip, this.street);

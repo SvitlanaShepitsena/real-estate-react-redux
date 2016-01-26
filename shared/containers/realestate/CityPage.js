@@ -1,10 +1,13 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
+import {connect}                   from 'react-redux';
+import strformat                     from 'strformat';
+
 import {Link} from 'react-router';
 import TypeLink from './TypeLink';
-import config from '../../config';
+
+import config                                 from '../../config';
 
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions, CardText} from 'react-mdl/lib/Card';
@@ -13,7 +16,6 @@ import strformat                     from 'strformat';
 import _ from 'lodash';
 
 import {bindActionCreators} from 'redux';
-
 import * as zipsActions from '../../actions/zips';
 
 class cityPage extends Component {
@@ -24,14 +26,14 @@ class cityPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const zip = nextProps.zips.filter(zip=>zip.key.trim().toLowerCase() === this.props.params.city)[0];
+        const zip = nextProps.zips.filter(zip=>zip.key.trim().toLowerCase() === (this.props.params.city).replace(/-+/g,' ').trim().toLowerCase());
         this.zips = _.filter(_.keys(zip), zip=>zip.length === 5);
 
     }
 
     render() {
-        let city = this.props.params.city;
-        city = city.charAt(0).toUpperCase() + city.slice(1);
+        let city = _.capitalize(this.props.params.city.replace(/-+/g,' '));
+
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
         return (
