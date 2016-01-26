@@ -51,29 +51,30 @@ class HousesForSalePageContainer extends Component {
 
     render() {
         return (
-            <div style={{maxWidth:"100%"}}>
-
-                {this.cities &&
-                    <ul>
-                        {this.cities.map(city=>{
-                            return (
-                                <li key={city}>{city}</li>
-                            );
-                        })}
-                    </ul>
-
-                }
-
-
-                {!this.props.params.city &&
+            <div style={{width:"100%"}}>
+                {this.cities.map(city=> {
+                    return (
+                        <Cell
+                            key={city}
+                            align="top"
+                            col={3}>
+                            <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
+                                <Card
+                                    className="CityCard"
+                                    style={{ background: 'url(http://farm3.static.flickr.com/2711/4369664710_3c94dbffbc.jpg) center / cover' }}>
+                                    <CardTitle expand/>
+                                    <CardActions
+                                        style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
+                                    <span className="CityCard__city-name">
+                            {city}
+                                    </span>
+                                    </CardActions>
+                                </Card>
+                            </Link>
+                        </Cell>
+                    );
+                })}
                 <Grid style={{backgroundColor:'#F4F4F4'}}>
-                    <Cell
-                        align="top"
-                        col={3}>
-                        <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
-                            <CityCard house={house}></CityCard>/>
-                        </Link>
-                    </Cell>
                 </Grid>
                 }
                 {this.props.params.city &&

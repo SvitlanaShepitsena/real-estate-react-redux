@@ -9,8 +9,8 @@ if (process.env.BROWSER) {
 }
 
 export default class CityCard extends Component {
+
     render() {
-        const house = this.props.house
         return (
             <Card
                 className="CityCard"
