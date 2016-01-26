@@ -97,15 +97,15 @@ class cityPage extends Component {
                                         </Link>
                                     </h5>
                                     <h5 style={{marginTop:0}}>
-                                        k<a style={{textDecoration:'none', color:"#393939"}}>Multi-Family Home</a></h5>
+                                        <a style={{textDecoration:'none', color:"#393939"}}>Multi-Family Home</a></h5>
                                     <h5 style={{marginTop:0}}>
-                                        k<a style={{textDecoration:'none', color:"#393939"}}>Townhouse</a></h5>
+                                        <a style={{textDecoration:'none', color:"#393939"}}>Townhouse</a></h5>
                                     <h5 style={{marginTop:0}}>
-                                        k<a style={{textDecoration:'none', color:"#393939"}}>Duplex</a></h5>
+                                        <a style={{textDecoration:'none', color:"#393939"}}>Duplex</a></h5>
                                     <h5 style={{marginTop:0}}>
-                                        k<a style={{textDecoration:'none', color:"#393939"}}>Condominimum Unit</a></h5>
+                                        <a style={{textDecoration:'none', color:"#393939"}}>Condominimum Unit</a></h5>
                                     <h5 style={{marginTop:0}}>
-                                        k<a style={{textDecoration:'none', color:"#393939"}}>Raw Land</a></h5>
+                                        <a style={{textDecoration:'none', color:"#393939"}}>Raw Land</a></h5>
                                 </CardText>
                             </Card>
                         </Cell>
