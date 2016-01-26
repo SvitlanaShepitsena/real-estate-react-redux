@@ -24,17 +24,21 @@ export default class Footer extends Component {
                     linkToShare={linkToShare}
                     onRequestClose={onShareClose}
                 />
-                <div className="Footer__content">
-                    <div className="Footer__menus-container">
+                <Grid>
+                    <Cell col={3}>
                         <div className="Footer__menu">
                             <h3 className="Footer__menu-header">Re/Max 1st Class</h3>
                             <ul className="Footer__menu-items">
                                 <li>
                                     <span>4023 W. Church St.</span>
                                 </li>
-                                <li> Skokie, IL</li>
+                                <li>
+                                    <span>Skokie, IL</span>
+                                </li>
                             </ul>
                         </div>
+                    </Cell>
+                    <Cell col={3}>
                         <div className="Footer__menu">
                             <h3 className="Footer__menu-header">{l('Keep in touch')}</h3>
                             <ul className="Footer__menu-items">
@@ -72,8 +76,8 @@ export default class Footer extends Component {
                                 </li>
                             </ul>
                         </div>
-
-
+                    </Cell>
+                    <Cell col={3}>
                         <div className="Footer__menu">
                             <h3 className="Footer__menu-header">{l('Do you like our company?')}</h3>
                             <ul className="Footer__menu-items">
@@ -88,6 +92,8 @@ export default class Footer extends Component {
                                 </li>
                             </ul>
                         </div>
+                    </Cell>
+                    <Cell col={3}>
                         <div className="Footer__menu">
                             <h3 className="Footer__menu-header">Website rules</h3>
                             <ul className="Footer__menu-items">
@@ -99,8 +105,8 @@ export default class Footer extends Component {
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
+                    </Cell>
+                </Grid>
             </footer>
         );
     }
