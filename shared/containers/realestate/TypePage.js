@@ -23,6 +23,7 @@ class TypePage extends Component {
         this.type = this.props.params.type;
         this.zip = this.props.params.zip;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+        console.log(this.type);
 
         this.props.getHousesIfNeeded(this.saleRent, this.city, this.type);
     }

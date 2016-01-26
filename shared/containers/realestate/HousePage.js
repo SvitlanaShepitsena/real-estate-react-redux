@@ -63,7 +63,7 @@ class HousePage extends Component {
                     </div>
                     <br/>
                     <div>
-                        Agent: {agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
+                        Agent: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
                     </div>
                 </div>}
             </div>
