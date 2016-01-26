@@ -47,14 +47,14 @@ class cityPage extends Component {
                 {!this.props.params.zip &&
                 <div>
                     <h1 style={{fontSize:28}}>
-                        {_.capitalize(city)} Houses for Sale </h1>
+                        {_.startCase(city)} Houses for Sale </h1>
                     <hr/>
                     <Grid>
 
                         <Cell col={6} phone={12}>
                             <Card>
 
-                                <h4>{city} Zip Codes</h4>
+                                <h4>{_.startCase(city)} Zip Codes</h4>
                                 {this.zips && this.zips.map(zip=> {
                                     return (
                                         <h5 key={zip}>
