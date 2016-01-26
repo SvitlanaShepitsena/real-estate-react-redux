@@ -51,9 +51,10 @@ class cityPage extends Component {
                     <hr/>
                     <Grid>
                         <Cell col={6} phone={12}>
-                            <Card shadow={0} style={{height: 'auto', width:'100%', background: '#ffffff'}}>
-                                <CardTitle expand style={{alignItems: 'flex-start', color: '#393939', width:'100%'}}>
-                                    <h4 style={{margin: '0'}}>{city} Zip Codes</h4>
+                            <Card shadow={0}
+                                  style={{height: 'auto', width:'100%', background: '#ffffff', color: '#393939'}}>
+                                <CardTitle style={{color: '#393939', width:'100%'}}>
+                                    <h4 style={{margin: '0',fontSize:22, fontWeight:300}}>{city} Zip Codes</h4>
                                 </CardTitle>
                                 <CardText
                                     style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
@@ -77,31 +78,26 @@ class cityPage extends Component {
                             </Card>
                         </Cell>
                         <Cell col={6} phone={12}>
-                            <Card shadow={0} style={{height: 'auto', width:'100%', background: '#ffffff'}}>
-                                <CardTitle expand style={{alignItems: 'flex-start', color: '#393939', width:'100%'}}>
-                                    <h4 style={{margin: '0'}}> Property Types </h4>
+                            <Card shadow={0}
+                                  style={{height: 'auto', width:'100%', background: '#ffffff', color: '#393939'}}>
+                                <CardTitle expand style={{alignItems: 'flex-start', width:'100%'}}>
+                                    <h4 style={{margin: '0',fontSize:22, fontWeight:300}}> Property Types </h4>
                                 </CardTitle>
                                 <CardText
-                                    style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
+                                    style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box'}}>
 
                                     <h5>
-                                        <TypeLink loc={this.props.location.pathname} type="Single Family Homes"/>
+                                        <Link to={this.props.location.pathname}
+                                              style={{color: '#393939',textDecoration:'none'}}
+                                              type="Single Family Homes">
+                                            Single Family Home
+                                        </Link>
                                     </h5>
-                                    <h5>
-                                        <a>Multi-Family Home</a>
-                                    </h5>
-                                    <h5>
-                                        <a>Townhouse</a>
-                                    </h5>
-                                    <h5>
-                                        <a>Duplex</a>
-                                    </h5>
-                                    <h5>
-                                        <a>Condominimum Unit</a>
-                                    </h5>
-                                    <h5>
-                                        <a>Raw Land</a>
-                                    </h5>
+                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Multi-Family Home</a></h5>
+                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Townhouse</a></h5>
+                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Duplex</a></h5>
+                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Condominimum Unit</a></h5>
+                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Raw Land</a></h5>
                                 </CardText>
                             </Card>
                         </Cell>
