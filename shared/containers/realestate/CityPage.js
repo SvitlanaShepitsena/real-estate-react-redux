@@ -25,13 +25,13 @@ class cityPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const zip = nextProps.zips.filter(zip=>zip.key==(this.props.params.city));
+        const zip = nextProps.zips.filter(zip=>zip.key == (this.props.params.city));
         this.zips = _.filter(_.keys(zip[0]), zip=>zip.length === 5);
 
     }
 
     render() {
-        let city = _.capitalize(this.props.params.city.replace(/-+/g, ' '));
+        let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
 
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
@@ -64,7 +64,7 @@ class cityPage extends Component {
                                             return (
                                                 <li key={zip}>
                                                     <Link
-                                                        to={`/houses-for-${saleRent}/${city.toLowerCase()}/${zip}`}
+                                                        to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}/${zip}`}
                                                         style={{textDecoration:'none', color:'#393939',fontSize:18}}
                                                     >
                                                         {zip}

@@ -3,6 +3,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
+import _ from 'lodash';
 
 import {Link} from 'react-router';
 import config                                 from '../../config';
@@ -24,10 +25,11 @@ class ZipPage extends Component {
     }
 
     render() {
+        let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         return (
             <div style={{width:'100%'}}>
                 <h1 style={{fontSize:28}}>
-                    Houses for Sale </h1>
+                    {city} Houses for Sale </h1>
                 <hr/>
                 {this.props.params.street && <div>
                     {this.props.children}
