@@ -3,6 +3,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
+import _ from 'lodash';
 
 import {Link} from 'react-router';
 import TypeLink from './TypeLink';
@@ -12,7 +13,6 @@ import config                                 from '../../config';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions, CardText} from 'react-mdl/lib/Card';
 
-import _ from 'lodash';
 
 import {bindActionCreators} from 'redux';
 import * as zipsActions from '../../actions/zips';
@@ -80,6 +80,7 @@ class cityPage extends Component {
                                 </CardText>
                             </Card>
                         </Cell>
+
                         <Cell col={6} phone={12}>
                             <Card shadow={0}
                                   style={{height: 'auto', width:'100%', background: '#ffffff', color: '#393939'}}>
