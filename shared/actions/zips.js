@@ -6,8 +6,6 @@ export const ZIPS_GET_REQUEST = 'ZIPS_GET_REQUEST';
 export const ZIPS_GET_SUCCESS = 'ZIPS_GET_SUCCESS';
 export const ZIPS_GET_FAILURE = 'ZIPS_GET_FAILURE';
 
-
-
 /*Action Creator functions*/
 export function zipsGet() {
     return {
@@ -15,7 +13,6 @@ export function zipsGet() {
         promise: request.get('https://real-estate-react.firebaseio.com/autocomplete.json')
     };
 }
-
 
 export function getZIPsIfNeeded() {
     return (dispatch, getState) => {

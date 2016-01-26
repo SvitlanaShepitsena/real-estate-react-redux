@@ -12,6 +12,7 @@ import CityCard from '../../components/City/CityCard';
 
 import {bindActionCreators} from 'redux';
 import * as articleActions from '../../actions/article';
+import * as zipsActions from '../../actions/zips';
 
 class HousesForSalePageContainer extends Component {
     static contextTypes = {i18n: PropTypes.object};
@@ -39,19 +40,14 @@ class HousesForSalePageContainer extends Component {
         sendEvent('articles page', 'category', category);
     };
 
-    handleStopSharing = () => {
-        this.setState({
-            linkToShare: '',
-            isSharing: false
-        });
-    };
-
     componentDidMount() {
-        this.props.getArticlesIfNeeded();
+        this.props.getZIPsIfNeeded();
     }
 
     componentWillReceiveProps(nextProps) {
-        const currentQuery = this.props.location.query;
+        debugger;
+
+        const zipsQuery = this.props.location.query;
         const nextQuery = nextProps.location.query;
 
     }
@@ -93,15 +89,15 @@ class HousesForSalePageContainer extends Component {
     }
 }
 function mapStateToProps(state) {
-    return state.articles;
+    return state.zips;
 
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(articleActions, dispatch);
+    return bindActionCreators(zipsActions, dispatch);
 }
 HousesForSalePageContainer.need = [
-    articleActions.getArticlesIfNeeded
+    zipsActions.getZIPsIfNeeded
 ]
 export default connect(mapStateToProps, mapDispatchToProps)(HousesForSalePageContainer);
 
