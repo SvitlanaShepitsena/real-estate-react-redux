@@ -52,23 +52,26 @@ class HousesForSalePageContainer extends Component {
     render() {
         return (
             <div style={{maxWidth:"100%"}}>
-
                 {!this.props.params.city && this.cities &&
-                <Grid>
-                    {this.cities.map(city=> {
-                        return (
-                            <Cell
-                                cols="4"
-                                key={city}>
-                                <Link to={this.props.location.pathname+ '/'+ city}
-                                      style={{textDecoration:'none', color:'#393939',fontSize:18}}
-                                >
-                                    {_.capitalize(city)}
-                                </Link>
-                            </Cell>
-                        );
-                    })}
-                </Grid>
+                <div>
+                    <h1 style={{fontSize:28}}>Chicago North Suburbs Houses for Sale </h1>
+                    <hr/>
+                    <Grid>
+                        {this.cities.map(city=> {
+                            return (
+                                <Cell
+                                    col={4}
+                                    key={city}>
+                                    <Link to={this.props.location.pathname+ '/'+ city}
+                                          style={{textDecoration:'none', color:'#393939',fontSize:18}}
+                                    >
+                                        {_.capitalize(city)}
+                                    </Link>
+                                </Cell>
+                            );
+                        })}
+                    </Grid>
+                </div>
                 }
 
                 {this.props.params.city &&
