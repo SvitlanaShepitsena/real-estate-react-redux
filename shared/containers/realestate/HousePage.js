@@ -63,7 +63,7 @@ class HousePage extends Component {
                     </div>
                     <br/>
                     <div>
-                        Agent: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
+                        Sold by {this.props.house.agent}
                     </div>
                 </div>}
             </div>
