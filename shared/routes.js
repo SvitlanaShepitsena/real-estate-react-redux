@@ -31,7 +31,7 @@ export default (
             <Route component={AsideLayout}>
                 <Route component={HousesForSalePageContainer} path='/houses-for-sale'>
                     <Route component={CityPage} path=':city'>
-                        <Route component={ZipTypePage} path=':zip'>
+                        <Route component={ZipTypePage} path=':zipType'>
                             <Route component={HousePage} path=':street'/>
                         </Route>
                     </Route>
