@@ -36,13 +36,13 @@ class cityPage extends Component {
 
         return (
             <div>
-                {this.props.params.zip &&
+                {this.props.params.zipType &&
                 <div>
                     {this.props.children}
                 </div>
                 }
 
-                {!this.props.params.zip &&
+                {!this.props.params.zipType &&
                 <div>
                     <ul
                         style={{listStyle:'none', margin:'0px', padding:'0px'}}>
@@ -53,10 +53,8 @@ class cityPage extends Component {
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
-                            <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                  to="/houses-for-sale"> {_.startCase(city)}
-                            </Link>
-                            <span> / </span>
+                            <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}> {_.startCase(city)}
+                            </span>
                         </li>
                     </ul>
                     <h1 style={{fontSize:28}}>

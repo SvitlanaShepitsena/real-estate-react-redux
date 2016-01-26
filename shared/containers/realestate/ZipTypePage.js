@@ -26,29 +26,59 @@ class ZipTypePage extends Component {
 
     render() {
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
+        let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         return (
             <div style={{width:'100%'}}>
-                <h1 style={{fontSize:28}}>
-                    {city} Houses for Sale </h1>
-                <hr/>
-                {this.props.params.street && <div>
+                {this.props.params.street &&
+                <div>
                     {this.props.children}
-                </div>}
+                </div>
+                }
 
-                {!this.props.params.street && <div>
+                {!this.props.params.street &&
+                <div>
                     {this.props.houses &&
-                    <ul style={{listStyle:'none',padding:0}}>
-                        {this.props.houses.map(house=> {
-                            return (
-                                <li style={{marginBottom:16,padding:0}}
-                                    key={house.mls + house.city}>
-                                    <Link
-                                        to={this.props.location.pathname+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-')}>
-                                        <ListingThumbCard house={house}/></Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                    <div>
+                        <ul
+                            style={{listStyle:'none', margin:'0px', padding:'0px'}}>
+                            <li style={{display:'inline-block'}}>
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to="/houses-for-sale">Houses
+                                    For Sale
+                                </Link>
+                                <span> / </span>
+                            </li>
+                            <li style={{display:'inline-block'}}>
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                                >
+                                    {_.startCase(city)}
+                                </Link>
+                                <span> / </span>
+                            </li>
+                            <li style={{display:'inline-block'}}>
+                            <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
+                                {this.props.params.zipType}
+                            </span>
+                            </li>
+                        </ul>
+                        <h1 style={{fontSize:28}}>
+                            {city} Houses for Sale </h1>
+                        <hr/>
+
+                        <ul style={{listStyle:'none',padding:0}}>
+                            {this.props.houses.map(house=> {
+                                return (
+                                    <li style={{marginBottom:16,padding:0}}
+                                        key={house.mls + house.city}>
+                                        <Link
+                                            to={this.props.location.pathname+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-')}>
+                                            <ListingThumbCard house={house}/></Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
                     }
                 </div>}
             </div>
