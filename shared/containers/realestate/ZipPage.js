@@ -16,17 +16,12 @@ class ZipPage extends Component {
         super(props);
     }
 
-
-
-
     componentDidMount() {
         this.city = this.props.params.city;
         this.zip = this.props.params.zip;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         this.props.getHousesIfNeeded(this.saleRent, this.city, this.zip);
     }
-
-
 
     render() {
         return (
@@ -42,10 +37,7 @@ class ZipPage extends Component {
                         {this.props.houses.map(house=> {
                             return (
                                 <li style={{marginBottom:16}}
-                                    key={house.mls + house.city}
-                                    id={house.mls}
-                                    align='top'
-                                    col={12}>
+                                    key={house.mls + house.city}>
                                     <Link
                                         to={this.props.location.pathname+'/'+house.address.street.replace(/[\.\,]/g,'').replace(/[\s+]/g,'-')}>
                                         <ListingThumbCard house={house}/></Link>
