@@ -20,8 +20,7 @@ import AboutPageContainer from './containers/pages/AboutPage';
 import LoginPageContainer from './containers/pages/LoginPage.js';
 
 import CityPage from './containers/realestate/CityPage';
-import ZipPage from './containers/realestate/ZipPage';
-import TypePage from './containers/realestate/TypePage';
+import ZipTypePage from './containers/realestate/ZipTypePage';
 
 import HousePage from './containers/realestate/HousePage';
 
@@ -32,10 +31,9 @@ export default (
             <Route component={AsideLayout}>
                 <Route component={HousesForSalePageContainer} path='/houses-for-sale'>
                     <Route component={CityPage} path=':city'>
-                        <Route component={ZipPage} path=':zip'>
+                        <Route component={ZipTypePage} path=':zip'>
                             <Route component={HousePage} path=':street'/>
                         </Route>
-                        <Route component={TypePage} path='/type/:type'/>
                     </Route>
                 </Route>
                 <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>
