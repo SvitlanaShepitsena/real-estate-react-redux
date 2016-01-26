@@ -25,7 +25,7 @@ class cityPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const zip = nextProps.zips.filter(zip=>zip.key == (this.props.params.city));
+        const zip = nextProps.zips.filter(zip=>zip.key==(this.props.params.city));
         this.zips = _.filter(_.keys(zip[0]), zip=>zip.length === 5);
 
     }
@@ -47,7 +47,7 @@ class cityPage extends Component {
                 {!this.props.params.zip &&
                 <div>
                     <h1 style={{fontSize:28}}>
-                        {_.capitalize(city)} Houses for Sale </h1>
+                        {_.startCase(city)} Houses for Sale </h1>
                     <hr/>
                     <Grid>
 
@@ -59,18 +59,16 @@ class cityPage extends Component {
                                 </CardTitle>
                                 <CardText
                                     style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
-                                    <ul
-                                        style={{listStyle:'none', margin:'0px', padding:'0px'}}>
+                                    <ul>
                                         {this.zips && this.zips.map(zip=> {
                                             return (
-                                                <li key={zip} style={{margin:'0px', padding:'0px'}}>
-                                                    <h5>
-                                                        <Link
-                                                            to={`/houses-for-${saleRent}/${city.toLowerCase()}/${zip}`}
-                                                            style={{textDecoration:'none', color:'#393939',fontSize:18}}>
-                                                            {zip}
-                                                        </Link>
-                                                    </h5>
+                                                <li key={zip}>
+                                                    <Link
+                                                        to={`/houses-for-${saleRent}/${city.toLowerCase()}/${zip}`}
+                                                        style={{textDecoration:'none', color:'#393939',fontSize:18}}
+                                                    >
+                                                        {zip}
+                                                    </Link>
                                                 </li>
                                             )
                                         })

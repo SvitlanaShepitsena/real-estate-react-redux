@@ -58,6 +58,9 @@ class HousesForSalePageContainer extends Component {
                     <hr/>
                     <Grid>
                         {this.cities.map(city=> {
+
+
+
                             return (
                                 <Cell
                                     col={4}
@@ -65,7 +68,7 @@ class HousesForSalePageContainer extends Component {
                                     <Link to={this.props.location.pathname+ '/'+ city}
                                           style={{textDecoration:'none', color:'#393939',fontSize:18}}
                                     >
-                                        {_.capitalize(city)}
+                                        {_.startCase(city.replace(/-+/,' '))}
                                     </Link>
                                 </Cell>
                             );
