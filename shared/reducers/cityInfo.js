@@ -1,13 +1,13 @@
 import {
-    ZIPS_GET_REQUEST,
-    ZIPS_GET_SUCCESS,
-    ZIPS_GET_FAILURE,
+    CITYINFO_GET_REQUEST,
+    CITYINFO_GET_SUCCESS,
+    CITYINFO_GET_FAILURE,
 
-} from '../actions/zips';
+} from '../actions/cityInfo';
 
-export default function zips(state = {isFetching: false, zips: [], error: null}, action) {
+export default function cityInfo(state = {isFetching: false, cityInfo: null, error: null}, action) {
     switch (action.type) {
-        case ZIPS_GET_REQUEST:
+        case CITYINFO_GET_REQUEST:
             return Object.assign(
                 {},
                 state,
@@ -16,17 +16,17 @@ export default function zips(state = {isFetching: false, zips: [], error: null},
                 }
             );
             break;
-        case ZIPS_GET_SUCCESS:
+        case CITYINFO_GET_SUCCESS:
             return Object.assign(
                 {},
                 state,
                 {
                     isFetching: false,
                     error: false,
-                    zips: action.items
+                    cityInfo: action.items
                 });
             break;
-        case ZIPS_GET_FAILURE:
+        case CITYINFO_GET_FAILURE:
             return Object.assign(
                 {},
                 state,

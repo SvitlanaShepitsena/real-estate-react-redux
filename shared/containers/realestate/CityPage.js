@@ -14,18 +14,29 @@ import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions, CardText} from 'react-mdl/lib/Card';
 
 import {bindActionCreators} from 'redux';
-import * as zipsActions from '../../actions/zips';
+import * as cityInfoActions from '../../actions/cityInfo';
 
 class cityPage extends Component {
     static contextTypes = {i18n: PropTypes.object};
 
     componentDidMount() {
-        this.props.getZIPsIfNeeded();
+
+        this.city = this.props.params.city;
+        this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+
+        this.props.getCityInfoIfNeeded(this.saleRent, this.city);
     }
 
     componentWillReceiveProps(nextProps) {
-        const zip = nextProps.zips.filter(zip=>zip.key == (this.props.params.city));
-        this.zips = _.filter(_.keys(zip[0]), zip=>zip.length === 5);
+        let cityInfo = nextProps.cityInfo;
+        let types = [];
+        _.values(_.values(cityInfo)).forEach(zip=> {
+            let houses = (_.pluck(_.values(zip), 'type'));
+            types = _.union(houses, types);
+        });
+        this.types = types.map(type=>type+'s');
+
+        this.zips = _.keys(cityInfo);
 
     }
 
@@ -100,24 +111,25 @@ class cityPage extends Component {
                                 </CardTitle>
                                 <CardText
                                     style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box'}}>
+                                    { this.types &&
+                                    <div>
+                                        {this.types.map(type=> {
+                                            return (
 
-                                    <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
-                                        <Link to={this.props.location.pathname}
-                                              style={{color: '#393939',textDecoration:'none'}}
-                                              type="Single Family Homes">
-                                            Single Family Home
-                                        </Link>
-                                    </h5>
-                                    <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
-                                        <a style={{textDecoration:'none', color:"#393939"}}>Multi-Family Home</a></h5>
-                                    <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
-                                        <a style={{textDecoration:'none', color:"#393939"}}>Townhouse</a></h5>
-                                    <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
-                                        <a style={{textDecoration:'none', color:"#393939"}}>Duplex</a></h5>
-                                    <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
-                                        <a style={{textDecoration:'none', color:"#393939"}}>Condominimum Unit</a></h5>
-                                    <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
-                                        <a style={{textDecoration:'none', color:"#393939"}}>Raw Land</a></h5>
+                                                <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
+                                                    <Link
+                                                        to={this.props.location.pathname+'/'+type.replace(/\s+/,'-').toLowerCase()}
+                                                        style={{color: '#393939',textDecoration:'none'}}
+                                                    >
+                                                        {type}
+                                                    </Link>
+                                                </h5>
+
+                                            );
+                                        })}
+
+
+                                    </div>}
                                 </CardText>
                             </Card>
                         </Cell>
@@ -128,15 +140,15 @@ class cityPage extends Component {
     }
 }
 function mapStateToProps(state) {
-    return state.zips;
+    return state.cityInfo;
 
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(zipsActions, dispatch);
+    return bindActionCreators(cityInfoActions, dispatch);
 }
 cityPage.need = [
-    zipsActions.getZIPsIfNeeded
+    cityInfoActions.getCityInfoIfNeeded
 ]
 export default connect(mapStateToProps, mapDispatchToProps)(cityPage);
 
