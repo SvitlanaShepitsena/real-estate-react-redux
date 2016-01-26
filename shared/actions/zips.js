@@ -16,8 +16,11 @@ export function zipsGet() {
 
 export function getZIPsIfNeeded() {
     return (dispatch, getState) => {
-        if (!getState().zips.length) {
+        var zips = getState().zips;
+        if (!zips.length) {
             return dispatch(zipsGet());
+        } else{
+            return zips;
         }
     };
 }
