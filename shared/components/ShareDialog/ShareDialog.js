@@ -4,7 +4,7 @@ import Dialog    from './../common/Dialog/Dialog.js';
 import Button    from '../../../node_modules/react-mdl/lib/Button';
 import Icon      from './../common/Icon/Icon.js';
 
-import { facebookAppId } from '../../config';
+import {facebookAppId} from '../../config';
 
 /*get styles only when you are on client*/
 if (process.env.BROWSER) {
@@ -23,8 +23,8 @@ export default class ShareDialog extends Component {
     };
 
     render() {
-        const { l } = this.context.i18n;
-        const { title, onShare } = this.props;
+        const {l} = this.context.i18n;
+        const {title, onShare} = this.props;
 
         return (
             <div className='ShareDialog'>

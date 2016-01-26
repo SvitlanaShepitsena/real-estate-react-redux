@@ -28,7 +28,7 @@ export function getMetaDataFromState({route, state, lang = 'en'}) {
         const {name, message, pictureURL} = state.currentArticle.article;
         return {
             title: name,
-            siteName: "Company Name",
+            siteName: "Re/Max 1st Class",
             image: pictureURL ? pictureURL.replace('svg', 'png') : '',
             description: message
         };
@@ -37,8 +37,8 @@ export function getMetaDataFromState({route, state, lang = 'en'}) {
 }
 
 export function makeRedirectUrl({originalUrl}) {
-    const UIWallPath = `${clientConfig.embedOrigin}/companywall`;
-    return `${UIWallPath}${originalUrl}`;
+    const UIHousesForSalePath = `${clientConfig.embedOrigin}/houses-for-sale`;
+    return `${UIHousesForSalePath}${originalUrl}`;
 }
 
 export function detectLocale(req) {
