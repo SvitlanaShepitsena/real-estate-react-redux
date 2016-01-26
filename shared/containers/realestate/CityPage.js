@@ -25,13 +25,13 @@ class cityPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const zip = nextProps.zips.filter(zip=>zip.key.trim().toLowerCase() === (this.props.params.city).replace(/-+/g,' ').trim().toLowerCase());
+        const zip = nextProps.zips.filter(zip=>zip.key.trim().toLowerCase() === (this.props.params.city).replace(/-+/g, ' ').trim().toLowerCase());
         this.zips = _.filter(_.keys(zip), zip=>zip.length === 5);
 
     }
 
     render() {
-        let city = _.capitalize(this.props.params.city.replace(/-+/g,' '));
+        let city = _.capitalize(this.props.params.city.replace(/-+/g, ' '));
 
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
@@ -50,32 +50,39 @@ class cityPage extends Component {
                         {_.capitalize(city)} Houses for Sale </h1>
                     <hr/>
                     <Grid>
-
                         <Cell col={6} phone={12}>
-                            <Card>
-
-                                <h4>{city} Zip Codes</h4>
-                                {this.zips && this.zips.map(zip=> {
-                                    return (
-                                        <h5 key={zip}>
-                                            <Link to={`/houses-for-${saleRent}/${city.toLowerCase()}/${zip}`}
-                                                  style={{textDecoration:'none', color:'#393939',fontSize:18}}
-                                            >
-                                                {zip}
-                                            </Link>
-                                        </h5>)
-                                })
-                                }
+                            <Card shadow={0} style={{height: 'auto', width:'100%', background: '#ffffff'}}>
+                                <CardTitle expand style={{alignItems: 'flex-start', color: '#393939', width:'100%'}}>
+                                    <h4 style={{margin: '0'}}>{city} Zip Codes</h4>
+                                </CardTitle>
+                                <CardText
+                                    style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
+                                    <ul>
+                                        {this.zips && this.zips.map(zip=> {
+                                            return (
+                                                <li key={zip}>
+                                                    <Link
+                                                        to={`/houses-for-${saleRent}/${city.toLowerCase()}/${zip}`}
+                                                        style={{textDecoration:'none', color:'#393939',fontSize:18}}
+                                                    >
+                                                        {zip}
+                                                        <span>At vero eos et accusamus et iusto odio dignissimos ducimus</span>
+                                                    </Link>
+                                                </li>
+                                            )
+                                        })
+                                        }
+                                    </ul>
+                                </CardText>
                             </Card>
                         </Cell>
                         <Cell col={6} phone={12}>
-
-                            <Card shadow={0} style={{height: 'auto', background: '#ffffff'}}>
-                                <CardTitle expand style={{alignItems: 'flex-start', color: '#393939'}}>
-                                    <h4 style={{marginTop: '0'}}> Property Types </h4>
+                            <Card shadow={0} style={{height: 'auto', width:'100%', background: '#ffffff'}}>
+                                <CardTitle expand style={{alignItems: 'flex-start', color: '#393939', width:'100%'}}>
+                                    <h4 style={{margin: '0'}}> Property Types </h4>
                                 </CardTitle>
-                                <CardText border
-                                          style={{ borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
+                                <CardText
+                                    style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
 
                                     <h5>
                                         <TypeLink loc={this.props.location.pathname} type="Single Family Homes"/>
