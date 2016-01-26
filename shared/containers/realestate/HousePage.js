@@ -58,7 +58,7 @@ class HousePage extends Component {
                 <div>
                     <div>
 
-                        #{this.props.house.mls}
+                        MLS#: {this.props.house.mls}
                     </div>
                     <div>
                         ${this.props.house.price}
