@@ -59,16 +59,18 @@ class cityPage extends Component {
                                 </CardTitle>
                                 <CardText
                                     style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
-                                    <ul>
+                                    <ul
+                                        style={{listStyle:'none', margin:'0px', padding:'0px'}}>
                                         {this.zips && this.zips.map(zip=> {
                                             return (
-                                                <li key={zip}>
-                                                    <Link
-                                                        to={`/houses-for-${saleRent}/${city.toLowerCase()}/${zip}`}
-                                                        style={{textDecoration:'none', color:'#393939',fontSize:18}}
-                                                    >
-                                                        {zip}
-                                                    </Link>
+                                                <li key={zip} style={{margin:'0px', padding:'0px'}}>
+                                                    <h5>
+                                                        <Link
+                                                            to={`/houses-for-${saleRent}/${city.toLowerCase()}/${zip}`}
+                                                            style={{textDecoration:'none', color:'#393939',fontSize:18}}>
+                                                            {zip}
+                                                        </Link>
+                                                    </h5>
                                                 </li>
                                             )
                                         })

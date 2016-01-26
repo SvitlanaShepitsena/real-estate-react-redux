@@ -26,7 +26,9 @@ class ZipPage extends Component {
     render() {
         return (
             <div style={{width:'100%'}}>
-
+                <h1 style={{fontSize:28}}>
+                    Houses for Sale </h1>
+                <hr/>
                 {this.props.params.street && <div>
                     {this.props.children}
                 </div>}
