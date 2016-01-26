@@ -1,6 +1,7 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
+import _ from 'lodash';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
 import {connect}                   from 'react-redux';
@@ -45,16 +46,28 @@ class HousesForSalePageContainer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger;
+        this.cities = _.unique(_.pluck(nextProps.zips, 'key')).map(city=>city.toLowerCase().trim());
 
-        const zipsQuery = this.props.location.query;
-        const nextQuery = nextProps.location.query;
+
 
     }
 
     render() {
         return (
             <div style={{maxWidth:"100%"}}>
+
+                {this.cities &&
+                    <ul>
+                        {this.cities.map(city=>{
+                            return (
+                                <li>{city}</li>
+                            );
+                        })}
+                    </ul>
+
+                }
+
+
                 {!this.props.params.city &&
                 <Grid style={{backgroundColor:'#F4F4F4'}}>
                     <Cell
