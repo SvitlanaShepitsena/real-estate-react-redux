@@ -12,7 +12,6 @@ import config                                 from '../../config';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions, CardText} from 'react-mdl/lib/Card';
 
-import strformat                     from 'strformat';
 import _ from 'lodash';
 
 import {bindActionCreators} from 'redux';
@@ -26,13 +25,13 @@ class cityPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const zip = nextProps.zips.filter(zip=>zip.key.trim().toLowerCase() === (this.props.params.city).replace(/-+/g,' ').trim().toLowerCase());
-        this.zips = _.filter(_.keys(zip), zip=>zip.length === 5);
+        const zip = nextProps.zips.filter(zip=>zip.key==(this.props.params.city));
+        this.zips = _.filter(_.keys(zip[0]), zip=>zip.length === 5);
 
     }
 
     render() {
-        let city = _.capitalize(this.props.params.city.replace(/-+/g,' '));
+        let city = _.capitalize(this.props.params.city.replace(/-+/g, ' '));
 
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
