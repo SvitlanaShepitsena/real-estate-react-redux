@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import Grid, {Cell} from 'react-mdl/lib/Grid';
 
 import {Link} from 'react-router';
 import Icon from './../common/Icon/Icon.js';
@@ -26,6 +27,15 @@ export default class Footer extends Component {
                 <div className="Footer__content">
                     <div className="Footer__menus-container">
                         <div className="Footer__menu">
+                            <h3 className="Footer__menu-header">Re/Max 1st Class</h3>
+                            <ul className="Footer__menu-items">
+                                <li>
+                                    <span>4023 W. Church St.</span>
+                                </li>
+                                <li> Skokie, IL</li>
+                            </ul>
+                        </div>
+                        <div className="Footer__menu">
                             <h3 className="Footer__menu-header">{l('Keep in touch')}</h3>
                             <ul className="Footer__menu-items">
                                 <li>
@@ -42,6 +52,22 @@ export default class Footer extends Component {
                                         target='_blank'
                                         onClick={onLinkClick.bind(null, 'google')}>
                                         Google Plus
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href={links.twitter}
+                                        target='_blank'
+                                        onClick={onLinkClick.bind(null, 'twitter')}>
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href={links.linkedin}
+                                        target='_blank'
+                                        onClick={onLinkClick.bind(null, 'linkedin')}>
+                                        Linkedin
                                     </a>
                                 </li>
                             </ul>

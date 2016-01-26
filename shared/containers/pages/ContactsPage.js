@@ -30,7 +30,6 @@ export default class ContactsPage extends React.Component {
                 </h2>
                 <hr/>
                 <ContactForm />
-                <hr/>
             </div>
         )
     }
