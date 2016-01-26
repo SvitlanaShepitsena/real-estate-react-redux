@@ -38,10 +38,10 @@ export default class Footer extends Component {
                                 </li>
                                 <li>
                                     <a
-                                        href={links.youtube}
+                                        href={links.google}
                                         target='_blank'
-                                        onClick={onLinkClick.bind(null, 'youtube')}>
-                                        {l('Videos on Youtube')}
+                                        onClick={onLinkClick.bind(null, 'google')}>
+                                        Google Plus
                                     </a>
                                 </li>
                             </ul>

@@ -11,29 +11,41 @@ export default class AboutContent extends React.Component {
     render() {
         return (
             <div className="AboutContent">
-                <h1>About vero eos et accusamus et iusto odio dignissimos ducimus</h1>
+                <h1 style={{fontSize:34}}>Why Re/Max 1st Class Realty is worth to work with:
+                </h1>
                 <hr/>
                 <article>
-                    <h2>Eligendi et accusamus</h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus </p>
-                    <h3>Eligendi </h3>
                     <p>
-                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                        provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-                        dolorum
-                        fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
-                        nobis
+                        Re/Max 1st Class Realty offers one stop service for home selling or purchase. We have long term
+                        partnerships with major banks and can negotiate the best possible deal. We can help you find the
+                        right specialist to get the lowest mortgage rate and move you to your new home as fast as
+                        possible. Our clients always have all papers signed on time with all details covered.
                     </p>
 
-                    <h3>Accusamus</h3>
                     <p>
-                        Est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis
-                        voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis
-                        debitis
-                        aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
-                        recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
-                        maiores alias consequatur aut perferendis doloribus asperiores repellat
+                        Re/Max 1st Class Realty has no hidden fees and as a Remax Representative is very flexible in
+                        commissions. We always prioritize the client interest and trying to find the best possible deal
+                        for our client. Our main mission is client satisfaction and long term partnership.
+                    </p>
+
+                    <p>
+                        Re/Max 1st Class offers comprehensive service in real estate - we can help you avoid foreclosure
+                        without any influence on your credit score.
+                    </p>
+
+                    <p>
+                        We also can sell your residential property in the shortest time as we have a wide network of
+                        real estate partnerships in the area. We have a great experience in pre-sell preparation when
+                        small investments could bring the highest return.
+                    </p>
+
+                    <p>
+                        We always have the best options for investment opportunities in the area.
+                    </p>
+
+                    <p>
+                        In 2014 we sold more than 100 residential properties for middle-class families and 40 of them
+                        directly from banks.
                     </p>
                 </article>
             </div>
