@@ -53,14 +53,14 @@ class HousesForSalePageContainer extends Component {
         return (
             <div style={{maxWidth:"100%"}}>
 
-                {this.cities &&
+                {!this.props.params.city && this.cities &&
                 <Grid>
                     {this.cities.map(city=> {
                         return (
                             <Cell
                                 cols="4"
                                 key={city}>
-                                <Link to="houses-for-sale/:city">
+                                <Link to={this.props.location.pathname+ '/'+ city}>
                                     {city}
                                 </Link>
                             </Cell>
