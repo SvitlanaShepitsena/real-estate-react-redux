@@ -54,13 +54,13 @@ class HousesForSalePageContainer extends Component {
             <div style={{maxWidth:"100%"}}>
 
                 {this.cities &&
-                <ul>
-                    {this.cities.map(city=> {
-                        return (
-                            <li>{city}</li>
-                        );
-                    })}
-                </ul>
+                    <ul>
+                        {this.cities.map(city=>{
+                            return (
+                                <li key={city}>{city}</li>
+                            );
+                        })}
+                    </ul>
 
                 }
 
