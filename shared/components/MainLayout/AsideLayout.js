@@ -24,21 +24,13 @@ export default class AsideLayout extends Component {
                         col={4}
                         phone={12}>
                         <aside style={{padding:"0px 8px"}}>
-                            <a style={{textAlign:'center', color:'#393939'}}
-                               target="_blank"
-                               href="https://tleunen.github.io/react-mdl/#/cards">
-                                <h4>
-                                    React-MDL
-                                    Cards
-                                </h4>
-                            </a>
                             <div style={{textAlign:'center'}}>
                                 <Card shadow={0}
                                       className="AsideLayout__card"
                                       style={{height: '256px', background: '#2196F3'}}>
                                     <CardTitle expand style={{alignItems: 'flex-start', color: '#fff'}}>
                                         <h4 style={{marginTop: '0'}}>
-                                            Featured event:<br />
+                                            Open House event:<br />
                                             May 24, 2016<br />
                                             7-11pm
                                         </h4>
@@ -54,26 +46,18 @@ export default class AsideLayout extends Component {
                                         <Icon name="event"/>
                                     </CardActions>
                                 </Card>
-                                <Card shadow={0}
-                                      className="AsideLayout__card-image"
-                                      style={{ background: 'url(https://www.getmdl.io/assets/demos/image_card.jpg) center / cover' }}>
-                                    <CardTitle expand/>
-                                    <CardActions
-                                        style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
-                                    <span
-                                        style={{color: '#fff', fontSize: '14px', fontWeight: '500'}}> Image.jpg </span>
-                                    </CardActions>
-                                </Card>
                                 <Card shadow={0} className="AsideLayout__card-image-dog">
                                     <CardTitle expand
                                                style={{color: '#fff',
-                                                background: 'url(https://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC'}}>Update</CardTitle>
+                                                background: 'url(https://www.getmdl.io/assets/demos/dog.png) bottom right 5% no-repeat #46B6AC'}}>
+                                        <h4 style={{position:"absolute",top:16, margin:0}}>Pets Friendly
+                                            Housing</h4>
+                                    </CardTitle>
                                     <CardText>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Aenan convallis.
+                                        10 Steps to find a pet friendly rent
                                     </CardText>
                                     <CardActions border>
-                                        <Button colored>View Updates</Button>
+                                        <Button colored>Learn More</Button>
                                     </CardActions>
                                 </Card>
                             </div>
