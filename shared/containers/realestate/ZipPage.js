@@ -37,10 +37,10 @@ class ZipPage extends Component {
 
                 {!this.props.params.street && <div>
                     {this.props.houses &&
-                    <ul style={{listStyle:'none'}}>
+                    <ul style={{listStyle:'none',padding:0}}>
                         {this.props.houses.map(house=> {
                             return (
-                                <li style={{marginBottom:16}}
+                                <li style={{marginBottom:16,padding:0}}
                                     key={house.mls + house.city}>
                                     <Link
                                         to={this.props.location.pathname+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-')}>

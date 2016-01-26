@@ -59,16 +59,19 @@ class cityPage extends Component {
                                 </CardTitle>
                                 <CardText
                                     style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box', color: '#393939'}}>
-                                    <ul>
+                                    <ul
+                                        style={{listStyle:'none', margin:'0px', padding:'0px'}}>
                                         {this.zips && this.zips.map(zip=> {
                                             return (
-                                                <li key={zip}>
-                                                    <Link
-                                                        to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}/${zip}`}
-                                                        style={{textDecoration:'none', color:'#393939',fontSize:18}}
-                                                    >
-                                                        {zip}
-                                                    </Link>
+                                                <li key={zip} style={{padding:0}}>
+                                                    <h5 style={{marginTop:0}}>
+                                                        <Link
+                                                            to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}/${zip}`}
+                                                            style={{textDecoration:'none', color:'#393939',fontSize:18}}
+                                                        >
+                                                            {zip}
+                                                        </Link>
+                                                    </h5>
                                                 </li>
                                             )
                                         })
@@ -86,18 +89,23 @@ class cityPage extends Component {
                                 <CardText
                                     style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box'}}>
 
-                                    <h5>
+                                    <h5 style={{marginTop:0}}>
                                         <Link to={this.props.location.pathname}
                                               style={{color: '#393939',textDecoration:'none'}}
                                               type="Single Family Homes">
                                             Single Family Home
                                         </Link>
                                     </h5>
-                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Multi-Family Home</a></h5>
-                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Townhouse</a></h5>
-                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Duplex</a></h5>
-                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Condominimum Unit</a></h5>
-                                    <h5><a style={{textDecoration:'none', color:"#393939"}}>Raw Land</a></h5>
+                                    <h5 style={{marginTop:0}}>
+                                        k<a style={{textDecoration:'none', color:"#393939"}}>Multi-Family Home</a></h5>
+                                    <h5 style={{marginTop:0}}>
+                                        k<a style={{textDecoration:'none', color:"#393939"}}>Townhouse</a></h5>
+                                    <h5 style={{marginTop:0}}>
+                                        k<a style={{textDecoration:'none', color:"#393939"}}>Duplex</a></h5>
+                                    <h5 style={{marginTop:0}}>
+                                        k<a style={{textDecoration:'none', color:"#393939"}}>Condominimum Unit</a></h5>
+                                    <h5 style={{marginTop:0}}>
+                                        k<a style={{textDecoration:'none', color:"#393939"}}>Raw Land</a></h5>
                                 </CardText>
                             </Card>
                         </Cell>
