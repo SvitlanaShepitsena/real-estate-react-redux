@@ -52,11 +52,12 @@ class ZipTypePage extends Component {
                                 <span> / </span>
                             </li>
                             <li style={{display:'inline-block'}}>
-                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                      to={saleRent=="sale"?'houses':'apartments'+`-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}`}
-                                >
-                                    {_.startCase(city)}
-                                </Link>
+                                {saleRent=='sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/houses-for-sale/${this.props.params.city}`}>
+                                    {city}
+                                </Link>}
+                                {saleRent=='rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/apartments-for-rent/${this.props.params.city}`}>
+                                    {city}
+                                </Link>}
                                 <span> / </span>
                             </li>
                             <li style={{display:'inline-block'}}>
@@ -73,7 +74,7 @@ class ZipTypePage extends Component {
                             {this.props.houses.map((house,index)=> {
                                 return (
                                     <li style={{marginBottom:16,padding:0}}
-                                        key={index+house.mls + house.city}>
+                                        key={index}>
                                         <Link
                                             to={(saleRent=="sale"?"/houses-for-sale/":"/apartments-for-rent/")+house.address.city.trim().replace(/\s+/g,'-').toLowerCase()+'/'+house.address.zip+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-').replace(/-+/g,'-')}>
                                             <ListingThumbCard house={house}/></Link>
