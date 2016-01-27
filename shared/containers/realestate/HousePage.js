@@ -92,16 +92,6 @@ class HousePage extends Component {
                                     Short Sale
                                 </div>
                                 }
-                                {this.props.house.foreclosure &&
-                                <div>
-                                    Foreclosure
-                                </div>
-                                }
-                                {this.props.house.bankOwned &&
-                                <div>
-                                    Bank Owned
-                                </div>
-                                }
                                 <div>
                                     MLS#: {this.props.house.mls}
                                 </div>
