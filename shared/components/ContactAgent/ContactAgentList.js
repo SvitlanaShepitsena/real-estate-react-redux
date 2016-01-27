@@ -3,6 +3,7 @@ import {reduxForm} from 'redux-form';
 export const fields = ['name', 'email', 'message'];
 import {Card, CardText, CardTitle, CardActions} from 'react-mdl/lib/Card';
 import Button      from 'react-mdl/lib/Button';
+import Checkbox      from 'react-mdl/lib/Checkbox';
 import AgentThumb from './AgentThumb';
 
 if (process.env.BROWSER) {
@@ -35,9 +36,8 @@ class ContactAgentList extends Component {
             submitting
         } = this.props;
         return (
-            <form action="/gmail" method="post">
-                <Card shadow={1} className="ContactAgentList__Card">
-                    <AgentThumb></AgentThumb>
+            <Card shadow={1} className="ContactAgentList__Card">
+                <form action="/gmail" method="post">
 
                     <CardTitle>
                         Send a message
@@ -74,10 +74,9 @@ class ContactAgentList extends Component {
                             Clear
                         </Button>
                     </CardActions>
-                </Card>
-            </form>
-        )
-            ;
+                </form>
+            </Card>
+        );
     }
 }
 
