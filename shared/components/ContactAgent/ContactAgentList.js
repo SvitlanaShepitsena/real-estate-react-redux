@@ -3,6 +3,7 @@ import {reduxForm} from 'redux-form';
 export const fields = ['name', 'email', 'message'];
 import {Card, CardText, CardTitle, CardActions} from 'react-mdl/lib/Card';
 import Button      from 'react-mdl/lib/Button';
+import AgentThumb from './AgentThumb';
 
 if (process.env.BROWSER) {
     require('./ContactAgentList.less');
@@ -36,6 +37,8 @@ class ContactAgentList extends Component {
         return (
             <form action="/gmail" method="post">
                 <Card shadow={1} className="ContactAgentList__Card">
+                    <AgentThumb></AgentThumb>
+
                     <CardTitle>
                         Send a message
                     </CardTitle>
