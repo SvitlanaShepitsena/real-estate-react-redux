@@ -24,7 +24,8 @@ export default function promiseMiddleware() {
                     } else {
                         //    filter by propTypes
                         let filter2 = filter.substr(0, filter.length - 1).toLowerCase().replace(/-+/g, ' ');
-                        items = _.filter(_.flatten((_.values(items).map(zip=>_.values(zip)))), home=>home.type.toLowerCase() == filter2);
+                        let arr = _.filter(_.flatten((_.values(items).map(zip=>_.values(zip)))), home=>home.type.toLowerCase() == filter2);
+                        items = arr;
                     }
                 }
                 next({items, type: SUCCESS});
