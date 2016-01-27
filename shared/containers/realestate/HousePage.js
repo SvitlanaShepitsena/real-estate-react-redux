@@ -51,16 +51,22 @@ class HousePage extends Component {
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
-                            <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                  to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}`}>
-                                {_.startCase(this.props.house.address.city)}
-                            </Link>
+                            {saleRent=='sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/houses-for-sale/${this.props.params.city}`}>
+                                {city}
+                            </Link>}
+                            {saleRent=='rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/apartments-for-rent/${this.props.params.city}`}>
+                                {city}
+                            </Link>}
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
-                            <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                  to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}/${zipType}`}> {this.props.params.zipType}
-                            </Link>
+                            {saleRent=='sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/houses-for-sale/${this.props.params.city}/${this.props.params.zipType}`}>
+                                {this.props.params.zipType}
+
+                            </Link>}
+                            {saleRent=='rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/apartments-for-rent/${this.props.params.city}/${this.props.params.zipType}`}>
+                                {this.props.params.zipType}
+                            </Link>}
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
