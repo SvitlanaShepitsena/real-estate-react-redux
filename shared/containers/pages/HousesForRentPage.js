@@ -1,18 +1,15 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import _ from 'lodash';
-import Grid, {Cell} from 'react-mdl/lib/Grid';
-import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
-import {Link} from 'react-router';
+
 import config                                 from '../../config';
 import {sendEvent}                          from '../../utils/googleAnalytics';
-import CityCard from '../../components/City/CityCard';
 
 import {bindActionCreators} from 'redux';
-import * as citiesActions from '../../actions/cities';
+import * as articleActions from '../../actions/article';
+import RentGrid from '../../components/RentGrid/RentGrid.js';
 
 class HousesForRentPageContainer extends Component {
     static contextTypes = {i18n: PropTypes.object};
@@ -22,60 +19,51 @@ class HousesForRentPageContainer extends Component {
         isSharing: false
     };
 
+    handleTabChange = (category) => {
+        this.props.history.pushState(null, this.props.location.pathname, {
+            ...this.props.location.query,
+            category: category !== 'ALL' ? category : undefined
+        });
+
+        sendEvent('articles page', 'category', category);
+    };
+
     componentDidMount() {
-        this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-        this.props.getCitiesIfNeeded(this.saleRent);
+        this.props.getArticlesIfNeeded();
     }
 
     componentWillReceiveProps(nextProps) {
-        this.cities = _.keys(nextProps.cities);
+        const currentQuery = this.props.location.query;
+        const nextQuery = nextProps.location.query;
+
     }
 
     render() {
         return (
-            <div style={{maxWidth:"100%"}}>
-
-                {!this.props.params.city && this.cities &&
-                <div>
-                    <h1 style={{fontSize:28}}>Chicago North Suburbs {this.saleRent==='sale'?"Houses for Sale":'Apartments for Rent'} </h1>
-                    <hr/>
-                    <Grid>
-                        {this.cities.map(city=> {
-                            return (
-                                <Cell
-                                    col={4}
-                                    key={city}>
-                                    <Link to={this.props.location.pathname+ '/'+ city}
-                                          style={{textDecoration:'none', color:'#393939',fontSize:18}}>
-                                        {_.startCase(city.replace(/-+/, ' '))}
-                                    </Link>
-                                </Cell>
-                            );
-                        })}
-                    </Grid>
-                </div>
-                }
-
-                {this.props.params.city &&
-                <div>
-                    {this.props.children}
-
-                </div>
-                }
-            </div>
+            <RentGrid
+                articles={this.props.articles}
+                search={this.props.search}
+                linkToShare={this.state.linkToShare}
+                selectedCategory={this.props.category}
+                isSharing={this.state.isSharing}
+                isEmbedded={this.props.location.query.embed}
+                isLoading={this.props.isLoading}
+                isEmpty={this.props.articles.length === 0}
+                onTabChange={this.handleTabChange}
+            />
         );
     }
 }
 function mapStateToProps(state) {
-    return state.cities;
+    return state.articles;
 
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(citiesActions, dispatch);
+    return bindActionCreators(articleActions, dispatch);
 }
 HousesForRentPageContainer.need = [
-    citiesActions.getCitiesIfNeeded
+    articleActions.getArticlesIfNeeded
 ]
 export default connect(mapStateToProps, mapDispatchToProps)(HousesForRentPageContainer);
 

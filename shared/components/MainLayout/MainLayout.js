@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
+import {Footer} from 'react-mdl/lib/Footer';
 import {Link} from 'react-router';
 
 import AppBar      from '../AppBar/AppBar.js';
@@ -28,7 +29,7 @@ export default class MainLayout extends Component {
         const {l} = this.context.i18n;
 
         return (
-            <Layout fixedHeader >
+            <Layout fixedHeader style={{minHeight: '500px',height:"auto", position: 'relative'}}>
                 <AppBar />
                 <Drawer onClick={this.toggleDrawer.bind(this)}>
                     <Navigation>
@@ -39,7 +40,9 @@ export default class MainLayout extends Component {
                         <Link to="/contacts" className='MainLayout__drawer-nav-link'>{l('contact')}</Link>
                     </Navigation>
                 </Drawer>
+                <div>
                     {this.props.children}
+                </div>
                 <div className="mdl-layout-spacer"></div>
                 <Footer />
             </Layout>
