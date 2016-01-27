@@ -27,6 +27,7 @@ class ZipTypePage extends Component {
     render() {
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+
         return (
             <div style={{width:'100%'}}>
                 {this.props.params.street &&

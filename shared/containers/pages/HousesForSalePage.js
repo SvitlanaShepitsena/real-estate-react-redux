@@ -12,8 +12,7 @@ import {sendEvent}                          from '../../utils/googleAnalytics';
 import CityCard from '../../components/City/CityCard';
 
 import {bindActionCreators} from 'redux';
-import * as articleActions from '../../actions/article';
-import * as zipsActions from '../../actions/zips';
+import * as citiesActions from '../../actions/cities';
 
 class HousesForSalePageContainer extends Component {
     static contextTypes = {i18n: PropTypes.object};
@@ -24,11 +23,12 @@ class HousesForSalePageContainer extends Component {
     };
 
     componentDidMount() {
-        this.props.getZIPsIfNeeded();
+        this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+        this.props.getCitiesIfNeeded(this.saleRent);
     }
 
     componentWillReceiveProps(nextProps) {
-        this.cities = _.unique(_.pluck(nextProps.zips, 'key').map(city=>city.toLowerCase().trim()));
+        this.cities = _.keys(nextProps.cities);
     }
 
     render() {
@@ -67,15 +67,15 @@ class HousesForSalePageContainer extends Component {
     }
 }
 function mapStateToProps(state) {
-    return state.zips;
+    return state.cities;
 
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(zipsActions, dispatch);
+    return bindActionCreators(citiesActions, dispatch);
 }
 HousesForSalePageContainer.need = [
-    zipsActions.getZIPsIfNeeded
+    citiesActions.getCitiesIfNeeded
 ]
 export default connect(mapStateToProps, mapDispatchToProps)(HousesForSalePageContainer);
 
