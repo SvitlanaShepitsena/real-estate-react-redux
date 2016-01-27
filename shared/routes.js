@@ -36,7 +36,7 @@ export default (
                         </Route>
                     </Route>
                 </Route>
-                <Route component={HousesForSalePageContainer} path='/apartments-for-rent'>
+                <Route component={HousesForRentPageContainer} path='/apartments-for-rent'>
                     <Route component={CityPage} path=':city'>
                         <Route component={ZipTypePage} path=':zipType'>
                             <Route component={HousePage} path=':street'/>
