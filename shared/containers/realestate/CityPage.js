@@ -106,29 +106,24 @@ class cityPage extends Component {
                         <Cell col={6} phone={12}>
                             <Card shadow={0}
                                   style={{height: 'auto', width:'100%', background: '#ffffff', color: '#393939'}}>
-                                <CardTitle expand style={{alignItems: 'flex-start', width:'100%'}}>
+                                <CardTitle style={{width:'100%'}}>
                                     <h4 style={{margin: '0',fontSize:22, fontWeight:300}}> Property Types </h4>
                                 </CardTitle>
                                 <CardText
                                     style={{width:'100%',margin:0, borderTop: '1px #E0E0E0 solid', boxSizing: 'border-box'}}>
-                                    { this.types &&
+                                    {this.types &&
                                     <div>
                                         {this.types.map(type=> {
                                             return (
-
                                                 <h5 style={{marginTop:0,fontSize:15, fontWeight:500}} key={type}>
                                                     <Link
                                                         to={this.props.location.pathname+'/'+type.replace(/\s+/g,'-').toLowerCase()}
-                                                        style={{color: '#393939',textDecoration:'none'}}
-                                                    >
+                                                        style={{color: '#393939',textDecoration:'none'}}>
                                                         {type}
                                                     </Link>
                                                 </h5>
-
                                             );
                                         })}
-
-
                                     </div>}
                                 </CardText>
                             </Card>
