@@ -58,10 +58,12 @@ class cityPage extends Component {
                     <ul
                         style={{listStyle:'none', margin:'0px', padding:'0px'}}>
                         <li style={{display:'inline-block'}}>
-                            {saleRent=='sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to="/houses-for-sale">Houses
+                            {saleRent == 'sale' &&
+                            <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to="/houses-for-sale">Houses
                                 For Sale
                             </Link>}
-                            {saleRent=='rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to="/apartments-for-rent">Apartments
+                            {saleRent == 'rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                                         to="/apartments-for-rent">Apartments
                                 For Rent
                             </Link>}
                             <span> / </span>
@@ -91,7 +93,7 @@ class cityPage extends Component {
                                                 <li key={zip} style={{padding:0}}>
                                                     <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
                                                         <Link
-                                                            to={saleRent=="sale"?"/houses-for-sale/":"/apartments-for-rent/"+`${city.toLowerCase().replace(/\s+/g, '-')}/${zip}`}
+                                                            to={(saleRent=="sale"?"/houses-for-sale/":"/apartments-for-rent/")+`${city.toLowerCase().replace(/\s+/g, '-')}/${zip}`}
                                                             style={{textDecoration:'none', color:'#393939',fontSize:18}}
                                                         >
                                                             {zip}
