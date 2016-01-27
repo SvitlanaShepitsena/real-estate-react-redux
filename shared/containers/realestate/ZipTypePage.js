@@ -75,7 +75,7 @@ class ZipTypePage extends Component {
                                     <li style={{marginBottom:16,padding:0}}
                                         key={index+house.mls + house.city}>
                                         <Link
-                                            to={saleRent=="sale"?"/houses-for-sale/":"/apartments-for-rent/"+house.address.city.trim().replace(/\s+/g,'-').toLowerCase()+'/'+house.address.zip+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-').replace(/-+/g,'-')}>
+                                            to={(saleRent=="sale"?"/houses-for-sale/":"/apartments-for-rent/")+house.address.city.trim().replace(/\s+/g,'-').toLowerCase()+'/'+house.address.zip+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-').replace(/-+/g,'-')}>
                                             <ListingThumbCard house={house}/></Link>
                                     </li>
                                 );
