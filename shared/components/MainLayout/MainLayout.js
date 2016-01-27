@@ -30,6 +30,7 @@ export default class MainLayout extends Component {
         return (
             <Layout fixedHeader className="MainLayout">
                 <AppBar />
+
                 <Drawer onClick={this.toggleDrawer.bind(this)}>
                     <Navigation>
                         <Link to="/" className='MainLayout__drawer-nav-link'>home</Link>
