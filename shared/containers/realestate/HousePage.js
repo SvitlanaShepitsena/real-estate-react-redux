@@ -32,6 +32,7 @@ class HousePage extends Component {
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let zipType = this.props.params.zipType;
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+        const house = this.props.house;
         return (
             <div style={{width:'100%'}}>
                 {this.props.house &&
@@ -236,6 +237,33 @@ class HousePage extends Component {
                                 {this.props.house.utilities['Water'] &&
                                 <p> Water: {this.props.house.utilities['Water']} </p>
                                 }
+                            </article>
+                        }
+                        {
+                            this.props.house.utilities &&
+                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                <h5>Utilities</h5>
+                                <ul>
+                                    {
+                                        Object.keys(this.props.house.utilities).map(util => {
+                                            console.log(util);
+                                            const val = this.props.house.utilities[util];
+                                            console.log(val);
+                                            return (
+                                                <li key={util}>
+                                                    <span>
+                                                        {util}
+                                                    </span>
+                                                    <span>
+                                                        {val}
+                                                    </span>
+                                                </li>
+                                            );
+                                        })
+                                    }
+
+                                </ul>
+
                             </article>
                         }
                         {
