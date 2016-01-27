@@ -36,28 +36,20 @@ class ContactAgentList extends Component {
             submitting
         } = this.props;
         return (
-            <form action="/gmail" method="post">
-                <Card shadow={1} className="ContactAgentList">
+            <Card shadow={1} className="ContactAgentList__Card">
+                <form action="/gmail" method="post">
+
                     <CardTitle>
-                        Contact Our Agent
+                        Send a message
                     </CardTitle>
                     <CardText>
-                        <ul style={{listStyle:"none", textAlign:"left", margin:0, padding:"0px 20px 0px 0px", width:"100%"}}>
-                            <li style={{display:'inline-block'}}>
-                                <Checkbox ripple defaultChecked/>
-                            </li>
-                            <li style={{display:'inline-block'}}>
-                                <AgentThumb></AgentThumb>
-                            </li>
-                        </ul>
-                        <hr/>
-                        <br/>
+
                         <div className="ContactAgentList__input-container">
-                            <input className="mdl-textfield__input" type="text" placeholder="Your Name" {...name}/>
+                            <input className="mdl-textfield__input" type="text" placeholder="Name" {...name}/>
                         </div>
 
                         <div className="ContactAgentList__input-container">
-                            <input className="mdl-textfield__input" type="email" placeholder="Your Email" {...email}/>
+                            <input className="mdl-textfield__input" type="email" placeholder="Email" {...email}/>
                             {email.touched && email.error &&
                             <span className="ContactAgentList__error">{email.error}</span>}
                         </div>
@@ -82,8 +74,8 @@ class ContactAgentList extends Component {
                             Clear
                         </Button>
                     </CardActions>
-                </Card>
-            </form>
+                </form>
+            </Card>
         );
     }
 }
