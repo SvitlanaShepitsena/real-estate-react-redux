@@ -3,16 +3,16 @@
 @import "../../assets/palette.less";
 @import '../../assets/typography.less';
 
-.MainLayout {
-  background-color: #eaeaea;
+.mdl-layout__content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
 
-@media @phone {
-  .MainLayout {
-    position: relative;
-    min-height: 500px;
-    height: auto;
-  }
+.MainLayout {
+  background-color: #eaeaea;
+  position: relative;
 }
 
 .MainLayout__drawer-nav-link {

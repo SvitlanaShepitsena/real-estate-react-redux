@@ -16,12 +16,7 @@ export default class AgentThumb extends Component {
 
     render() {
         return (
-            <div className="AgentThumb">
-                <img style={{width:60}}
-                     src="http://res.cloudinary.com/svitlana/image/upload/v1453915134/broker-default-icon_xqgzj5.png"
-                     alt="Re/Max 1st Class Broker Picture"/>
-                <h4 style={{fontSize:16, display:"inline-block", margin:"0px 10px"}}>Agent Name</h4>
-            </div>
+            <div className="AgentThumb">Nona Lisitsa</div>
         );
     }
 }
