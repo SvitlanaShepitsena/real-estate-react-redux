@@ -35,7 +35,7 @@ class HousePage extends Component {
         const house = this.props.house;
         return (
             <div style={{width:'100%'}}>
-                {this.props.house &&
+                {house &&
                 <div>
                     <ul
                         style={{listStyle:'none', margin:'0px', padding:'0px'}}>
@@ -51,33 +51,37 @@ class HousePage extends Component {
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
-                            {saleRent=='sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/houses-for-sale/${this.props.params.city}`}>
+                            {saleRent == 'sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                                         to={`/houses-for-sale/${this.props.params.city}`}>
                                 {city}
                             </Link>}
-                            {saleRent=='rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/apartments-for-rent/${this.props.params.city}`}>
+                            {saleRent == 'rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                                         to={`/apartments-for-rent/${this.props.params.city}`}>
                                 {city}
                             </Link>}
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
-                            {saleRent=='sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/houses-for-sale/${this.props.params.city}/${this.props.params.zipType}`}>
+                            {saleRent == 'sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                                         to={`/houses-for-sale/${this.props.params.city}/${this.props.params.zipType}`}>
                                 {this.props.params.zipType}
 
                             </Link>}
-                            {saleRent=='rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/apartments-for-rent/${this.props.params.city}/${this.props.params.zipType}`}>
+                            {saleRent == 'rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                                         to={`/apartments-for-rent/${this.props.params.city}/${this.props.params.zipType}`}>
                                 {this.props.params.zipType}
                             </Link>}
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
-                            {this.props.house.address.street &&
+                            {house.address.street &&
                             <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
-                                {this.props.house.address.street}
+                                {house.address.street}
                             </span>
                             }
-                            {this.props.house.mls &&
+                            {house.mls &&
                             <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
-                             {" - MLS#" + this.props.house.mls  }
+                             {" - MLS#" + house.mls  }
                             </span>
                             }
                         </li>
@@ -88,149 +92,149 @@ class HousePage extends Component {
                             <li style={{display:'block',float:'left', padding:'0px 16px'}}>
                                 {/*=Address*/}
                                 <h4 style={{fontSize:22,marginBottom:5}}>
-                                    {this.props.house.address.street &&
-                                    <span>{this.props.house.address.street}</span>
+                                    {house.address.street &&
+                                    <span>{house.address.street}</span>
                                     }
                                     <br/>
 
-                                    {this.props.house.address.city &&
-                                    <span> {this.props.house.address.city + ", "} </span>
+                                    {house.address.city &&
+                                    <span> {house.address.city + ", "} </span>
                                     }
 
-                                    {this.props.house.address.state &&
-                                    <span> {this.props.house.address.state } </span>
+                                    {house.address.state &&
+                                    <span> {house.address.state } </span>
                                     }
                                 </h4>
-                                {this.props.house.type &&
-                                <p> {this.props.house.type} </p>
+                                {house.type &&
+                                <p> {house.type} </p>
                                 }
                             </li>
                             <li style={{display:'block',float:'right', padding:'0px 16px'}}>
-                                {this.props.house.price &&
-                                <h4> ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")} </h4>
+                                {house.price &&
+                                <h4> ${house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")} </h4>
                                 }
-                                {this.props.house.shortSale &&
+                                {house.shortSale &&
                                 <div> Short Sale </div>
                                 }
-                                {this.props.house.mls &&
-                                <div> MLS#: {this.props.house.mls} </div>
+                                {house.mls &&
+                                <div> MLS#: {house.mls} </div>
                                 }
-                                {this.props.house.year &&
-                                <div> Year: {this.props.house.year} </div>
+                                {house.year &&
+                                <div> Year: {house.year} </div>
                                 }
                             </li>
                         </ul>
                         <div>
-                            {this.props.house.images && this.props.house.images.length &&
-                            <img style={{width:'100%',height:'auto'}} src={this.props.house.images[0]} alt=""/>
+                            {house.images && house.images.length &&
+                            <img style={{width:'100%',height:'auto'}} src={house.images[0]} alt=""/>
                             }
                         </div>
                         <article style={{margin:'0px 10px'}}>
-                            {this.props.house.description &&
+                            {house.description &&
                             <div>
                                 <h5 >Description</h5>
-                                <p> {this.props.house.description} </p>
+                                <p> {house.description} </p>
                             </div>
                             }
                         </article>
-                        <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                        <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13, width:"100%"}}>
                             <h5>Key Facts:</h5>
-                            {this.props.house.type &&
-                            <p> Type: {this.props.house.type} </p>
-                            }
+                            <Grid>
+                                <Cell
+                                    col={6}
+                                    phone={1}
+                                >
+                                    {house.type &&
+                                    <p> Type: {house.type} </p>
+                                    }
 
-                            {this.props.house.exteriorDetails && this.props.house.exteriorDetails['Lot Size'] &&
-                            <p> Lot Size: {this.props.house.exteriorDetails['Lot Size']} </p>
-                            }
-                            {this.props.house.price &&
-                            <p> Price: ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")} </p>
-                            }
-                            {this.props.house.year &&
-                            <p> Year Built: {this.props.house.year} </p>
-                            }
-                            {this.props.house.beds &&
-                            <p> Beds: {this.props.house.beds} </p>
-                            }
-                            {this.props.house.bath &&
-                            <p> Baths: {this.props.house.bath} </p>
-                            }
-                            {this.props.house.exteriorDetails && this.props.house.exteriorDetails['Parking'] &&
-                            <p> Parking: {this.props.house.exteriorDetails['Parking']} </p>
-                            }
+                                    {house.exteriorDetails && house.exteriorDetails['Lot Size'] &&
+                                    <p> Lot Size: {house.exteriorDetails['Lot Size']} </p>
+                                    }
+                                    {house.price &&
+                                    <p> Price: ${house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")} </p>
+                                    }
+                                    {house.year &&
+                                    <p> Year Built: {house.year} </p>
+                                    }
+                                </Cell>
+                                <Cell
+                                    col={6}
+                                    phone={1}
+                                >
+                                    {house.beds &&
+                                    <p> Beds: {house.beds} </p>
+                                    }
+                                    {house.bath &&
+                                    <p> Baths: {house.bath} </p>
+                                    }
+                                    {house.exteriorDetails && house.exteriorDetails['Parking'] &&
+                                    <p> Parking: {house.exteriorDetails['Parking']} </p>
+                                    }
+                                </Cell>
+
+                            </Grid>
                         </article>
                         {
-                            this.props.house.exteriorDetails &&
+                            house.exteriorDetails &&
                             <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                                 <h5>Exterior Details</h5>
-                                {this.props.house.exteriorDetails['Architecture'] &&
-                                <p> Architecture: {this.props.house.exteriorDetails['Architecture']} </p>
-                                }
-                                {this.props.house.exteriorDetails['Building Units'] &&
-                                <p> Building Units: {this.props.house.exteriorDetails['Building Units']} </p>
-                                }
-                                {this.props.house.exteriorDetails['Features'] &&
-                                <p> Features: {this.props.house.exteriorDetails['Features']} </p>
-                                }
-                                {this.props.house.exteriorDetails['Lot Features'] &&
-                                <p> Lot Features: {this.props.house.exteriorDetails['Lot Features']} </p>
-                                }
-                                {this.props.house.exteriorDetails['Lot Size'] &&
-                                <p> Lot Size: {this.props.house.exteriorDetails['Lot Size']} </p>
-                                }
-                                {this.props.house.exteriorDetails['Parking'] &&
-                                <p> Parking: {this.props.house.exteriorDetails['Parking']} </p>
-                                }
-                                {this.props.house.exteriorDetails['Roof'] &&
-                                <p> Roof: {this.props.house.exteriorDetails['Roof']} </p>
-                                }
-                            </article>
-                        }
-                        {
-                            this.props.house.interiorDetails &&
-                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                <ul style={{fontSize: 16}}>
+                                    {
+                                        Object.keys(house.exteriorDetails).map(extDetail => {
+                                            console.log(extDetail);
+                                            const val = house.exteriorDetails[extDetail];
+                                            console.log(val);
+                                            return (
+                                                <li key={extDetail}>
+                                                    <span>
+                                                        {extDetail + ": "}
+                                                    </span>
+                                                    <span>
+                                                        {val}
+                                                    </span>
+                                                </li>
+                                            );
+                                        })
+                                    }
+                                </ul>
 
-                                <h5>Interior Details</h5>
-                                {this.props.house.interiorDetails['Appliances'] &&
-                                <p> Appliances: {this.props.house.interiorDetails['Appliances']} </p>
-                                }
-                                {this.props.house.interiorDetails['Basement'] &&
-                                <p> Basement: {this.props.house.interiorDetails['Basement']} </p>
-                                }
-                                {this.props.house.interiorDetails['Master Bedroom'] &&
-                                <p> Master Bedroom: {this.props.house.interiorDetails['Master Bedroom']} </p>
-                                }
-                                {this.props.house.interiorDetails['Bedroom 2'] &&
-                                <p> Bedroom 2: {this.props.house.interiorDetails['Bedroom 2']} </p>
-                                }
-                                {this.props.house.interiorDetails['Bedroom 3'] &&
-                                <p> Bedroom 3: {this.props.house.interiorDetails['Bedroom 3']} </p>
-                                }
-                                {this.props.house.interiorDetails['Dining Area'] &&
-                                <p> Dining Area: {this.props.house.interiorDetails['Dining Area']} </p>
-                                }
-                                {this.props.house.interiorDetails['Dining Room'] &&
-                                <p> Dining Room: {this.props.house.interiorDetails['Dining Room']} </p>
-                                }
-                                {this.props.house.interiorDetails['Kitchen'] &&
-                                <p> Kitchen: {this.props.house.interiorDetails['Kitchen']} </p>
-                                }
-                                {this.props.house.interiorDetails['Laundry Room'] &
-                                <p> Laundry Room: {this.props.house.interiorDetails['Laundry Room']} </p>
-                                }
-                                {this.props.house.interiorDetails['Window Type'] &&
-                                <p> Window Type: {this.props.house.interiorDetails['Window Type']} </p>
-                                }
                             </article>
                         }
                         {
-                            this.props.house.utilities &&
+                            house.interiorDetails &&
+                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                <h5>Interior Details</h5>
+                                <ul style={{fontSize: 16}}>
+                                    {
+                                        Object.keys(house.interiorDetails).map(intDetail => {
+                                            console.log(intDetail);
+                                            const val = house.interiorDetails[intDetail];
+                                            console.log(val);
+                                            return (
+                                                <li key={intDetail}>
+                                                    <span>
+                                                        {intDetail + ": "}
+                                                    </span>
+                                                    <span>
+                                                        {val}
+                                                    </span>
+                                                </li>
+                                            );
+                                        })
+                                    }
+                                </ul>
+                            </article>
+                        }
+                        {
+                            house.utilities &&
                             <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                                 <h5>Utilities</h5>
                                 <ul style={{fontSize: 16}}>
                                     {
-                                        Object.keys(this.props.house.utilities).map(util => {
+                                        Object.keys(house.utilities).map(util => {
                                             console.log(util);
-                                            const val = this.props.house.utilities[util];
+                                            const val = house.utilities[util];
                                             console.log(val);
                                             return (
                                                 <li key={util}>
@@ -248,23 +252,61 @@ class HousePage extends Component {
                             </article>
                         }
                         {
-                            this.props.house.taxes &&
+                            house.publicFacts &&
+                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                <h5>Public Facts</h5>
+                                <ul style={{fontSize: 16}}>
+                                    {
+                                        Object.keys(house.publicFacts).map(publicFact => {
+                                            console.log(publicFact);
+                                            const val = house.publicFacts[publicFact];
+                                            console.log(val);
+                                            return (
+                                                <li key={publicFact}>
+                                                    <span>
+                                                        {publicFact + ": "}
+                                                    </span>
+                                                    <span>
+                                                        {val}
+                                                    </span>
+                                                </li>
+                                            );
+                                        })
+                                    }
+                                </ul>
+                            </article>
+                        }
+                        {
+                            house.taxes &&
                             <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                                 <h5>Taxes</h5>
-                                {this.props.house.taxes['Tax Amount'] &&
-                                <p> Tax Amount: {this.props.house.taxes['Tax Amount']} </p>
-                                }
-                                {this.props.house.taxes['Tax Year'] &&
-                                <p> Tax Year: {this.props.house.taxes['Tax Year']} </p>
-                                }
+                                <ul style={{fontSize: 16}}>
+                                    {
+                                        Object.keys(house.taxes).map(tax => {
+                                            console.log(tax);
+                                            const val = house.taxes[tax];
+                                            console.log(val);
+                                            return (
+                                                <li key={tax}>
+                                                    <span>
+                                                        {tax + ": "}
+                                                    </span>
+                                                    <span>
+                                                        {val}
+                                                    </span>
+                                                </li>
+                                            );
+                                        })
+                                    }
+                                </ul>
                             </article>
                         }
 
                         {
-                            this.props.house.agent &&
+                            house.agent &&
                             <article style={{margin: '0px 10px', paddingBottom: 16}}>
                                 <p> Listing
-                                    Broker: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
+                                    Broker: {house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
                                 </p>
                             </article>
                         }
