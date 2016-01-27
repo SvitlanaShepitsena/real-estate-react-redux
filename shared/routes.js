@@ -36,14 +36,13 @@ export default (
                         </Route>
                     </Route>
                 </Route>
-                <Route component={HousesForSalePageContainer} path='/houses-for-rent'>
+                <Route component={HousesForRentPageContainer} path='/apartments-for-rent'>
                     <Route component={CityPage} path=':city'>
                         <Route component={ZipTypePage} path=':zipType'>
                             <Route component={HousePage} path=':street'/>
                         </Route>
                     </Route>
                 </Route>
-                <Route component={HousesForRentPageContainer} path='/appartments-for-rent'/>
                 <Route component={ArticlesPageContainer} path='/blog'/>
                 <Route component={TermsOfUsePageContainer} path='/terms-of-use'/>
                 <Route component={PrivacyPolicyPageContainer} path='/privacy-policy'/>
