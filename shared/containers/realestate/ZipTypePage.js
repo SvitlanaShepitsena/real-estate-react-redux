@@ -68,12 +68,12 @@ class ZipTypePage extends Component {
                         <hr/>
 
                         <ul style={{listStyle:'none',padding:0}}>
-                            {this.props.houses.map(house=> {
+                            {this.props.houses.map((house,index)=> {
                                 return (
                                     <li style={{marginBottom:16,padding:0}}
-                                        key={house.mls + house.city}>
+                                        key={index+house.mls + house.city}>
                                         <Link
-                                            to={'/houses-for-'+saleRent+'/'+house.address.city.trim().replace(/\s+/g,'-').toLowerCase()+'/'+house.address.zip+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-').replace(/-+/g,'-')}>
+                                            to={saleRent=="sale"?"/houses-for-sale/":"/apartments-for-rent/"+house.address.city.trim().replace(/\s+/g,'-').toLowerCase()+'/'+house.address.zip+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-').replace(/-+/g,'-')}>
                                             <ListingThumbCard house={house}/></Link>
                                     </li>
                                 );
