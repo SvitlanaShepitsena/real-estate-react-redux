@@ -88,7 +88,7 @@ class cityPage extends Component {
                                                 <li key={zip} style={{padding:0}}>
                                                     <h5 style={{marginTop:0,fontSize:15, fontWeight:500}}>
                                                         <Link
-                                                            to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}/${zip}`}
+                                                            to={saleRent=="sale"?"/houses-for-sale/":"/apartments-for-rent/"+`${city.toLowerCase().replace(/\s+/g, '-')}/${zip}`}
                                                             style={{textDecoration:'none', color:'#393939',fontSize:18}}
                                                         >
                                                             {zip}
