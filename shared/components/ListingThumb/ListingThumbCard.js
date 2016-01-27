@@ -55,15 +55,6 @@ export default class ListingThumbCard extends Component {
                             <span>Year: {house.year} </span>
                             }
                         </p>
-                        <p>
-
-                            {house.mls &&
-                            <span>MLS#: {house.mls} </span>
-                            }
-                            {house.agent &&
-                            <span>MLS#: {house.agent} </span>
-                            }
-                        </p>
                     </li>
                 </ul>
             </Card>

@@ -204,7 +204,7 @@ class HousePage extends Component {
                                 {this.props.house.interiorDetails['Kitchen'] &&
                                 <p> Kitchen: {this.props.house.interiorDetails['Kitchen']} </p>
                                 }
-                                {this.props.house.interiorDetails['Laundry Room'] &&
+                                {this.props.house.interiorDetails['Laundry Room'] &
                                 <p> Laundry Room: {this.props.house.interiorDetails['Laundry Room']} </p>
                                 }
                                 {this.props.house.interiorDetails['Window Type'] &&
@@ -216,34 +216,7 @@ class HousePage extends Component {
                             this.props.house.utilities &&
                             <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                                 <h5>Utilities</h5>
-                                {this.props.house.utilities['Cable Wiring'] &&
-                                <p> Cable Wiring: {this.props.house.utilities['Cable Wiring']} </p>
-                                }
-                                {this.props.house.utilities['Cooler'] &&
-                                <p> Cooler: {this.props.house.utilities['Cooler']} </p>
-                                }
-                                {this.props.house.utilities['Cooling'] &&
-                                <p> Cooling: {this.props.house.utilities['Cooling']} </p>
-                                }
-                                {this.props.house.utilities['Electrical'] &&
-                                <p> Electrical: {this.props.house.utilities['Electrical']} </p>
-                                }
-                                {this.props.house.utilities['Heating'] &&
-                                <p> Heating: {this.props.house.utilities['Heating']} </p>
-                                }
-                                {this.props.house.utilities['Sewing'] &&
-                                <p> Sewing: {this.props.house.utilities['Sewing']} </p>
-                                }
-                                {this.props.house.utilities['Water'] &&
-                                <p> Water: {this.props.house.utilities['Water']} </p>
-                                }
-                            </article>
-                        }
-                        {
-                            this.props.house.utilities &&
-                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
-                                <h5>Utilities</h5>
-                                <ul>
+                                <ul style={{fontSize: 16}}>
                                     {
                                         Object.keys(this.props.house.utilities).map(util => {
                                             console.log(util);
@@ -252,7 +225,7 @@ class HousePage extends Component {
                                             return (
                                                 <li key={util}>
                                                     <span>
-                                                        {util}
+                                                        {util + ": "}
                                                     </span>
                                                     <span>
                                                         {val}
@@ -261,9 +234,7 @@ class HousePage extends Component {
                                             );
                                         })
                                     }
-
                                 </ul>
-
                             </article>
                         }
                         {
