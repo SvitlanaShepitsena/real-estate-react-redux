@@ -53,12 +53,5 @@ export default class FooterSmartContainer extends Component {
         );
     }
 
-    openLinkInPopup(URL) {
-        window.open(URL, '', 'width=500, height=500');
-    }
-
-    openLinkInNewTab(URL) {
-        window.open(URL, '_blank');
-    }
 }
 
