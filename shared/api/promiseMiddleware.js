@@ -1,7 +1,7 @@
 export default function promiseMiddleware() {
     return next => action => {
 
-        const {promise, obj, type, ...rest} = action;
+        const {promise, filter, obj, type, ...rest} = action;
 
         if (!promise) return next(action);
 
@@ -14,6 +14,14 @@ export default function promiseMiddleware() {
                     req = objtoArray(req);
                 }
                 var items = req.data;
+                if (filter) {
+
+                    if (filter.match(/\d+/g)) {
+
+                        items = _.toArray(items[filter]);
+                        console.log(items);
+                    }
+                }
                 next({items, type: SUCCESS});
                 return true;
             })
