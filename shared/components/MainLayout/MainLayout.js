@@ -28,7 +28,7 @@ export default class MainLayout extends Component {
         const {l} = this.context.i18n;
 
         return (
-            <Layout fixedHeader style={{minHeight: '500px',height:"auto", position: 'relative'}}>
+            <Layout fixedHeader >
                 <AppBar />
                 <Drawer onClick={this.toggleDrawer.bind(this)}>
                     <Navigation>
@@ -39,9 +39,8 @@ export default class MainLayout extends Component {
                         <Link to="/contacts" className='MainLayout__drawer-nav-link'>{l('contact')}</Link>
                     </Navigation>
                 </Drawer>
-                <div>
                     {this.props.children}
-                </div>
+                <div className="mdl-layout-spacer"></div>
                 <Footer />
             </Layout>
         );
