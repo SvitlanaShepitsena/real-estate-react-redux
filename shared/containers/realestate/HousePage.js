@@ -71,13 +71,17 @@ class HousePage extends Component {
                     <Card shadow={0} style={{width:'100%'}}>
                         <ul style={{listStyle:'none',padding:0}}>
                             <li style={{display:'block',float:'left', padding:'0px 16px'}}>
-                                <h4>
-                                    {this.props.house.address.street + ' ' + this.props.house.address.city + ", " + this.props.house.address.state }
+                                <h4 style={{fontSize:22,marginBottom:5}}>
+                                    <span>{this.props.house.address.street}</span>
+                                    <br/>
+                                    <span>
+                                    {this.props.house.address.city + ", " + this.props.house.address.state }
+                                    </span>
                                 </h4>
                                 {this.props.house.type &&
-                                <h6>
+                                <p>
                                     {this.props.house.type}
-                                </h6>
+                                </p>
                                 }
                             </li>
                             <li style={{display:'block',float:'right', padding:'0px 16px'}}>
@@ -86,6 +90,9 @@ class HousePage extends Component {
                                 </h4>
                                 <p>
                                     MLS#: {this.props.house.mls}
+                                </p>
+                                <p>
+                                    Year: {this.props.house.year}
                                 </p>
                             </li>
                         </ul>
@@ -105,10 +112,53 @@ class HousePage extends Component {
                             </div>
                             }
                         </article>
+                        <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                            {this.props.house.beds &&
+                            <p> Beds: {this.props.house.beds}
+                            </p>
+                            }
+                            {this.props.house.bath &&
+                            <p> Baths: {this.props.house.bath}
+                            </p>
+                            }
+                        </article>
+                        <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                            {this.props.house.exteriorDetails &&
+                            <h5>Exterior Details</h5>
+                            }
+
+                            {this.props.house.exteriorDetails['Architecture'] &&
+                            <p> Architecture: {this.props.house.exteriorDetails['Architecture']} </p>
+                            }
+                            {this.props.house.exteriorDetails['Building Units'] &&
+                            <p> Building Units: {this.props.house.exteriorDetails['Building Units']} </p>
+                            }
+                            {this.props.house.exteriorDetails['Features'] &&
+                            <p> Features: {this.props.house.exteriorDetails['Features']} </p>
+                            }
+                            {this.props.house.exteriorDetails['Lot Features'] &&
+                            <p> Lot Features: {this.props.house.exteriorDetails['Lot Features']} </p>
+                            }
+                            {this.props.house.exteriorDetails['Lot Size'] &&
+                            <p> Lot Size: {this.props.house.exteriorDetails['Lot Size']} </p>
+                            }
+                            {this.props.house.exteriorDetails['Parking'] &&
+                            <p> Parking: {this.props.house.exteriorDetails['Parking']} </p>
+                            }
+                            {this.props.house.exteriorDetails['Roof'] &&
+                            <p> Roof: {this.props.house.exteriorDetails['Roof']} </p>
+                            }
+                        </article>
+                        <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                            <h5>Interior Details</h5>
+                        </article>
+                        <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                            <h5>Utilities</h5>
+                        </article>
+
                         <article style={{margin:'0px 10px', textAlign:'right',paddingBottom:16, fontSize:13}}>
                             <span>
-                                Listing
-                                Broker: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
+                                Listing Broker: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
                             </span>
                         </article>
 

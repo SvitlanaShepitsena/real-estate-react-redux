@@ -7,15 +7,13 @@ import apiResponseFormatter from '../utils/apiResponseFormatter';
 import {reducer as form} from 'redux-form';
 import user from './user';
 import articles from './article';
-import cities from './cities';
-import cityInfo from './cityInfo';
+import zips from './zip';
 import houses from './houses';
 import house from './house';
 
 const rootReducer = combineReducers({
     form,
-    cities,
-    cityInfo,
+    zips,
     articles,
     houses,
     house,

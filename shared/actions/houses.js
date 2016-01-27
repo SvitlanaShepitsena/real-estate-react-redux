@@ -8,20 +8,20 @@ export const HOUSES_GET_FAILURE = 'HOUSES_GET_FAILURE';
 
 
 /*Action Creator functions*/
-export function housesGet(saleRent,city,zipType) {
+export function housesGet(saleRent,city,zip) {
     return {
         type: HOUSES_GET,
-        promise: request.get(`https://real-estate-react.firebaseio.com/${saleRent}/${city}.json`),
-        obj:true,
-        filter:zipType
+        promise: request.get(`https://real-estate-react.firebaseio.com/${saleRent}/${city}/${zip}/.json`)
     };
 }
 
 
 
-export function getHousesIfNeeded(saleRent, city, zipType) {
+export function getHousesIfNeeded(saleRent, city, zip) {
     return (dispatch, getState) => {
-            return dispatch(housesGet(saleRent,city,zipType));
+        if (!getState().houses.length) {
+            return dispatch(housesGet(saleRent,city,zip));
+        }
     };
 }
 
