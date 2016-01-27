@@ -146,7 +146,7 @@ function renderHTML(helmet, {componentHTML, initialState, metaData, config}) {
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
             <link rel="shortcut icon" href="/static/favicon.ico"/>
             ${helmet.title}
             ${helmet.meta}
