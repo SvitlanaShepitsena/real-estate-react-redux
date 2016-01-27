@@ -1,17 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
-import {Footer, FooterSection, FooterLinkList} from 'react-mdl/lib/Footer';
 import {Link} from 'react-router';
 
 import AppBar      from '../AppBar/AppBar.js';
-import FooterSmart        from '../../containers/FooterSmart.js';
+import Footer        from '../../containers/FooterSmart.js';
 
 if (process.env.BROWSER) {
     require('./MainLayout.less');
 }
 
 export default class MainLayout extends Component {
-
     static contextTypes = {i18n: React.PropTypes.object};
 
     static propTypes = {
@@ -41,9 +39,11 @@ export default class MainLayout extends Component {
                         <Link to="/contacts" className='MainLayout__drawer-nav-link'>{l('contact')}</Link>
                     </Navigation>
                 </Drawer>
+                <div>
                     {this.props.children}
+                </div>
                 <div className="mdl-layout-spacer"></div>
-                <FooterSmart/>
+                <Footer />
             </Layout>
         );
     }
