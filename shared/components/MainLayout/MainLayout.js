@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
-import {Footer} from 'react-mdl/lib/Footer';
 import {Link} from 'react-router';
 
 import AppBar      from '../AppBar/AppBar.js';
@@ -29,15 +28,16 @@ export default class MainLayout extends Component {
         const {l} = this.context.i18n;
 
         return (
-            <Layout fixedHeader style={{minHeight: '500px',height:"auto", position: 'relative'}}>
+            <Layout fixedHeader className="MainLayout">
                 <AppBar />
                 <Drawer onClick={this.toggleDrawer.bind(this)}>
                     <Navigation>
-                        <Link to="/" className='MainLayout__drawer-nav-link'>{l('home')}</Link>
-                        <Link to="/about" className='MainLayout__drawer-nav-link'>{l('about us')}</Link>
-                        <Link to="/tutorials" className='MainLayout__drawer-nav-link'>{l('tutorials')}</Link>
-                        <Link to="/projects" className='MainLayout__drawer-nav-link'>{l('projects')}</Link>
-                        <Link to="/contacts" className='MainLayout__drawer-nav-link'>{l('contact')}</Link>
+                        <Link to="/" className='MainLayout__drawer-nav-link'>home</Link>
+                        <Link to="/houses-for-sale" className='MainLayout__drawer-nav-link'>houses for sale</Link>
+                        <Link to="/apartments-for-rent" className='MainLayout__drawer-nav-link'> apartments for
+                            rent </Link>
+                        <Link to="/about" className=' MainLayout__drawer-nav-link'>about us</Link>
+                        <Link to="/contacts" className=' MainLayout__drawer-nav-link'>contact</Link>
                     </Navigation>
                 </Drawer>
                 <div>

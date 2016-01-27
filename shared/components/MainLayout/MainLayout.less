@@ -3,11 +3,16 @@
 @import "../../assets/palette.less";
 @import '../../assets/typography.less';
 
-
 .MainLayout {
-  height: 1200px;
   background-color: #eaeaea;
-  position: relative;
+}
+
+@media @phone {
+  .MainLayout {
+    position: relative;
+    min-height: 500px;
+    height: auto;
+  }
 }
 
 .MainLayout__drawer-nav-link {
