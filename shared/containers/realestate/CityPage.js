@@ -34,7 +34,7 @@ class cityPage extends Component {
             let houses = (_.pluck(_.values(zip), 'type'));
             types = _.union(houses, types);
         });
-        this.types = types.map(type=>type+'s');
+        this.types = types.map(type=>type + 's');
 
         this.zips = _.keys(cityInfo);
 

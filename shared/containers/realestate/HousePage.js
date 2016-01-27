@@ -59,9 +59,16 @@ class HousePage extends Component {
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
+                            {this.props.house.address.street &&
                             <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
                                 {this.props.house.address.street}
                             </span>
+                            }
+                            {this.props.house.mls &&
+                            <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
+                             {" - MLS#" + this.props.house.mls  }
+                            </span>
+                            }
                         </li>
                     </ul>
                     <br/>
@@ -122,8 +129,13 @@ class HousePage extends Component {
                             <p> Type: {this.props.house.type}
                             </p>
                             }
-                            {this.props.house.exteriorDetails['Lot Size'] &&
-                            <p> Lot Size: {this.props.house.exteriorDetails['Lot Size']} </p>
+                            {this.props.house.exteriorDetails &&
+                            <div>
+
+                                {this.props.house.exteriorDetails['Lot Size'] &&
+                                <p> Lot Size: {this.props.house.exteriorDetails['Lot Size']} </p>
+                                }
+                            </div>
                             }
                             {this.props.house.price &&
                             <p> Price:
@@ -142,14 +154,17 @@ class HousePage extends Component {
                             <p> Baths: {this.props.house.bath}
                             </p>
                             }
-                            {this.props.house.exteriorDetails['Parking'] &&
-                            <p> Parking: {this.props.house.exteriorDetails['Parking']} </p>
+                            {this.props.house.exteriorDetails &&
+                            <div>
+                                {this.props.house.exteriorDetails['Parking'] &&
+                                <p> Parking: {this.props.house.exteriorDetails['Parking']} </p>
+                                }
+                            </div>
                             }
                         </article>
+                        {this.props.house.exteriorDetails &&
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
-                            {this.props.house.exteriorDetails &&
                             <h5>Exterior Details</h5>
-                            }
                             {this.props.house.exteriorDetails['Architecture'] &&
                             <p> Architecture: {this.props.house.exteriorDetails['Architecture']} </p>
                             }
@@ -172,6 +187,8 @@ class HousePage extends Component {
                             <p> Roof: {this.props.house.exteriorDetails['Roof']} </p>
                             }
                         </article>
+                        }
+                        {this.props.house.interiorDetails &&
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
 
                             <h5>Interior Details</h5>
@@ -206,6 +223,8 @@ class HousePage extends Component {
                             <p> Window Type: {this.props.house.interiorDetails['Window Type']} </p>
                             }
                         </article>
+                        }
+                        {this.props.house.utilities &&
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                             <h5>Utilities</h5>
                             {this.props.house.utilities['Cable Wiring'] &&
@@ -230,6 +249,8 @@ class HousePage extends Component {
                             <p> Water: {this.props.house.utilities['Water']} </p>
                             }
                         </article>
+                        }
+                        {this.props.house.taxes &&
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                             <h5>Taxes</h5>
                             {this.props.house.taxes['Tax Amount'] &&
@@ -239,15 +260,16 @@ class HousePage extends Component {
                             <p> Tax Year: {this.props.house.taxes['Tax Year']} </p>
                             }
                         </article>
+                        }
 
-                        <article style={{margin:'0px 10px',paddingBottom:16}}>
-                            {this.props.house.agent &&
+                        {this.props.house.agent &&
+                        <article style={{margin: '0px 10px', paddingBottom: 16}}>
                             <p>
                                 Listing
                                 Broker: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
                             </p>
-                            }
                         </article>
+                        }
 
                     </Card>
                 </div>
