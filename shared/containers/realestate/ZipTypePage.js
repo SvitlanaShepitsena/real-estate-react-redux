@@ -73,7 +73,7 @@ class ZipTypePage extends Component {
                                     <li style={{marginBottom:16,padding:0}}
                                         key={house.mls + house.city}>
                                         <Link
-                                            to={this.props.location.pathname+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-').replace(/-+/g,'-')}>
+                                            to={'/houses-for-'+saleRent+'/'+house.address.city.trim().replace(/\s+/g,'-').toLowerCase()+'/'+house.address.zip+'/'+house.address.street.toLowerCase().replace(/[\.\,]/g,'').replace(/[\s+]/g,'-').replace(/-+/g,'-')}>
                                             <ListingThumbCard house={house}/></Link>
                                     </li>
                                 );
