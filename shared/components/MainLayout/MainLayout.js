@@ -29,7 +29,6 @@ export default class MainLayout extends Component {
                         <Link to="/houses-for-sale" className='MainLayout__drawer-nav-link'> houses for sale </Link>
                         <Link to="/apartments-for-rent" className='MainLayout__drawer-nav-link'> apartments for
                             rent </Link>
-                        <Link to="/projects" className='MainLayout__drawer-nav-link'>projects</Link>
                         <Link to="/about" className='MainLayout__drawer-nav-link'>about us</Link>
                         <Link to="/contacts" className='MainLayout__drawer-nav-link'>contact</Link>
                     </Navigation>
