@@ -19,7 +19,7 @@ class ArticlesPageContainer extends Component {
         isSharing: false
     };
 
-    handleQuizCardClick = (article) => {
+    handleArticleClick = (article) => {
         this.props.history.pushState(null, `/articles/${article.id}`, {
             embed: this.props.location.query.embed,
             assigneeId: this.props.location.query.assigneeId
@@ -52,9 +52,6 @@ class ArticlesPageContainer extends Component {
         const currentQuery = this.props.location.query;
         const nextQuery = nextProps.location.query;
 
-
-
-
     }
 
     render() {
@@ -68,7 +65,7 @@ class ArticlesPageContainer extends Component {
                 isEmbedded={this.props.location.query.embed}
                 isLoading={this.props.isLoading}
                 isEmpty={this.props.articles.length === 0}
-                onItemClick={this.handleQuizCardClick}
+                onItemClick={this.handleArticleClick}
                 onTabChange={this.handleTabChange}
             />
         );

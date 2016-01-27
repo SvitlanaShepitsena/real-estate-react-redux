@@ -22,24 +22,6 @@ class HousesForSalePageContainer extends Component {
         isSharing: false
     };
 
-    handleQuizCardClick = (article) => {
-        this.props.history.pushState(null, `/articles/${article.id}`, {
-            embed: this.props.location.query.embed,
-            assigneeId: this.props.location.query.assigneeId
-        });
-
-        sendEvent('article card', 'view details');
-    };
-
-    handleTabChange = (category) => {
-        this.props.history.pushState(null, this.props.location.pathname, {
-            ...this.props.location.query,
-            category: category !== 'ALL' ? category : undefined
-        });
-
-        sendEvent('articles page', 'category', category);
-    };
-
     componentDidMount() {
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         this.props.getCitiesIfNeeded(this.saleRent);
@@ -64,8 +46,7 @@ class HousesForSalePageContainer extends Component {
                                     col={4}
                                     key={city}>
                                     <Link to={this.props.location.pathname+ '/'+ city}
-                                          style={{textDecoration:'none', color:'#393939',fontSize:18}}
-                                    >
+                                          style={{textDecoration:'none', color:'#393939',fontSize:18}}>
                                         {_.startCase(city.replace(/-+/, ' '))}
                                     </Link>
                                 </Cell>
