@@ -47,17 +47,14 @@ class HousePage extends Component {
                         </li>
                         <li style={{display:'inline-block'}}>
                             <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                  to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}`}
-                            >
+                                  to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}`}>
                                 {_.startCase(this.props.house.address.city)}
                             </Link>
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
                             <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                  to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}/${zipType}`}
-                            >
-                                {this.props.params.zipType}
+                                  to={`/houses-for-${saleRent}/${city.toLowerCase().replace(/\s+/g, '-')}/${zipType}`}> {this.props.params.zipType}
                             </Link>
                             <span> / </span>
                         </li>
@@ -72,7 +69,9 @@ class HousePage extends Component {
                         <ul style={{listStyle:'none',padding:0}}>
                             <li style={{display:'block',float:'left', padding:'0px 16px'}}>
                                 <h4 style={{fontSize:22,marginBottom:5}}>
+                                    {this.props.house.address.street &&
                                     <span>{this.props.house.address.street}</span>
+                                    }
                                     <br/>
                                     <span>
                                     {this.props.house.address.city + ", " + this.props.house.address.state }
@@ -88,12 +87,27 @@ class HousePage extends Component {
                                 <h4>
                                     ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
                                 </h4>
-                                <p>
+                                {this.props.house.shortSale &&
+                                <div>
+                                    Short Sale
+                                </div>
+                                }
+                                {this.props.house.foreclosure &&
+                                <div>
+                                    Foreclosure
+                                </div>
+                                }
+                                {this.props.house.bankOwned &&
+                                <div>
+                                    Bank Owned
+                                </div>
+                                }
+                                <div>
                                     MLS#: {this.props.house.mls}
-                                </p>
-                                <p>
+                                </div>
+                                <div>
                                     Year: {this.props.house.year}
-                                </p>
+                                </div>
                             </li>
                         </ul>
                         <div>
@@ -113,6 +127,23 @@ class HousePage extends Component {
                             }
                         </article>
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                            <h5>Key Facts:</h5>
+                            {this.props.house.type &&
+                            <p> Type: {this.props.house.type}
+                            </p>
+                            }
+                            {this.props.house.exteriorDetails['Lot Size'] &&
+                            <p> Lot Size: {this.props.house.exteriorDetails['Lot Size']} </p>
+                            }
+                            {this.props.house.price &&
+                            <p> Price:
+                                ${this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")}
+                            </p>
+                            }
+                            {this.props.house.year &&
+                            <p> Year Built: {this.props.house.year}
+                            </p>
+                            }
                             {this.props.house.beds &&
                             <p> Beds: {this.props.house.beds}
                             </p>
@@ -120,6 +151,9 @@ class HousePage extends Component {
                             {this.props.house.bath &&
                             <p> Baths: {this.props.house.bath}
                             </p>
+                            }
+                            {this.props.house.exteriorDetails['Parking'] &&
+                            <p> Parking: {this.props.house.exteriorDetails['Parking']} </p>
                             }
                         </article>
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
@@ -183,12 +217,45 @@ class HousePage extends Component {
                         </article>
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                             <h5>Utilities</h5>
+                            {this.props.house.utilities['Cable Wiring'] &&
+                            <p> Cable Wiring: {this.props.house.utilities['Cable Wiring']} </p>
+                            }
+                            {this.props.house.utilities['Cooler'] &&
+                            <p> Cooler: {this.props.house.utilities['Cooler']} </p>
+                            }
+                            {this.props.house.utilities['Cooling'] &&
+                            <p> Cooling: {this.props.house.utilities['Cooling']} </p>
+                            }
+                            {this.props.house.utilities['Electrical'] &&
+                            <p> Electrical: {this.props.house.utilities['Electrical']} </p>
+                            }
+                            {this.props.house.utilities['Heating'] &&
+                            <p> Heating: {this.props.house.utilities['Heating']} </p>
+                            }
+                            {this.props.house.utilities['Sewing'] &&
+                            <p> Sewing: {this.props.house.utilities['Sewing']} </p>
+                            }
+                            {this.props.house.utilities['Water'] &&
+                            <p> Water: {this.props.house.utilities['Water']} </p>
+                            }
+                        </article>
+                        <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                            <h5>Taxes</h5>
+                            {this.props.house.taxes['Tax Amount'] &&
+                            <p> Tax Amount: {this.props.house.taxes['Tax Amount']} </p>
+                            }
+                            {this.props.house.taxes['Tax Year'] &&
+                            <p> Tax Year: {this.props.house.taxes['Tax Year']} </p>
+                            }
                         </article>
 
-                        <article style={{margin:'0px 10px', textAlign:'right',paddingBottom:16, fontSize:13}}>
-                            <span>
-                                Listing Broker: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
-                            </span>
+                        <article style={{margin:'0px 10px',paddingBottom:16}}>
+                            {this.props.house.agent &&
+                            <p>
+                                Listing
+                                Broker: {this.props.house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
+                            </p>
+                            }
                         </article>
 
                     </Card>
