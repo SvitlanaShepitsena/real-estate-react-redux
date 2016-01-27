@@ -59,7 +59,7 @@ class ZipTypePage extends Component {
                             </li>
                             <li style={{display:'inline-block'}}>
                             <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
-                                {this.props.params.zipType}
+                                {_.startCase(this.props.params.zipType)}
                             </span>
                             </li>
                         </ul>
