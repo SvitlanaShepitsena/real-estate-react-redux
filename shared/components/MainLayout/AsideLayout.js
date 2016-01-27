@@ -26,6 +26,7 @@ export default class AsideLayout extends Component {
                         phone={12}>
                         <aside style={{padding:"0px 8px"}}>
                             <div style={{textAlign:'center'}}>
+                                <ContactAgent/>
                             </div>
                         </aside>
                     </Cell>
