@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import strformat                       from 'strformat';
-import escapeHTML                      from 'lodash/string/escape';
 
 import LoginDialog from '../components/LoginDialog/LoginDialog.js';
 import {socialAuthURL, emailAuthURL} from '../config';
@@ -25,15 +24,6 @@ export default class LoginDialogSmartContainer extends Component {
         sendEvent('user', 'login', type);
     };
 
-    handleEmailLogin = (type) => {
-        const {getLocale} = this.context.i18n;
-        const redirectURL = strformat(emailAuthURL, {
-            lang: getLocale().toLowerCase(),
-            continueRoute: escapeHTML(`/companywall${window.location.pathname}`)
-        });
-        this.openLink(redirectURL);
-        sendEvent('user', 'login', type);
-    };
 
     openLink = (URL) => {
         window.open(URL, '_self');

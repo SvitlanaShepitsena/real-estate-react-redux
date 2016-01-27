@@ -31,7 +31,7 @@ class cityPage extends Component {
         let cityInfo = nextProps.cityInfo;
         let types = [];
         _.values(_.values(cityInfo)).forEach(zip=> {
-            let houses = (_.pluck(_.values(zip), 'type'));
+            let houses = (_.map(_.values(zip), 'type'));
             types = _.union(houses, types);
         });
         this.types = types.map(type=>type+'s');
@@ -118,7 +118,7 @@ class cityPage extends Component {
 
                                                 <h5 style={{marginTop:0,fontSize:15, fontWeight:500}} key={type}>
                                                     <Link
-                                                        to={this.props.location.pathname+'/'+type.replace(/\s+/,'-').toLowerCase()}
+                                                        to={this.props.location.pathname+'/'+type.replace(/\s+/g,'-').toLowerCase()}
                                                         style={{color: '#393939',textDecoration:'none'}}
                                                     >
                                                         {type}
