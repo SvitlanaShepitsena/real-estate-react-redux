@@ -126,7 +126,6 @@ class HousePage extends Component {
                             {this.props.house.exteriorDetails &&
                             <h5>Exterior Details</h5>
                             }
-
                             {this.props.house.exteriorDetails['Architecture'] &&
                             <p> Architecture: {this.props.house.exteriorDetails['Architecture']} </p>
                             }
@@ -151,6 +150,36 @@ class HousePage extends Component {
                         </article>
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                             <h5>Interior Details</h5>
+                            {this.props.house.interiorDetails['Appliances'] &&
+                            <p> Appliances: {this.props.house.interiorDetails['Appliances']} </p>
+                            }
+                            {this.props.house.interiorDetails['Basement'] &&
+                            <p> Basement: {this.props.house.interiorDetails['Basement']} </p>
+                            }
+                            {this.props.house.interiorDetails['Master Bedroom'] &&
+                            <p> Master Bedroom: {this.props.house.interiorDetails['Master Bedroom']} </p>
+                            }
+                            {this.props.house.interiorDetails['Bedroom 2'] &&
+                            <p> Bedroom 2: {this.props.house.interiorDetails['Bedroom 2']} </p>
+                            }
+                            {this.props.house.interiorDetails['Bedroom 3'] &&
+                            <p> Bedroom 3: {this.props.house.interiorDetails['Bedroom 3']} </p>
+                            }
+                            {this.props.house.interiorDetails['Dining Area'] &&
+                            <p> Dining Area: {this.props.house.interiorDetails['Dining Area']} </p>
+                            }
+                            {this.props.house.interiorDetails['Dining Room'] &&
+                            <p> Dining Room: {this.props.house.interiorDetails['Dining Room']} </p>
+                            }
+                            {this.props.house.interiorDetails['Kitchen'] &&
+                            <p> Kitchen: {this.props.house.interiorDetails['Kitchen']} </p>
+                            }
+                            {this.props.house.interiorDetails['Laundry Room'] &&
+                            <p> Laundry Room: {this.props.house.interiorDetails['Laundry Room']} </p>
+                            }
+                            {this.props.house.interiorDetails['Window Type'] &&
+                            <p> Window Type: {this.props.house.interiorDetails['Window Type']} </p>
+                            }
                         </article>
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
                             <h5>Utilities</h5>
