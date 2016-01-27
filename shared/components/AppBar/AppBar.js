@@ -73,7 +73,7 @@ class AppBar extends Component {
                     onRequestClose={this.handleLoginDialogClose}
                 />
                 <Navigation className="AppBar__right">
-                    <div >
+                    <div>
                         <Link to="/houses-for-sale" className='AppBar__menu-item-nav'> houses for sale </Link>
                     </div>
                     <div >

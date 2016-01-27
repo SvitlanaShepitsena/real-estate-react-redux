@@ -42,14 +42,7 @@ export default class FooterSmartContainer extends Component {
 
     render() {
         return (
-            <Footer
-                links={this.links}
-                showShareDialog={this.state.showShareDialog}
-                linkToShare={this.linkToShare}
-                onLinkClick={this.handleLinkClick}
-                onShareClick={this.handleShare}
-                onShareClose={this.handleShareClose}
-            />
+            <Footer></Footer>
         );
     }
 
