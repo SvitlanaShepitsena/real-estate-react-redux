@@ -58,9 +58,12 @@ class cityPage extends Component {
                     <ul
                         style={{listStyle:'none', margin:'0px', padding:'0px'}}>
                         <li style={{display:'inline-block'}}>
-                            <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to="/houses-for-sale">Houses
+                            {saleRent=='sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to="/houses-for-sale">Houses
                                 For Sale
-                            </Link>
+                            </Link>}
+                            {saleRent=='rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to="/apartments-for-rent">Apartments
+                                For Rent
+                            </Link>}
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
