@@ -8,7 +8,7 @@ import React                     from 'react';
 import ReactDOM                  from 'react-dom/server';
 import {Provider}              from 'react-redux';
 import {RoutingContext, match} from 'react-router';
-import escapeHTML                from 'lodash/string/escape';
+import _                from 'lodash';
 import Helmet from "react-helmet";
 
 import passportConfig from './config/passport';
@@ -149,7 +149,7 @@ function renderHTML(helmet, {componentHTML, initialState, metaData, config}) {
             <link rel="shortcut icon" href="/static/favicon.ico"/>
             ${helmet.title}
             ${helmet.meta}
-            <meta property="fb:app_id" content="${escapeHTML(config.facebookAppId)}" />
+            <meta property="fb:app_id" content="${_.escape(config.facebookAppId)}" />
 
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default function promiseMiddleware() {
     return next => action => {
 
@@ -19,7 +21,10 @@ export default function promiseMiddleware() {
                     if (filter.match(/\d+/g)) {
 
                         items = _.toArray(items[filter]);
-                        console.log(items);
+                    } else {
+                        //    filter by propTypes
+                        let filter2 = filter.substr(0, filter.length - 1).toLowerCase().replace(/-+/g, ' ');
+                        items = _.filter(_.flatten((_.values(items).map(zip=>_.values(zip)))), home=>home.type.toLowerCase() == filter2);
                     }
                 }
                 next({items, type: SUCCESS});
