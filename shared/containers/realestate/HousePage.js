@@ -204,7 +204,7 @@ class HousePage extends Component {
                                 {this.props.house.interiorDetails['Kitchen'] &&
                                 <p> Kitchen: {this.props.house.interiorDetails['Kitchen']} </p>
                                 }
-                                {this.props.house.interiorDetails['Laundry Room'] &&
+                                {this.props.house.interiorDetails['Laundry Room'] &
                                 <p> Laundry Room: {this.props.house.interiorDetails['Laundry Room']} </p>
                                 }
                                 {this.props.house.interiorDetails['Window Type'] &&
@@ -225,7 +225,7 @@ class HousePage extends Component {
                                             return (
                                                 <li key={util}>
                                                     <span>
-                                                        {util+ ": "}
+                                                        {util + ": "}
                                                     </span>
                                                     <span>
                                                         {val}
@@ -234,9 +234,7 @@ class HousePage extends Component {
                                             );
                                         })
                                     }
-
                                 </ul>
-
                             </article>
                         }
                         {
