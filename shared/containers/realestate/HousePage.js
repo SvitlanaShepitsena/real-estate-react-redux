@@ -173,6 +173,7 @@ class HousePage extends Component {
                             }
                         </article>
                         <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+
                             <h5>Interior Details</h5>
                             {this.props.house.interiorDetails['Appliances'] &&
                             <p> Appliances: {this.props.house.interiorDetails['Appliances']} </p>
