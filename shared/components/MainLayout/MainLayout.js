@@ -28,7 +28,7 @@ export default class MainLayout extends Component {
         const {l} = this.context.i18n;
 
         return (
-            <Layout fixedHeader style={{minHeight: '500px',height:"auto", position: 'relative'}}>
+            <Layout fixedHeader className="MainLayout">
                 <AppBar />
                 <Drawer onClick={this.toggleDrawer.bind(this)}>
                     <Navigation>
