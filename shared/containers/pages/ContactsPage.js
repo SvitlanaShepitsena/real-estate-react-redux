@@ -24,7 +24,6 @@ export default class ContactsPage extends React.Component {
                     {"property": "og:title", "content": `${contacts.title}`},
                     {"property": "og:image", "content": `${contacts.image}`},
                     {"property": "og:description", "content": `${contacts.description}`},
-                    {"property": "description", "content": `${contacts.description}`}
                 ]}
                 />
                 <h1 style={{fontSize:34}}>

@@ -18,12 +18,12 @@ export default class HomePage extends React.Component {
                     title={appTitle}
 
                     meta={[
+                    {"property": "description", "content":  `${home.description}`},
                     {"property": "og:url", "content": `${appUrl}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${appTitle}`},
                     {"property": "og:image", "content": `${home.image}`},
-                    {"property": "og:description", "content": `${home.description}`},
-                    {"property": "description", "content":  `${home.description}`}
+                    {"property": "og:description", "content": `${home.description}`}
                 ]}
                 />
                 <HomeContent></HomeContent>

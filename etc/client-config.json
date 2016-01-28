@@ -2,7 +2,7 @@
   "apiPrefix": "http://localhost:3001/api",
   "backgroundImagesPrefix": "http://localhost:3001/tutorials",
   "staticUrl": "http://localhost:8050",
-  "appTitle": "Re/Max 1st Class Realty, Skokie, IL",
+  "appTitle": "Re/Max 1st Class Realty, Skokie Homes for Sale, Skokie Real Estate",
   "appType": "website",
   "appUrl": "https://real-estate-redux.herokuapp.com",
   "appImage": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
@@ -31,7 +31,6 @@
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "First class agents for buyers and sellers. Call us for a free consultation!"
     },
-    
     "privacyPolicyPage": {
       "url": "http://localhost:3001/contacts",
       "title": "Re/Max 1st Class Privacy Policy",

@@ -20,6 +20,7 @@ export default class AboutPage extends React.Component {
                     title={about.title}
                     description={about.description}
                     meta={[
+                    {"property": "description", "content": `${about.description}`},
                     {"property": "og:url", "content": `${about.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${about.title}`},
