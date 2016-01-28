@@ -1,6 +1,9 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
+import Helmet from 'react-helmet';
+import {appType, ogProps} from "../../config.js";
+
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
 import _ from 'lodash';
@@ -42,11 +45,22 @@ class cityPage extends Component {
 
     render() {
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
-
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
+        const city = ogProps.cityPage;
         return (
             <div>
+                <Helmet
+                    title={city.title}
+                    meta={[
+                    {"property": "og:url", "content": `${city.url}`},
+                    {"property": "og:type", "content": `${appType}`},
+                    {"property": "og:title", "content": `${city.title}`},
+                    {"property": "og:image", "content": `${city.image}`},
+                    {"property": "og:description", "content": `${city.description}`}
+                ]}
+                />
+
                 {this.props.params.zipType &&
                 <div>
                     {this.props.children}

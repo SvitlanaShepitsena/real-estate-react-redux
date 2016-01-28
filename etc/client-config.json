@@ -54,6 +54,12 @@
       "title": "Northern Illinois Houses for Sale",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "Browse Houses for sale at North and Northwest Chicago Suburbs. Detailed listing information with large photos. "
+    },
+    "cityPage": {
+      "url": "http://localhost:3001/apartments-for-sale",
+      "title": "North Chicago Suburbs Properties",
+      "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
+      "description": "Find a listing by zip Codes or Property Type. "
     }
   },
   "footerLinks": {
