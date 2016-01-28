@@ -58,7 +58,8 @@ class cityPage extends Component {
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${cityOg.title}`},
                     {"property": "og:image", "content": `${cityOg.image}`},
-                    {"property": "og:description", "content": `${cityOg.description}`}
+                    {"property": "og:description", "content": `${cityOg.description}`},
+                    {"property": "description", "content": `${cityOg.description}`}
                 ]}
                 />
                 {this.props.params.zipType &&

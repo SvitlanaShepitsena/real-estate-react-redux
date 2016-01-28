@@ -19,7 +19,8 @@ export default class TermsOfUsePage extends React.Component {
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${terms.title}`},
                     {"property": "og:image", "content": `${terms.image}`},
-                    {"property": "og:description", "content": `${terms.description}`}
+                    {"property": "og:description", "content": `${terms.description}`},
+                    {"property": "description", "content": `${terms.description}`}
                 ]}
                 />
                 <h1 style={{fontSize:34}}>Re/Max 1st Class Terms of Use</h1>

@@ -2,7 +2,7 @@
   "apiPrefix": "http://localhost:3001/api",
   "backgroundImagesPrefix": "http://localhost:3001/tutorials",
   "staticUrl": "http://localhost:8050",
-  "appTitle": "Re/Max 1st Class",
+  "appTitle": "Re/Max 1st Class Realty, Skokie, IL",
   "appType": "website",
   "appUrl": "https://real-estate-redux.herokuapp.com",
   "appImage": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
