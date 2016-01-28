@@ -30,21 +30,23 @@ export default (
             <Route component={HomePage} path='/'/>
             <Route component={AsideLayout}>
 
-                <Route component={HousesForSalePageContainer} path='/houses-for-sale'>
-                    <Route component={CityPage} path=':city'>
-                        <Route component={ZipTypePage} path=':zipType'>
-                            <Route component={HousePage} path=':street'/>
-                        </Route>
-                    </Route>
-                </Route>
+                /*Sale*/
+                <Route component={HousePage} path='/houses-for-sale/:city/:zipType/:street'/>
+                <Route component={ZipTypePage} path='/houses-for-sale/:city/:zipType'/>
+                <Route component={CityPage} path='/houses-for-sale/:city'/>
+                <Route component={HousesForSalePageContainer} path='/houses-for-sale'/>
 
-                <Route component={HousesForRentPageContainer} path='/apartments-for-rent'>
-                    <Route component={CityPage} path=':city'>
-                        <Route component={ZipTypePage} path=':zipType'>
-                            <Route component={HousePage} path=':street'/>
-                        </Route>
-                    </Route>
-                </Route>
+
+                /*Rent*/
+                <Route component={HousePage} path='/apartments-for-rent/:city/:zipType/:street'/>
+                <Route component={ZipTypePage} path='/apartments-for-rent/:city/:zipType'/>
+                <Route component={CityPage} path='/apartments-for-rent/:city'/>
+                <Route component={HousesForSalePageContainer} path='/apartments-for-rent'/>
+
+
+
+
+
                 <Route component={ArticlesPageContainer} path='/blog'/>
                 <Route component={TermsOfUsePageContainer} path='/terms-of-use'/>
                 <Route component={PrivacyPolicyPageContainer} path='/privacy-policy'/>
