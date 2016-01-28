@@ -33,11 +33,12 @@ class HousePage extends Component {
         const house = this.props.house;
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let zipType = this.props.params.zipType;
+        let street = this.props.params.street.replace(/-+/g, '-');
 
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         const cityOg = ogProps.cityPage;
 
-        let saleTitle = city + ", " + zipType;
+        let saleTitle = city + ", " + zipType + ", " + street;
         let rentTitle = "Rent Title";
 
         return (
