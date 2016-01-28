@@ -24,6 +24,7 @@ class HousesForRentPageContainer extends Component {
         this.cities = _.keys(nextProps.cities);
     }
 
+
     render() {
         const rent = ogProps.housesForRentPage;
         return (
