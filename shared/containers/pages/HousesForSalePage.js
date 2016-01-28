@@ -51,13 +51,13 @@ class HousesForSalePageContainer extends Component {
                     {"property": "og:description", "content": `${sale.description}`}
                 ]}
                 />
-                {!this.props.params.city && this.cities &&
+                {!this.props.params.city &&
                 <div>
-                    <h1 style={{fontSize:34}}>Chicago North
-                        Suburbs {this.saleRent === 'sale' ? "Houses for Sale" : 'Apartments for Rent'} </h1>
+                    <h1 style={{fontSize:34}}>Chicago North Suburbs Houses for Sale </h1>
                     <hr/>
+                    {this.props.cities &&
                     <Grid>
-                        {this.cities.map(city=> {
+                        {Object.keys(this.props.cities).map(city=> {
                             return (
                                 <Cell
                                     col={4}
@@ -69,7 +69,7 @@ class HousesForSalePageContainer extends Component {
                                 </Cell>
                             );
                         })}
-                    </Grid>
+                    </Grid>}
                 </div>
                 }
 
