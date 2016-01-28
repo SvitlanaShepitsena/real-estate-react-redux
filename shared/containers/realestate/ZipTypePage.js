@@ -1,8 +1,13 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import {connect}                   from 'react-redux';
-import strformat                     from 'strformat';
+import Helmet from 'react-helmet';
+import {AppUrl, fbImage, appType, ogProps} from "../../config.js";
+
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {Link} from 'react-router';
+
 import _ from 'lodash';
 
 import {Link} from 'react-router';
