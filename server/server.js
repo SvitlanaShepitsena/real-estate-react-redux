@@ -141,7 +141,7 @@ app.use((req, res) => {
 function renderHTML(helmet, {componentHTML, initialState, metaData, config}) {
     return `
         <!DOCTYPE html>
-        <html>
+        <html lang="en"  xml:lang="en">
 
         <head>
             <meta charset="utf-8">

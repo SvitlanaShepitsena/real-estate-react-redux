@@ -50,7 +50,7 @@ class AppBar extends Component {
         return (
             <div>
                 <Link to="/" style={{color:'white',textDecoration:'none'}}>
-                    <img src={LOGO_SRC} className='AppBar__logo'/>
+                    <img alt="Re/Max 1st Class Logo" src={LOGO_SRC} className='AppBar__logo'/>
                     <div className="AppBar__title">
                         Re/Max 1st Class
                     </div>
