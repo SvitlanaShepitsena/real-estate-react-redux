@@ -26,7 +26,7 @@ class HousePage extends Component {
         this.street = this.props.params.street.replace(/-+/g, '-');
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        this.props.getHouseIfNeeded(this.props.params,this.props.location);
+        this.props.getHouseIfNeeded(this.props.params, this.props.location);
     }
 
     render() {
@@ -38,23 +38,23 @@ class HousePage extends Component {
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         const cityOg = ogProps.cityPage;
 
-        let saleTitle = city + ", " + zipType + ", " + street;
-        let rentTitle = "Rent Title";
+        let ogTitle = ((house.address.street || '' )+ ", " + city + ", " + zipType);
+        console.log(ogTitle);
 
         return (
             <div style={{width:'100%'}}>
                 {saleRent == 'sale' &&
                 <Helmet
-                    title={saleTitle}
+                    title={ogTitle}
                     meta={[
                         {"name": "url", "content": `${cityOg.url}`},
                         {"name": "type", "content": `${appType}`},
-                        {"name": "title", "content": `${saleTitle}`},
+                        {"name": "title", "content": `${ogTitle}`},
                         {"name": "image", "content": `${fbImage}`},
                         {"name": "description", "content": `${cityOg.description}`},
                         {"property": "og:url", "content": `${cityOg.url}`},
                         {"property": "og:type", "content": `${appType}`},
-                        {"property": "og:title", "content": `${saleTitle}`},
+                        {"property": "og:title", "content": `${ogTitle}`},
                         {"property": "og:image", "content": `${fbImage}`},
                         {"property": "og:description", "content": `${cityOg.description}`}
                     ]}
@@ -62,16 +62,16 @@ class HousePage extends Component {
                 }
                 {saleRent == 'rent' &&
                 <Helmet
-                    title={rentTitle}
+                    title={ogTitle}
                     meta={[
                         {"name": "url", "content": `${cityOg.url}`},
                         {"name": "type", "content": `${appType}`},
-                        {"name": "title", "content": `${rentTitle}`},
+                        {"name": "title", "content": `${ogTitle}`},
                         {"name": "image", "content": `${fbImage}`},
                         {"name": "description", "content": `${cityOg.description}`},
                         {"property": "og:url", "content": `${cityOg.url}`},
                         {"property": "og:type", "content": `${appType}`},
-                        {"property": "og:title", "content": `${saleTitle}`},
+                        {"property": "og:title", "content": `${ogTitle}`},
                         {"property": "og:image", "content": `${fbImage}`},
                         {"property": "og:description", "content": `${cityOg.description}`}
                     ]}
@@ -249,9 +249,7 @@ class HousePage extends Component {
                                 <ul style={{fontSize: 16}}>
                                     {
                                         Object.keys(house.interiorDetails).map(intDetail => {
-                                            console.log(intDetail);
                                             const val = house.interiorDetails[intDetail];
-                                            console.log(val);
                                             return (
                                                 <li key={intDetail}>
                                                     <span>
@@ -274,9 +272,7 @@ class HousePage extends Component {
                                 <ul style={{fontSize: 16}}>
                                     {
                                         Object.keys(house.utilities).map(util => {
-                                            console.log(util);
                                             const val = house.utilities[util];
-                                            console.log(val);
                                             return (
                                                 <li key={util}>
                                                     <span>
@@ -299,9 +295,7 @@ class HousePage extends Component {
                                 <ul style={{fontSize: 16}}>
                                     {
                                         Object.keys(house.publicFacts).map(publicFact => {
-                                            console.log(publicFact);
                                             const val = house.publicFacts[publicFact];
-                                            console.log(val);
                                             return (
                                                 <li key={publicFact}>
                                                     <span>
@@ -324,9 +318,7 @@ class HousePage extends Component {
                                 <ul style={{fontSize: 16}}>
                                     {
                                         Object.keys(house.taxes).map(tax => {
-                                            console.log(tax);
                                             const val = house.taxes[tax];
-                                            console.log(val);
                                             return (
                                                 <li key={tax}>
                                                     <span>

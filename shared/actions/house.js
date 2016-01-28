@@ -8,7 +8,6 @@ export const HOUSE_GET_FAILURE = 'HOUSE_GET_FAILURE';
 
 /*Action Creator functions*/
 export function houseGet(saleRent, city, zip, street) {
-    console.log('run here house.js');
     return {
         type: HOUSE_GET,
         promise: request.get(`https://real-estate-react.firebaseio.com/${saleRent}/${city}/${zip}/${street}/.json`),

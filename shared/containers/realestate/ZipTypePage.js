@@ -4,14 +4,10 @@ import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
 import {AppUrl, fbImage, appType, ogProps} from "../../config.js";
 
-import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 
 import _ from 'lodash';
-
-import {Link} from 'react-router';
-import config                                 from '../../config';
 
 import {bindActionCreators} from 'redux';
 import * as housesActions from '../../actions/houses';
@@ -26,7 +22,7 @@ class ZipTypePage extends Component {
         this.city = this.props.params.city;
         this.zipType = this.props.params.zipType;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-        this.props.getHousesIfNeeded(this.props.params,this.props.location);
+        this.props.getHousesIfNeeded(this.props.params, this.props.location);
     }
 
     render() {
@@ -78,10 +74,14 @@ class ZipTypePage extends Component {
                                 <span> / </span>
                             </li>
                             <li style={{display:'inline-block'}}>
-                                {saleRent=='sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/houses-for-sale/${this.props.params.city}`}>
+                                {saleRent == 'sale' &&
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to={`/houses-for-sale/${this.props.params.city}`}>
                                     {city}
                                 </Link>}
-                                {saleRent=='rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to={`/apartments-for-rent/${this.props.params.city}`}>
+                                {saleRent == 'rent' &&
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to={`/apartments-for-rent/${this.props.params.city}`}>
                                     {city}
                                 </Link>}
                                 <span> / </span>
@@ -97,7 +97,7 @@ class ZipTypePage extends Component {
                         <hr/>
 
                         <ul style={{listStyle:'none',padding:0}}>
-                            {this.props.houses.map((house,index)=> {
+                            {this.props.houses.map((house, index)=> {
                                 return (
                                     <li style={{marginBottom:16,padding:0}}
                                         key={index}>
