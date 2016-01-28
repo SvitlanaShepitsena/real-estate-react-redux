@@ -224,9 +224,7 @@ class HousePage extends Component {
                                 <ul style={{fontSize: 16}}>
                                     {
                                         Object.keys(house.exteriorDetails).map(extDetail => {
-                                            console.log(extDetail);
                                             const val = house.exteriorDetails[extDetail];
-                                            console.log(val);
                                             return (
                                                 <li key={extDetail}>
                                                     <span>
