@@ -79,7 +79,6 @@ export default class TermsOfUsePage extends React.Component {
                 <section>
 
                     <h4>Applicable Law</h4>
-
                     <p className="ml mr">The Web Site is operated by RE/MAX 1ST CLASS from its office in Skokie,
                         Illinois U.S.A. As such,
                         the laws of the State of Illinois, U.S.A., will govern these Terms of Use, excluding any
