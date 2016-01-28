@@ -28,23 +28,26 @@ class HousePage extends Component {
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let zipType = this.props.params.zipType;
         let street = this.props.params.street.replace(/-+/g, '-');
-
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+
+        let price = house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
         const housePageOg = ogProps.cityPage;
 
-        let ogTitle = ("For Sale "+ house.address.street + ", " + house.address.city + ", " + house.address.zip);
+        let metaTitle = ("Re/Max 1st Class | " + house.type + " FOR SALE! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+        let ogTitle = ("Re/Max 1st Class ☆ " + house.type + " FOR SALE! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+
         console.log(ogTitle);
 
         return (
             <div style={{width:'100%'}}>
                 {saleRent == 'sale' &&
                 <Helmet
-                    title={ogTitle}
+                    title={metaTitle}
                     meta={[
                         {"name": "url", "content": `${housePageOg.url}`},
                         {"name": "type", "content": `${appType}`},
-                        {"name": "title", "content": `${ogTitle}`},
+                        {"name": "title", "content": `${metaTitle}`},
                         {"name": "image", "content": `${fbImage}`},
                         {"name": "description", "content": `${housePageOg.description}`},
                         {"property": "og:url", "content": `${housePageOg.url}`},
