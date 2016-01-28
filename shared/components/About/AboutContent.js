@@ -11,8 +11,7 @@ export default class AboutContent extends React.Component {
     render() {
         return (
             <div className="AboutContent">
-                <h1 style={{fontSize:34}}>Why Re/Max 1st Class Realty is worth to work with:
-                </h1>
+                <h1>Why Re/Max 1st Class Realty is worth to work with: </h1>
                 <hr/>
                 <article>
                     <p>

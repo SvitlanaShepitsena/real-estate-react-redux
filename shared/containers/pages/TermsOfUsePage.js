@@ -27,7 +27,7 @@ export default class TermsOfUsePage extends React.Component {
                     {"property": "og:description", "content": `${terms.description}`}
                 ]}
                 />
-                <h1 style={{fontSize:34}}>Re/Max 1st Class Terms of Use</h1>
+                <h1>Re/Max 1st Class Terms of Use</h1>
                 <hr/>
                 <h4 className="ml mr">Please Read Carefully before using remax1stclass.com</h4>
                 <section>
