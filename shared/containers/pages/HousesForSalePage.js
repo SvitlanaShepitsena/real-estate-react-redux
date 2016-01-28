@@ -1,17 +1,19 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import _ from 'lodash';
+import Helmet from "react-helmet";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+import {Link} from 'react-router';
+import config from '../../config';
+import {appType, ogProps} from "../../config.js";
+
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
-import {connect}                   from 'react-redux';
-import strformat                     from 'strformat';
-import {Link} from 'react-router';
-import config                                 from '../../config';
-import {sendEvent}                          from '../../utils/googleAnalytics';
-import CityCard from '../../components/City/CityCard';
+import _ from 'lodash';
 
-import {bindActionCreators} from 'redux';
+import CityCard from '../../components/City/CityCard';
 import * as citiesActions from '../../actions/cities';
 
 class HousesForSalePageContainer extends Component {
@@ -32,12 +34,24 @@ class HousesForSalePageContainer extends Component {
     }
 
     render() {
+        const sale = ogProps.housesForSalePage;
         return (
             <div style={{maxWidth:"100%"}}>
+                <Helmet
+                    title={sale.title}
+                    meta={[
+                    {"property": "og:url", "content": `${sale.url}`},
+                    {"property": "og:type", "content": `${appType}`},
+                    {"property": "og:title", "content": `${sale.title}`},
+                    {"property": "og:image", "content": `${sale.image}`},
+                    {"property": "og:description", "content": `${sale.description}`}
+                ]}
+                />
 
                 {!this.props.params.city && this.cities &&
                 <div>
-                    <h1 style={{fontSize:28}}>Chicago North Suburbs {this.saleRent==='sale'?"Houses for Sale":'Apartments for Rent'} </h1>
+                    <h1 style={{fontSize:28}}>Chicago North
+                        Suburbs {this.saleRent === 'sale' ? "Houses for Sale" : 'Apartments for Rent'} </h1>
                     <hr/>
                     <Grid>
                         {this.cities.map(city=> {
