@@ -6,7 +6,7 @@ import strformat   from 'strformat';
 import clientConfig                     from '../etc/client-config.json';
 import {getSupportedLocales, sprintf} from '../shared/utils';
 
-export function fetchComponentsData(dispatch, components, params, query) {
+export function fetchComponentsData(dispatch, components, params, location) {
     // Select components that have assync request for the specific route
     let needs = [];
     for (var i = 0; i < components.length; i++) {
@@ -17,7 +17,7 @@ export function fetchComponentsData(dispatch, components, params, query) {
         }
     }
     const promises = needs.map(need => {
-        return dispatch(need());
+        return dispatch(need(params,location));
     });
 
     return Promise.all(promises);

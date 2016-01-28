@@ -1,26 +1,30 @@
 'use strict';
 
+
 import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
-import {appUrl, fbImage, appType, ogProps} from "../../config.js";
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import {appType, ogProps} from "../../config.js";
 
-import strformat from 'strformat';
+import {connect}                   from 'react-redux';
+import strformat                     from 'strformat';
 import _ from 'lodash';
 
 import {Link} from 'react-router';
-import config from '../../config';
+import TypeLink from './TypeLink';
+
+import config                                 from '../../config';
 
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions, CardText} from 'react-mdl/lib/Card';
-/*Components*/
+
+import {bindActionCreators} from 'redux';
 import * as cityInfoActions from '../../actions/cityInfo';
 
 class cityPage extends Component {
     static contextTypes = {i18n: PropTypes.object};
 
     componentDidMount() {
+
         this.city = this.props.params.city;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
@@ -35,12 +39,15 @@ class cityPage extends Component {
             types = _.union(houses, types);
         });
         this.types = types.map(type=>type + 's');
+
         this.zips = _.keys(cityInfo);
+
     }
 
     render() {
         const cityOg = ogProps.cityPage;
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
+
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
         return (
@@ -48,15 +55,11 @@ class cityPage extends Component {
                 <Helmet
                     title={cityOg.title}
                     meta={[
-                    {"name": "url", "content": `${cityOg.url}`},
-                    {"name": "type", "content": `${appType}`},
-                    {"name": "title", "content": `${cityOg.title}`},
-                    {"name": "image", "content": `${fbImage}`},
-                    {"name": "description", "content": `${cityOg.description}`},
+                    {"property": "description", "content": `${cityOg.description}`},
                     {"property": "og:url", "content": `${cityOg.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${cityOg.title}`},
-                    {"property": "og:image", "content": `${fbImage}`},
+                    {"property": "og:image", "content": `${cityOg.image}`},
                     {"property": "og:description", "content": `${cityOg.description}`}
                 ]}
                 />
@@ -85,7 +88,7 @@ class cityPage extends Component {
                             </span>
                         </li>
                     </ul>
-                    <h1>
+                    <h1 style={{fontSize:32}}>
                         {_.startCase(city)} Houses for Sale </h1>
                     <hr/>
                     <Grid>

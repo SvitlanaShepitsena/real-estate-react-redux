@@ -102,7 +102,7 @@ app.use((req, res) => {
                     store.dispatch,
                     renderProps.components,
                     renderProps.params,
-                    renderProps.location.query
+                    renderProps.location
                 )
                     .then(() => {
                         const componentHTML = ReactDOM.renderToString(
