@@ -134,6 +134,7 @@ export default class PrivacyPolicyPage extends React.Component {
                         thereof by Re/Max 1st Class or of the provider of such content or services, or of any third
                         party web site. Re/Max
                         1st Class reserves the right to terminate any link or linking program at any time.</p>
+
                     <p class="ml mr">Please be aware that when you enter a third party web site, any information you
                         provide, including financial information, is subject to the <span class="ml"><Link
                             to="/terms-of-use">terms of
