@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import Helmet from 'react-helmet';
-import {appType, ogProps} from "../../config.js";
+import {fbImage, appType, ogProps} from "../../config.js";
 
 export default class PrivacyPolicyPage extends React.Component {
     constructor(props) {
@@ -18,12 +18,12 @@ export default class PrivacyPolicyPage extends React.Component {
                     {"name": "url", "content": `${privacy.url}`},
                     {"name": "type", "content": `${appType}`},
                     {"name": "title", "content": `${privacy.title}`},
-                    {"name": "image", "content": `${privacy.image}`},
+                    {"name": "image", "content": `${fbImage}`},
                     {"name": "description", "content": `${privacy.description}`},
                     {"property": "og:url", "content": `${privacy.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${privacy.title}`},
-                    {"property": "og:image", "content": `${privacy.image}`},
+                    {"property": "og:image", "content": `${fbImage}`},
                     {"property": "og:description", "content": `${privacy.description}`}
                 ]}
                 />

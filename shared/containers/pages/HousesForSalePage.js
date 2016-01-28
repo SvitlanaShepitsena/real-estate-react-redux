@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 import {Link} from 'react-router';
-import {appType, ogProps} from "../../config.js";
+import {fbImage, appType, ogProps} from "../../config.js";
 
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
@@ -42,12 +42,12 @@ class HousesForSalePageContainer extends Component {
                     {"name": "url", "content": `${sale.url}`},
                     {"name": "type", "content": `${appType}`},
                     {"name": "title", "content": `${sale.title}`},
-                    {"name": "image", "content": `${sale.image}`},
+                    {"name": "image", "content": `${fbImage}`},
                     {"name": "description", "content": `${sale.description}`},
                     {"property": "og:url", "content": `${sale.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${sale.title}`},
-                    {"property": "og:image", "content": `${sale.image}`},
+                    {"property": "og:image", "content": `${fbImage}`},
                     {"property": "og:description", "content": `${sale.description}`}
                 ]}
                 />

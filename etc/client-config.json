@@ -6,6 +6,7 @@
   "appType": "website",
   "appUrl": "https://real-estate-redux.herokuapp.com",
   "appImage": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
+  "fbImage": "http://res.cloudinary.com/svitlana/image/upload/v1454000457/1200-Remax-1st-class-logo_g8di8r.jpg",
   "loginUrl": "https://real-estate-redux.herokuapp.com",
   "embedOrigin": "https://real-estate-redux.herokuapp.com",
   "socialAuthURL": "https://real-estate-redux.herokuapp.com/auth/{socialType}",
@@ -21,37 +22,31 @@
     "aboutPage": {
       "url": "https://real-estate-redux.herokuapp.com/about",
       "title": "About Re/Max 1st Class Realty, Skokie, IL.",
-      "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
       "description": "Re/Max 1st Class Realty offers one stop service for home selling or purchase.We can help you find the right specialist to get the lowest mortgage rate and move you to your new home as fast as possible. Our clients always have all papers signed on time with all details covered."
     },
     "contactsPage": {
       "url": "https://real-estate-redux.herokuapp.com/contacts",
       "title": "Contact Re/Max 1st Class Realty Skokie, IL.",
-      "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
       "description": "First class agents for buyers and sellers. Call us for a free consultation!"
     },
     "privacyPolicyPage": {
       "url": "https://real-estate-redux.herokuapp.com/contacts",
       "title": "At Re/Max 1st Class your privacy is very important to us.",
-      "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
       "description": "The purpose of this privacy policy is to provide you with a description of the types of information we collect about you when you visit the Re/Max 1st Class Website, and how we use that information. "
     },
     "termsOfUsePage": {
       "url": "https://real-estate-redux.herokuapp.com/contacts",
       "title": "Please Read Carefully before using Re/Max 1st Class Realty Website.",
-      "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
       "description": "To promote a safe, non-offensive environment for all visitors to our website, we have established these Terms of Use."
     },
     "housesForRentPage": {
       "url": "https://real-estate-redux.herokuapp.com/apartments-for-rent",
       "title": "Northern Illinois Apartments for Rent.",
-      "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
       "description": "Find an Apartment for rent at North and Northwest Chicago Suburbs."
     },
     "housesForSalePage": {
       "url": "https://real-estate-redux.herokuapp.com/apartments-for-sale",
       "title": "Northern Illinois Houses for Sale.",
-      "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
       "description": "Browse Houses for sale at North and Northwest Chicago Suburbs. Detailed listing information with large photos. "
     },
     "cityPage": {

@@ -2,7 +2,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
-import {appType, ogProps} from "../../config.js";
+import {fbImage, appType, ogProps} from "../../config.js";
 
 import {connect}                   from 'react-redux';
 import strformat                     from 'strformat';
@@ -54,11 +54,15 @@ class cityPage extends Component {
                 <Helmet
                     title={cityOg.title}
                     meta={[
-                    {"property": "description", "content": `${cityOg.description}`},
+                    {"name": "url", "content": `${cityOg.url}`},
+                    {"name": "type", "content": `${appType}`},
+                    {"name": "title", "content": `${cityOg.title}`},
+                    {"name": "image", "content": `${fbImage}`},
+                    {"name": "description", "content": `${cityOg.description}`},
                     {"property": "og:url", "content": `${cityOg.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${cityOg.title}`},
-                    {"property": "og:image", "content": `${cityOg.image}`},
+                    {"property": "og:image", "content": `${fbImage}`},
                     {"property": "og:description", "content": `${cityOg.description}`}
                 ]}
                 />

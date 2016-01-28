@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import Helmet from 'react-helmet';
-import {appType, ogProps} from "../../config.js";
+import {fbImage, appType, ogProps} from "../../config.js";
 
 export default class TermsOfUsePage extends React.Component {
     constructor(props) {
@@ -18,12 +18,12 @@ export default class TermsOfUsePage extends React.Component {
                     {"name": "url", "content": `${terms.url}`},
                     {"name": "type", "content": `${appType}`},
                     {"name": "title", "content": `${terms.title}`},
-                    {"name": "image", "content": `${terms.image}`},
+                    {"name": "image", "content": `${fbImage}`},
                     {"name": "description", "content": `${terms.description}`},
                     {"property": "og:url", "content": `${terms.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${terms.title}`},
-                    {"property": "og:image", "content": `${terms.image}`},
+                    {"property": "og:image", "content": `${fbImage}`},
                     {"property": "og:description", "content": `${terms.description}`}
                 ]}
                 />

@@ -5,7 +5,7 @@ import Helmet from "react-helmet";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router';
-import {appType, ogProps} from "../../config.js";
+import {fbImage, appType, ogProps} from "../../config.js";
 
 import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
 import Grid, {Cell} from 'react-mdl/lib/Grid';
@@ -19,6 +19,7 @@ class HousesForRentPageContainer extends Component {
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         this.props.getCitiesIfNeeded(this.saleRent);
     }
+
     componentWillReceiveProps(nextProps) {
         this.cities = _.keys(nextProps.cities);
     }
@@ -33,12 +34,12 @@ class HousesForRentPageContainer extends Component {
                     {"name": "url", "content": `${rent.url}`},
                     {"name": "type", "content": `${appType}`},
                     {"name": "title", "content": `${rent.title}`},
-                    {"name": "image", "content": `${rent.image}`},
+                    {"name": "image", "content": `${fbImage}`},
                     {"name": "description", "content": `${rent.description}`},
                     {"property": "og:url", "content": `${rent.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${rent.title}`},
-                    {"property": "og:image", "content": `${rent.image}`},
+                    {"property": "og:image", "content": `${fbImage}`},
                     {"property": "og:description", "content": `${rent.description}`}
                 ]}
                 />

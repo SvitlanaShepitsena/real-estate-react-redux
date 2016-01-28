@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import ContactForm from '../../components/Contact/ContactForm.js';
-import {appType, ogProps} from "../../config.js";
+import {fbImage, appType, ogProps} from "../../config.js";
 
 export default class ContactsPage extends React.Component {
     // Constructor
@@ -21,12 +21,12 @@ export default class ContactsPage extends React.Component {
                     {"name": "url", "content": `${contacts.url}`},
                     {"name": "type", "content": `${appType}`},
                     {"name": "title", "content": `${contacts.title}`},
-                    {"name": "image", "content": `${contacts.image}`},
+                    {"name": "image", "content": `${fbImage}`},
                     {"name": "description", "content": `${contacts.description}`},
                     {"property": "og:url", "content": `${contacts.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${contacts.title}`},
-                    {"property": "og:image", "content": `${contacts.image}`},
+                    {"property": "og:image", "content": `${fbImage}`},
                     {"property": "og:description", "content": `${contacts.description}`}
                 ]}
                 />
