@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
+import Helmet from 'react-helmet';
+import {appType, ogProps} from "../../config.js";
 
 export default class PrivacyPolicyPage extends React.Component {
     // Constructor
@@ -10,14 +12,25 @@ export default class PrivacyPolicyPage extends React.Component {
     }
 
     render() {
+        const privacy = ogProps.privacyPolicyPage;
         return (
             <div>
+                <Helmet
+                    title={privacy.title}
+                    meta={[
+                    {"property": "og:url", "content": `${privacy.url}`},
+                    {"property": "og:type", "content": `${appType}`},
+                    {"property": "og:title", "content": `${privacy.title}`},
+                    {"property": "og:image", "content": `${privacy.image}`},
+                    {"property": "og:description", "content": `${privacy.description}`}
+                ]}
+                />
                 <h1>Re/Max 1st Class Privacy Policy</h1>
                 <hr/>
-                <h4 class="ml mr">Please Read Carefully before using remax1stclass.com</h4>
+                <h4 className="ml mr">Please Read Carefully before using remax1stclass.com</h4>
                 <section>
 
-                    <p class="ml mr">At Re/Max 1st Class your privacy is very important to us. The purpose of this
+                    <p className="ml mr">At Re/Max 1st Class your privacy is very important to us. The purpose of this
                         privacy
                         policy is to
                         provide you with a description of the types of information we collect about you when you visit
@@ -30,7 +43,8 @@ export default class PrivacyPolicyPage extends React.Component {
                         not use
                         the Web
                         Site.</p>
-                    <p class="ml mr">This policy only applies to information collected while you are on the Web Site.
+                    <p className="ml mr">This policy only applies to information collected while you are on the Web
+                        Site.
                         For
                         more
                         information on how the Web Site may redirect you to other web sites, please see the Links and
@@ -40,10 +54,11 @@ export default class PrivacyPolicyPage extends React.Component {
                 <section>
                     <h4>Information We Collect</h4>
 
-                    <p class="ml mr">We collect and store information that you voluntarily provide to us as well as data
+                    <p className="ml mr">We collect and store information that you voluntarily provide to us as well as
+                        data
                         related to your
                         Web Site visit and usage.</p>
-                    <p class="ml mr">We collect personally identifiable information (including, but not limited to,
+                    <p className="ml mr">We collect personally identifiable information (including, but not limited to,
                         name,
                         address and
                         phone number) that is voluntarily provided to us by you. For example, you voluntarily provide
@@ -51,7 +66,7 @@ export default class PrivacyPolicyPage extends React.Component {
                         identifiable information when you send us an email, use certain features of the Web Site such as
                         registering or
                         the "Contact an Agent" feature or participate in a survey or sweepstakes.</p>
-                    <p class="ml mr">In addition, during your visit we automatically collect certain aggregate
+                    <p className="ml mr">In addition, during your visit we automatically collect certain aggregate
                         information
                         related to
                         your Web Site visit. Aggregate information is non-personally identifiable or anonymous
@@ -68,7 +83,8 @@ export default class PrivacyPolicyPage extends React.Component {
                 <section>
                     <h4>Use of Cookies</h4>
 
-                    <p class="ml mr">Cookies are simple text files stored on your computer for use by a browser. Certain
+                    <p className="ml mr">Cookies are simple text files stored on your computer for use by a browser.
+                        Certain
                         Web
                         Site
                         features may only be available through the placement of a cookie. We may use cookies to assist
@@ -88,7 +104,8 @@ export default class PrivacyPolicyPage extends React.Component {
                 <section>
                     <h4>How We Use Information</h4>
 
-                    <p class="ml mr">We use collected information to make available and to improve our high standard of
+                    <p className="ml mr">We use collected information to make available and to improve our high standard
+                        of
                         reliable
                         services. We use such information to: respond to inquiries or service requests and monitor such
                         responses;
@@ -97,14 +114,14 @@ export default class PrivacyPolicyPage extends React.Component {
                 <section>
                     <h4>Disclosure of Information</h4>
 
-                    <p class="ml mr">We do not sell or rent personally identifiable information to any third. We may
+                    <p className="ml mr">We do not sell or rent personally identifiable information to any third. We may
                         disclose personally
                         identifiable information to appropriate affiliates of RE/MAX, including strategic alliance
                         affiliates and third
                         party service providers, to respond to a request for service or to provide information about
                         available products
                         or services.</p>
-                    <p class="ml mr">We may share non-personally identifiable information with certain third parties
+                    <p className="ml mr">We may share non-personally identifiable information with certain third parties
                         including marketing
                         partners, national industry organizations, and prospective affiliates. We may provide such
                         information as part
@@ -121,10 +138,12 @@ export default class PrivacyPolicyPage extends React.Component {
                 <section>
                     <h4>Links and Redirection to Third Party Sites</h4>
 
-                    <p class="ml mr">The Web Site contains links to third party web sites and may redirect you to third
+                    <p className="ml mr">The Web Site contains links to third party web sites and may redirect you to
+                        third
                         party web sites
                         ("Third Party Sites").</p>
-                    <p class="ml mr">Third Party Sites are not under the control of Re/Max 1st Class, remax1stclass.com
+                    <p className="ml mr">Third Party Sites are not under the control of Re/Max 1st Class,
+                        remax1stclass.com
                         is
                         not
                         responsible for such Third Party Sites, including without limitation the accuracy, sufficiency,
@@ -138,22 +157,22 @@ export default class PrivacyPolicyPage extends React.Component {
                         1st
                         Class
                         reserves the right to terminate any link or linking program at any time.</p>
-                    <p class="ml mr">Please be aware that when you enter a third party web site, any information you
+                    <p className="ml mr">Please be aware that when you enter a third party web site, any information you
                         provide, including
-                        financial information, is subject to the <span class="ml"><Link to="/terms-of-use">terms of
-                            use</Link></span><span class="ml"> and privacy policy of that site.</span></p>
+                        financial information, is subject to the <span className="ml"><Link to="/terms-of-use">terms of
+                            use</Link></span><span className="ml"> and privacy policy of that site.</span></p>
                 </section>
                 <section>
                     <h4>Children’s Privacy</h4>
 
-                    <p class="ml mr">This Web site is not directed toward children, and we do not knowingly collect
+                    <p className="ml mr">This Web site is not directed toward children, and we do not knowingly collect
                         information from
                         children.</p>
                 </section>
                 <section>
                     <h4>Effective Date; Policy Changes</h4>
 
-                    <p class="ml mr">Each time you use the Web Site, the current version of the policy will apply.
+                    <p className="ml mr">Each time you use the Web Site, the current version of the policy will apply.
                         Accordingly, when you
                         use the Web Site, you should check the date of this policy (which appears at the top of the
                         policy)
@@ -169,14 +188,16 @@ export default class PrivacyPolicyPage extends React.Component {
                 <section>
                     <h4>Lost or Stolen Information</h4>
 
-                    <p class="ml mr">You must promptly notify us if you become aware that any information provided by or
+                    <p className="ml mr">You must promptly notify us if you become aware that any information provided
+                        by or
                         submitted to
                         this Web Site is lost, stolen, or used without permission.</p>
                 </section>
                 <section>
                     <h4>Limitation of Liability</h4>
 
-                    <p class="ml mr">UNDER NO CIRCUMSTANCES SHALL RE/MAX 1ST CLASS LIABLE FOR ANY DAMAGES (INCLUDING,
+                    <p className="ml mr">UNDER NO CIRCUMSTANCES SHALL RE/MAX 1ST CLASS LIABLE FOR ANY DAMAGES
+                        (INCLUDING,
                         BUT
                         NOT LIMITED TO
                         DIRECT, INDIRECT, PUNITIVE, SPECIAL, INCIDENTAL, CONSEQUENTIAL, LOST PROFITS OR LOST REVENUE)
@@ -190,7 +211,8 @@ export default class PrivacyPolicyPage extends React.Component {
                 <section>
                     <h4>Governing Law</h4>
 
-                    <p class="ml mr">This policy is governed by the laws of the State of Illinois without giving effect
+                    <p className="ml mr">This policy is governed by the laws of the State of Illinois without giving
+                        effect
                         to
                         any
                         principles of conflict of law.</p>
@@ -198,14 +220,14 @@ export default class PrivacyPolicyPage extends React.Component {
                 <section>
                     <h4>Contact Us</h4>
 
-                    <p class="ml mr">To contact us with your questions or comments regarding this policy or the
+                    <p className="ml mr">To contact us with your questions or comments regarding this policy or the
                         information
                         collection
                         and dissemination practices of this Web Site, please email us at
                         webmaster@remax1stclass.com.</p>
 
-                    <p class="ml mr mb">To see the Terms of Use that apply to this Web Site, <span class="ml"><a
-                        href="/terms-of-use"> click here. </a></span><span class="ml">All trademarks, service marks, and other proprietary materials herein are the property of Re/Max 1st Class 2015. All rights reserved.</span>
+                    <p className="ml mr mb">To see the Terms of Use that apply to this Web Site, <span className="ml"><a
+                        href="/terms-of-use"> click here. </a></span><span className="ml">All trademarks, service marks, and other proprietary materials herein are the property of Re/Max 1st Class 2015. All rights reserved.</span>
                     </p>
                 </section>
             </div>

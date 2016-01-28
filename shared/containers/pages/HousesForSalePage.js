@@ -6,7 +6,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 import {Link} from 'react-router';
-import config from '../../config';
 import {appType, ogProps} from "../../config.js";
 
 import Grid, {Cell} from 'react-mdl/lib/Grid';
