@@ -15,7 +15,11 @@ export default class TermsOfUsePage extends React.Component {
                 <Helmet
                     title={terms.title}
                     meta={[
-                    {"property": "description", "content": `${terms.description}`},
+                    {"name": "url", "content": `${terms.url}`},
+                    {"name": "type", "content": `${appType}`},
+                    {"name": "title", "content": `${terms.title}`},
+                    {"name": "image", "content": `${terms.image}`},
+                    {"name": "description", "content": `${terms.description}`},
                     {"property": "og:url", "content": `${terms.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${terms.title}`},

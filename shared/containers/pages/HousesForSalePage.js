@@ -39,12 +39,16 @@ class HousesForSalePageContainer extends Component {
                 <Helmet
                     title={sale.title}
                     meta={[
+                    {"name": "url", "content": `${sale.url}`},
+                    {"name": "type", "content": `${appType}`},
+                    {"name": "title", "content": `${sale.title}`},
+                    {"name": "image", "content": `${sale.image}`},
+                    {"name": "description", "content": `${sale.description}`},
                     {"property": "og:url", "content": `${sale.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${sale.title}`},
                     {"property": "og:image", "content": `${sale.image}`},
-                    {"property": "og:description", "content": `${sale.description}`},
-                    {"property": "description", "content": `${sale.description}`}
+                    {"property": "og:description", "content": `${sale.description}`}
                 ]}
                 />
 

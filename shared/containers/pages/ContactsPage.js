@@ -18,12 +18,16 @@ export default class ContactsPage extends React.Component {
                 <Helmet
                     title={contacts.title}
                     meta={[
-                    {"property": "description", "content":  `${contacts.description}`},
+                    {"name": "url", "content": `${contacts.url}`},
+                    {"name": "type", "content": `${appType}`},
+                    {"name": "title", "content": `${contacts.title}`},
+                    {"name": "image", "content": `${contacts.image}`},
+                    {"name": "description", "content": `${contacts.description}`},
                     {"property": "og:url", "content": `${contacts.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${contacts.title}`},
                     {"property": "og:image", "content": `${contacts.image}`},
-                    {"property": "og:description", "content": `${contacts.description}`},
+                    {"property": "og:description", "content": `${contacts.description}`}
                 ]}
                 />
                 <h1 style={{fontSize:34}}>

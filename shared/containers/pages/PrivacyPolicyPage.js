@@ -15,7 +15,11 @@ export default class PrivacyPolicyPage extends React.Component {
                 <Helmet
                     title={privacy.title}
                     meta={[
-                    {"property": "description", "content": `${privacy.description}`},
+                    {"name": "url", "content": `${privacy.url}`},
+                    {"name": "type", "content": `${appType}`},
+                    {"name": "title", "content": `${privacy.title}`},
+                    {"name": "image", "content": `${privacy.image}`},
+                    {"name": "description", "content": `${privacy.description}`},
                     {"property": "og:url", "content": `${privacy.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${privacy.title}`},
