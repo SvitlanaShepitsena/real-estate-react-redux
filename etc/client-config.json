@@ -1,6 +1,6 @@
 {
-  "apiPrefix": "http://localhost:3001/api",
-  "backgroundImagesPrefix": "http://localhost:3001/tutorials",
+  "apiPrefix": "https://real-estate-redux.herokuapp.com/api",
+  "backgroundImagesPrefix": "https://real-estate-redux.herokuapp.com/tutorials",
   "staticUrl": "http://localhost:8050",
   "appTitle": "Re/Max 1st Class Realty, Skokie Homes for Sale, Skokie Real Estate",
   "appType": "website",
@@ -8,8 +8,8 @@
   "appImage": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
   "loginUrl": "https://real-estate-redux.herokuapp.com",
   "embedOrigin": "https://real-estate-redux.herokuapp.com",
-  "socialAuthURL": "http://localhost:3001/auth/{socialType}",
-  "emailAuthURL": "http://localhost:3001/auth/local/",
+  "socialAuthURL": "https://real-estate-redux.herokuapp.com/auth/{socialType}",
+  "emailAuthURL": "https://real-estate-redux.herokuapp.com/auth/local/",
   "facebookAppId": "",
   "gaTrackingCode": "XXX",
   "companyShareLink": "https://real-estate-redux.herokuapp.com",
@@ -20,43 +20,43 @@
       "description": "You Need Only One Company For All Your Real Estate Needs."
     },
     "aboutPage": {
-      "url": "http://localhost:3001/about",
+      "url": "https://real-estate-redux.herokuapp.com/about",
       "title": "About Re/Max 1st Class Realty, Skokie, IL",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "Re/Max 1st Class Realty offers one stop service for home selling or purchase.We can help you find the right specialist to get the lowest mortgage rate and move you to your new home as fast as possible. Our clients always have all papers signed on time with all details covered."
     },
     "contactsPage": {
-      "url": "http://localhost:3001/contacts",
+      "url": "https://real-estate-redux.herokuapp.com/contacts",
       "title": "Contact Re/Max 1st Class Realty Skokie, IL",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "First class agents for buyers and sellers. Call us for a free consultation!"
     },
     "privacyPolicyPage": {
-      "url": "http://localhost:3001/contacts",
+      "url": "https://real-estate-redux.herokuapp.com/contacts",
       "title": "Re/Max 1st Class Privacy Policy",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "By visiting or using our website, you agree to the provisions of this privacy policy"
     },
     "termsOfUsePage": {
-      "url": "http://localhost:3001/contacts",
+      "url": "https://real-estate-redux.herokuapp.com/contacts",
       "title": "Re/Max 1st Class Terms of Use",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "To promote a safe, non-offensive environment for all visitors to our website, we have established these Terms of Use."
     },
     "housesForRentPage": {
-      "url": "http://localhost:3001/apartments-for-rent",
+      "url": "https://real-estate-redux.herokuapp.com/apartments-for-rent",
       "title": "Northern Illinois Apartments for Rent",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "Find an Apartment for rent at North and Northwest Chicago Suburbs."
     },
     "housesForSalePage": {
-      "url": "http://localhost:3001/apartments-for-sale",
+      "url": "https://real-estate-redux.herokuapp.com/apartments-for-sale",
       "title": "Northern Illinois Houses for Sale",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "Browse Houses for sale at North and Northwest Chicago Suburbs. Detailed listing information with large photos. "
     },
     "cityPage": {
-      "url": "http://localhost:3001/apartments-for-sale",
+      "url": "https://real-estate-redux.herokuapp.com/apartments-for-sale",
       "title": "North Chicago Suburbs Properties",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "Find a listing by zip Codes or Property Type. "
