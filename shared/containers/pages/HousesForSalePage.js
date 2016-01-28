@@ -51,7 +51,6 @@ class HousesForSalePageContainer extends Component {
                     {"property": "og:description", "content": `${sale.description}`}
                 ]}
                 />
-
                 {!this.props.params.city && this.cities &&
                 <div>
                     <h1 style={{fontSize:34}}>Chicago North
