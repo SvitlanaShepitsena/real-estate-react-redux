@@ -18,6 +18,7 @@ export default class AboutPage extends React.Component {
             <di>
                 <Helmet
                     title={about.title}
+                    description={about.description}
                     meta={[
                     {"property": "og:url", "content": `${about.url}`},
                     {"property": "og:type", "content": `${appType}`},
