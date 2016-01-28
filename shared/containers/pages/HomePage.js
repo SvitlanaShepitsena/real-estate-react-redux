@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeContent from '../../components/HomeContent/HomeContent.js';
 import Helmet from "react-helmet";
-import {appTitle, appType, appUrl, ogProps} from "../../config.js";
+import {appImage, appTitle, appType, appUrl, ogProps} from "../../config.js";
 export default class HomePage extends React.Component {
     // Constructor
     constructor(props) {
@@ -18,11 +18,14 @@ export default class HomePage extends React.Component {
                     title={appTitle}
 
                     meta={[
-                    {"property": "description", "content":  `${home.description}`},
+                    {"property": "url", "content": `${appUrl}`},
+                    {"property": "type", "content": `${appType}`},
+                    {"property": "image", "content": `${appImage}`},
+                    {"property": "description", "content": `${home.description}`},
                     {"property": "og:url", "content": `${appUrl}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${appTitle}`},
-                    {"property": "og:image", "content": `${home.image}`},
+                    {"property": "og:image", "content": `${appImage}`},
                     {"property": "og:description", "content": `${home.description}`}
                 ]}
                 />
