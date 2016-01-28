@@ -1,21 +1,20 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
-import _ from 'lodash';
-import Grid, {Cell} from 'react-mdl/lib/Grid';
-import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
-import {connect}                   from 'react-redux';
-import strformat                     from 'strformat';
-import {Link} from 'react-router';
-import config                                 from '../../config';
-import {sendEvent}                          from '../../utils/googleAnalytics';
-import CityCard from '../../components/City/CityCard';
-
+import Helmet from "react-helmet";
+import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {Link} from 'react-router';
+import {appType, ogProps} from "../../config.js";
+
+import {Card, CardTitle, CardActions} from 'react-mdl/lib/Card';
+import Grid, {Cell} from 'react-mdl/lib/Grid';
+import _ from 'lodash';
+
+import CityCard from '../../components/City/CityCard';
 import * as citiesActions from '../../actions/cities';
 
 class HousesForRentPageContainer extends Component {
-    static contextTypes = {i18n: PropTypes.object};
 
     state = {
         linkToShare: '',
@@ -32,9 +31,19 @@ class HousesForRentPageContainer extends Component {
     }
 
     render() {
+        const rent = ogProps.housesForRentPage;
         return (
             <div style={{maxWidth:"100%"}}>
-
+                <Helmet
+                    title={rent.title}
+                    meta={[
+                    {"property": "og:url", "content": `${rent.url}`},
+                    {"property": "og:type", "content": `${appType}`},
+                    {"property": "og:title", "content": `${rent.title}`},
+                    {"property": "og:image", "content": `${rent.image}`},
+                    {"property": "og:description", "content": `${rent.description}`}
+                ]}
+                />
                 {!this.props.params.city && this.cities &&
                 <div>
                     <h1 style={{fontSize:28}}>Chicago North
@@ -60,7 +69,6 @@ class HousesForRentPageContainer extends Component {
                 {this.props.params.city &&
                 <div>
                     {this.props.children}
-
                 </div>
                 }
             </div>
@@ -69,7 +77,6 @@ class HousesForRentPageContainer extends Component {
 }
 function mapStateToProps(state) {
     return state.cities;
-
 }
 
 function mapDispatchToProps(dispatch) {
