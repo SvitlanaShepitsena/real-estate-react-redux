@@ -20,12 +20,6 @@ class HousePage extends Component {
     }
 
     componentDidMount() {
-        this.city = this.props.params.city;
-        this.state = this.props.params.state;
-        this.zipType = this.props.params.zipType;
-        this.street = this.props.params.street.replace(/-+/g, '-');
-        this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-
         this.props.getHouseIfNeeded(this.props.params, this.props.location);
     }
 
@@ -36,9 +30,10 @@ class HousePage extends Component {
         let street = this.props.params.street.replace(/-+/g, '-');
 
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-        const cityOg = ogProps.cityPage;
 
-        let ogTitle = ((house.address.street || '' )+ ", " + city + ", " + zipType);
+        const housePageOg = ogProps.cityPage;
+
+        let ogTitle = ("For Sale "+ house.address.street + ", " + house.address.city + ", " + house.address.zip);
         console.log(ogTitle);
 
         return (
@@ -47,16 +42,16 @@ class HousePage extends Component {
                 <Helmet
                     title={ogTitle}
                     meta={[
-                        {"name": "url", "content": `${cityOg.url}`},
+                        {"name": "url", "content": `${housePageOg.url}`},
                         {"name": "type", "content": `${appType}`},
                         {"name": "title", "content": `${ogTitle}`},
                         {"name": "image", "content": `${fbImage}`},
-                        {"name": "description", "content": `${cityOg.description}`},
-                        {"property": "og:url", "content": `${cityOg.url}`},
+                        {"name": "description", "content": `${housePageOg.description}`},
+                        {"property": "og:url", "content": `${housePageOg.url}`},
                         {"property": "og:type", "content": `${appType}`},
                         {"property": "og:title", "content": `${ogTitle}`},
                         {"property": "og:image", "content": `${fbImage}`},
-                        {"property": "og:description", "content": `${cityOg.description}`}
+                        {"property": "og:description", "content": `${housePageOg.description}`}
                     ]}
                 />
                 }
@@ -64,16 +59,16 @@ class HousePage extends Component {
                 <Helmet
                     title={ogTitle}
                     meta={[
-                        {"name": "url", "content": `${cityOg.url}`},
+                        {"name": "url", "content": `${housePageOg.url}`},
                         {"name": "type", "content": `${appType}`},
                         {"name": "title", "content": `${ogTitle}`},
                         {"name": "image", "content": `${fbImage}`},
-                        {"name": "description", "content": `${cityOg.description}`},
-                        {"property": "og:url", "content": `${cityOg.url}`},
+                        {"name": "description", "content": `${housePageOg.description}`},
+                        {"property": "og:url", "content": `${housePageOg.url}`},
                         {"property": "og:type", "content": `${appType}`},
                         {"property": "og:title", "content": `${ogTitle}`},
                         {"property": "og:image", "content": `${fbImage}`},
-                        {"property": "og:description", "content": `${cityOg.description}`}
+                        {"property": "og:description", "content": `${housePageOg.description}`}
                     ]}
                 />
                 }
@@ -95,24 +90,24 @@ class HousePage extends Component {
                         </li>
                         <li style={{display:'inline-block'}}>
                             {saleRent == 'sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to={`/houses-for-sale/${this.props.params.city}`}>
+                                                         to={`/houses-for-sale/${city}`}>
                                 {city}
                             </Link>}
                             {saleRent == 'rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to={`/apartments-for-rent/${this.props.params.city}`}>
+                                                         to={`/apartments-for-rent/${city}`}>
                                 {city}
                             </Link>}
                             <span> / </span>
                         </li>
                         <li style={{display:'inline-block'}}>
                             {saleRent == 'sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to={`/houses-for-sale/${this.props.params.city}/${this.props.params.zipType}`}>
-                                {this.props.params.zipType}
+                                                         to={`/houses-for-sale/${city}/${zipType}`}>
+                                {zipType}
 
                             </Link>}
                             {saleRent == 'rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to={`/apartments-for-rent/${this.props.params.city}/${this.props.params.zipType}`}>
-                                {this.props.params.zipType}
+                                                         to={`/apartments-for-rent/${city}/${zipType}`}>
+                                {zipType}
                             </Link>}
                             <span> / </span>
                         </li>
