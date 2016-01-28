@@ -44,23 +44,23 @@ class cityPage extends Component {
     }
 
     render() {
+        const cityOg = ogProps.cityPage;
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
+
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        const city = ogProps.cityPage;
         return (
             <div>
                 <Helmet
-                    title={city.title}
+                    title={cityOg.title}
                     meta={[
-                    {"property": "og:url", "content": `${city.url}`},
+                    {"property": "og:url", "content": `${cityOg.url}`},
                     {"property": "og:type", "content": `${appType}`},
-                    {"property": "og:title", "content": `${city.title}`},
-                    {"property": "og:image", "content": `${city.image}`},
-                    {"property": "og:description", "content": `${city.description}`}
+                    {"property": "og:title", "content": `${cityOg.title}`},
+                    {"property": "og:image", "content": `${cityOg.image}`},
+                    {"property": "og:description", "content": `${cityOg.description}`}
                 ]}
                 />
-
                 {this.props.params.zipType &&
                 <div>
                     {this.props.children}
