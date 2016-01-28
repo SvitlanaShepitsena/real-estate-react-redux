@@ -26,7 +26,7 @@ class HousePage extends Component {
         this.street = this.props.params.street.replace(/-+/g, '-');
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        this.props.getHouseIfNeeded(this.saleRent, this.city, this.zipType, this.street);
+        this.props.getHouseIfNeeded(this.props.params,this.props.location);
     }
 
     render() {

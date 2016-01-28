@@ -19,7 +19,11 @@ export function housesGet(saleRent,city,zipType) {
 
 
 
-export function getHousesIfNeeded(saleRent, city, zipType) {
+export function getHousesIfNeeded(params, location) {
+
+    const saleRent = location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+    const city = params.city;
+    const zipType = params.zipType;
     return (dispatch, getState) => {
             return dispatch(housesGet(saleRent,city,zipType));
     };

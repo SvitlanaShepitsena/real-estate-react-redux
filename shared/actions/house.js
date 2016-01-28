@@ -16,12 +16,15 @@ export function houseGet(saleRent, city, zip, street) {
     };
 }
 
-export function getHouseIfNeeded(saleRent, city, zip, street) {
-    return (dispatch, getState) => {
-        let test = getState();
-        console.log(test);
+export function getHouseIfNeeded(params, location) {
+    const saleRent = location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+    const city = params.city;
+    const zipType = params.zipType;
+    const street = params.street;
 
-        return dispatch(houseGet(saleRent, city, zip, street));
+    return (dispatch, getState) => {
+
+        return dispatch(houseGet(saleRent, city, zipType, street));
     };
 }
 
