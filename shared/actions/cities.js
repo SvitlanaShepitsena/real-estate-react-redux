@@ -11,18 +11,16 @@ export function citiesGet(saleRent) {
     return {
         type: CITIES_GET,
         promise: request.get(`https://real-estate-react.firebaseio.com/${saleRent}.json?shallow=true`),
-        obj:true
+        obj: true
     };
 }
 
-export function getCitiesIfNeeded(saleRent) {
+export function getCitiesIfNeeded(params, location) {
+    const saleRent = location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
     return (dispatch, getState) => {
-        var cities = getState().cities;
-        if (!cities.length) {
-            return dispatch(citiesGet(saleRent));
-        } else{
-            return cities;
-        }
+
+        return dispatch(citiesGet(saleRent));
+
     };
 }
 

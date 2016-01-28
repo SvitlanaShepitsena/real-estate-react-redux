@@ -17,7 +17,7 @@ import * as citiesActions from '../../actions/cities';
 class HousesForRentPageContainer extends Component {
     componentDidMount() {
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-        this.props.getCitiesIfNeeded(this.saleRent);
+        this.props.getCitiesIfNeeded(this.props.params, this.props.location);
     }
 
     componentWillReceiveProps(nextProps) {
