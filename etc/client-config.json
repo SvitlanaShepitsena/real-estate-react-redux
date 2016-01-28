@@ -33,9 +33,9 @@
     },
     "privacyPolicyPage": {
       "url": "https://real-estate-redux.herokuapp.com/contacts",
-      "title": "Re/Max 1st Class Privacy Policy",
+      "title": "At Re/Max 1st Class Realty Website your privacy is very important to us",
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
-      "description": "By visiting or using our website, you agree to the provisions of this privacy policy"
+      "description": "The purpose of this privacy policy is to provide you with a description of the types of information we collect about you when you visit the Re/Max 1st Class Website, and how we use that information. "
     },
     "termsOfUsePage": {
       "url": "https://real-estate-redux.herokuapp.com/contacts",
