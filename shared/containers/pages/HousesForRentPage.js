@@ -19,7 +19,6 @@ class HousesForRentPageContainer extends Component {
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         this.props.getCitiesIfNeeded(this.saleRent);
     }
-
     componentWillReceiveProps(nextProps) {
         this.cities = _.keys(nextProps.cities);
     }
