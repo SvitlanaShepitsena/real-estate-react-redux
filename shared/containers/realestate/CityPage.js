@@ -67,7 +67,6 @@ class cityPage extends Component {
                     {this.props.children}
                 </div>
                 }
-
                 {!this.props.params.zipType &&
                 <div>
                     <ul
