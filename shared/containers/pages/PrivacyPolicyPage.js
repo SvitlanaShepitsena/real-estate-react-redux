@@ -22,7 +22,7 @@ export default class PrivacyPolicyPage extends React.Component {
                     {"property": "og:description", "content": `${privacy.description}`}
                 ]}
                 />
-                <h1>Re/Max 1st Class Privacy Policy</h1>
+                <h1 style={{fontSize:34}}>Re/Max 1st Class Privacy Policy</h1>
                 <hr/>
                 <h4 className="ml mr">Please Read Carefully before using remax1stclass.com</h4>
                 <section>

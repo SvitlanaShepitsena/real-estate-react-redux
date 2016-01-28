@@ -25,9 +25,9 @@ export default class ContactsPage extends React.Component {
                     {"property": "og:description", "content": `${contacts.description}`}
                 ]}
                 />
-                <h2>
+                <h1 style={{fontSize:34}}>
                     Contact Us
-                </h2>
+                </h1>
                 <hr/>
                 <ContactForm />
             </div>
