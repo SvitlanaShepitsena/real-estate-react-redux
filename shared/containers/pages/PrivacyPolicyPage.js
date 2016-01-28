@@ -125,22 +125,18 @@ export default class PrivacyPolicyPage extends React.Component {
                         party web sites
                         ("Third Party Sites").</p>
                     <p class="ml mr">Third Party Sites are not under the control of Re/Max 1st Class, remax1stclass.com
-                        is
-                        not
-                        responsible for such Third Party Sites, including without limitation the accuracy, sufficiency,
-                        correctness,
-                        reliability, veracity, completeness, or timeliness thereof, any link contained therein, or any
-                        changes or
-                        updates thereto. The inclusion or access to Third Party Sites does not imply an endorsement
-                        thereof
-                        by Re/Max
-                        1st Class or of the provider of such content or services, or of any third party web site. Re/Max
-                        1st
-                        Class
-                        reserves the right to terminate any link or linking program at any time.</p>
+                        is not responsible for such Third Party Sites, including without limitation the accuracy,
+                        sufficiency,
+                        correctness, reliability, veracity, completeness, or timeliness thereof, any link contained
+                        therein, or any
+                        changes or updates thereto. The inclusion or access to Third Party Sites does not imply an
+                        endorsement
+                        thereof by Re/Max 1st Class or of the provider of such content or services, or of any third
+                        party web site. Re/Max
+                        1st Class reserves the right to terminate any link or linking program at any time.</p>
                     <p class="ml mr">Please be aware that when you enter a third party web site, any information you
-                        provide, including
-                        financial information, is subject to the <span class="ml"><Link to="/terms-of-use">terms of
+                        provide, including financial information, is subject to the <span class="ml"><Link
+                            to="/terms-of-use">terms of
                             use</Link></span><span class="ml"> and privacy policy of that site.</span></p>
                 </section>
                 <section>
