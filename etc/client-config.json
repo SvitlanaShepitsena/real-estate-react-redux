@@ -31,6 +31,7 @@
       "image": "https://cloudinary.com/console/media_library#dialog/image/upload/remax-1st-class-logo_gjc14e",
       "description": "First class agents for buyers and sellers. Call us for a free consultation!"
     },
+    
     "privacyPolicyPage": {
       "url": "http://localhost:3001/contacts",
       "title": "Re/Max 1st Class Privacy Policy",
