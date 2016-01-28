@@ -30,7 +30,7 @@ class HousePage extends Component {
         let street = this.props.params.street.replace(/-+/g, '-');
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        let price = house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+        let price = this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
         const housePageOg = ogProps.cityPage;
 

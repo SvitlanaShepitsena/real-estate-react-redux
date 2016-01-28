@@ -5,8 +5,8 @@
   "appTitle": "Re/Max 1st Class Realty, Skokie Homes for Sale, Skokie Real Estate",
   "appType": "website",
   "appUrl": "https://real-estate-redux.herokuapp.com",
-  "appImage": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
-  "fbImage": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
+  "appImage": "https://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
+  "fbImage": "https://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
   "fbImage1200": "https://cloudinary.com/console/media_library#/dialog/image/upload/1200-Remax-1st-class-logo_g8di8r",
   "loginUrl": "https://real-estate-redux.herokuapp.com",
   "embedOrigin": "https://real-estate-redux.herokuapp.com",
@@ -14,10 +14,10 @@
   "emailAuthURL": "https://real-estate-redux.herokuapp.com/auth/local/",
   "facebookAppId": "781844735261747",
   "companyShareLink": "https://real-estate-redux.herokuapp.com",
-  "houseImageThumb": "http://res.cloudinary.com/svitlana/image/upload/v1453494429/house-picture-icon_og71rx.png",
+  "houseImageThumb": "https://res.cloudinary.com/svitlana/image/upload/v1453494429/house-picture-icon_og71rx.png",
   "ogProps": {
     "homePage": {
-      "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
+      "image": "https://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
       "description": "You Need Only One Company For All Your Real Estate Needs. Buy or sell home, rent apartment or house in North or Northwest Chicago Suburbs."
     },
     "aboutPage": {
