@@ -35,7 +35,8 @@ class HousesForRentPageContainer extends Component {
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${rent.title}`},
                     {"property": "og:image", "content": `${rent.image}`},
-                    {"property": "og:description", "content": `${rent.description}`}
+                    {"property": "og:description", "content": `${rent.description}`},
+                    {"property": "description", "content": `${rent.description}`}
                 ]}
                 />
                 {!this.props.params.city && this.cities &&

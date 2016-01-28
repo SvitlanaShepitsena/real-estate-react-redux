@@ -19,7 +19,8 @@ export default class PrivacyPolicyPage extends React.Component {
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${privacy.title}`},
                     {"property": "og:image", "content": `${privacy.image}`},
-                    {"property": "og:description", "content": `${privacy.description}`}
+                    {"property": "og:description", "content": `${privacy.description}`},
+                    {"property": "description", "content": `${privacy.description}`}
                 ]}
                 />
 

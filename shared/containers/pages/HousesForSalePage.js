@@ -43,7 +43,8 @@ class HousesForSalePageContainer extends Component {
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${sale.title}`},
                     {"property": "og:image", "content": `${sale.image}`},
-                    {"property": "og:description", "content": `${sale.description}`}
+                    {"property": "og:description", "content": `${sale.description}`},
+                    {"property": "description", "content": `${sale.description}`}
                 ]}
                 />
 
