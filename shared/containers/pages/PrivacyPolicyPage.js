@@ -108,9 +108,9 @@ export default class PrivacyPolicyPage extends React.Component {
                         responses;
                         resolve problems; and manage the Web Site and assess its usage.</p>
                 </section>
+
                 <section>
                     <h4>Disclosure of Information</h4>
-
                     <p className="ml mr">We do not sell or rent personally identifiable information to any third. We may
                         disclose personally
                         identifiable information to appropriate affiliates of RE/MAX, including strategic alliance
