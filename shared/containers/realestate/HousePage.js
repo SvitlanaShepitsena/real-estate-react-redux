@@ -43,7 +43,7 @@ class HousePage extends Component {
 
         return (
             <div style={{width:'100%'}}>
-                {house && saleRent == 'sale' &&
+                {saleRent == 'sale' &&
                 <Helmet
                     title={saleTitle}
                     meta={[

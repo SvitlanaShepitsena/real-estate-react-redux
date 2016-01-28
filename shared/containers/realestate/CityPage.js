@@ -3,28 +3,25 @@
 
 import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
-import {appType, ogProps} from "../../config.js";
+import {appUrl, fbImage, appType, ogProps} from "../../config.js";
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
-import {connect}                   from 'react-redux';
-import strformat                     from 'strformat';
+import strformat from 'strformat';
 import _ from 'lodash';
 
 import {Link} from 'react-router';
-import TypeLink from './TypeLink';
-
-import config                                 from '../../config';
+import config from '../../config';
 
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions, CardText} from 'react-mdl/lib/Card';
-
-import {bindActionCreators} from 'redux';
+/*Components*/
 import * as cityInfoActions from '../../actions/cityInfo';
 
 class cityPage extends Component {
     static contextTypes = {i18n: PropTypes.object};
 
     componentDidMount() {
-
         this.city = this.props.params.city;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
@@ -55,11 +52,15 @@ class cityPage extends Component {
                 <Helmet
                     title={cityOg.title}
                     meta={[
-                    {"property": "description", "content": `${cityOg.description}`},
+                    {"name": "url", "content": `${cityOg.url}`},
+                    {"name": "type", "content": `${appType}`},
+                    {"name": "title", "content": `${cityOg.title}`},
+                    {"name": "image", "content": `${fbImage}`},
+                    {"name": "description", "content": `${cityOg.description}`},
                     {"property": "og:url", "content": `${cityOg.url}`},
                     {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${cityOg.title}`},
-                    {"property": "og:image", "content": `${cityOg.image}`},
+                    {"property": "og:image", "content": `${fbImage}`},
                     {"property": "og:description", "content": `${cityOg.description}`}
                 ]}
                 />
