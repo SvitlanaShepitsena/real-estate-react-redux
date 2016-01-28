@@ -4,10 +4,7 @@ import Helmet from 'react-helmet';
 import {appType, ogProps} from "../../config.js";
 
 export default class PrivacyPolicyPage extends React.Component {
-    // Constructor
     constructor(props) {
-        // Running constructor of Parent (React.Component) for binding this to object.
-        // Dynamically assigned global property This is always a component itself.
         super(props);
     }
 
