@@ -2,7 +2,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
-import {fbImage, appType, ogProps} from "../../config.js";
+import {AppUrl, fbImage, appType, ogProps} from "../../config.js";
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -28,6 +28,7 @@ class ZipTypePage extends Component {
 
     render() {
         const zipOg = ogProps.zipPage;
+
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 

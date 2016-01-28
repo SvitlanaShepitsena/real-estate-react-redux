@@ -2,7 +2,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
-import {fbImage, appType, ogProps} from "../../config.js";
+import {appUrl, fbImage, appType, ogProps} from "../../config.js";
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
