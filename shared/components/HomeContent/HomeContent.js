@@ -33,7 +33,7 @@ export default class HomeContent extends React.Component {
                         <div style={{margin:'0px auto',textAlign:'center'}}>
                             <img
                                 src="http://res.cloudinary.com/svitlana/image/upload/v1453490978/remax-1st-class-logo_gjc14e.png"
-                                alt="Re/max 1st Class Logo"/>
+                                alt="Re/max 1st Class Realty Logo"/>
                             <h1 className="HomePage_h1">You need only one company <br/> for all your real estate
                                 needs
                             </h1>
