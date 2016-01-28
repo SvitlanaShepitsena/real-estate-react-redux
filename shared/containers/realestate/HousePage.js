@@ -1,15 +1,15 @@
 'use strict';
 
 import React, {Component, PropTypes} from 'react';
+import Helmet from 'react-helmet';
+import {appUrl, fbImage, appType, ogProps} from "../../config.js";
+
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardText, CardActions} from 'react-mdl/lib/Card';
-import {connect}                   from 'react-redux';
-import strformat                     from 'strformat';
-import _ from 'lodash';
 
 import {Link} from 'react-router';
-import config                                 from '../../config';
-import {sendEvent}                          from '../../utils/googleAnalytics';
+import {connect}                   from 'react-redux';
+import _ from 'lodash';
 
 import {bindActionCreators} from 'redux';
 import * as houseActions from '../../actions/house';
@@ -21,6 +21,7 @@ class HousePage extends Component {
 
     componentDidMount() {
         this.city = this.props.params.city;
+        this.state = this.props.params.state;
         this.zipType = this.props.params.zipType;
         this.street = this.props.params.street.replace(/-+/g, '-');
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
@@ -29,12 +30,53 @@ class HousePage extends Component {
     }
 
     render() {
+        const house = this.props.house;
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let zipType = this.props.params.zipType;
+
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-        const house = this.props.house;
+        const cityOg = ogProps.cityPage;
+
+        let saleTitle = city + ", " + zipType;
+        let rentTitle = "Rent Title";
+
         return (
             <div style={{width:'100%'}}>
+                {house && saleRent == 'sale' &&
+                <Helmet
+                    title={saleTitle}
+                    meta={[
+                        {"name": "url", "content": `${cityOg.url}`},
+                        {"name": "type", "content": `${appType}`},
+                        {"name": "title", "content": `${saleTitle}`},
+                        {"name": "image", "content": `${fbImage}`},
+                        {"name": "description", "content": `${cityOg.description}`},
+                        {"property": "og:url", "content": `${cityOg.url}`},
+                        {"property": "og:type", "content": `${appType}`},
+                        {"property": "og:title", "content": `${saleTitle}`},
+                        {"property": "og:image", "content": `${fbImage}`},
+                        {"property": "og:description", "content": `${cityOg.description}`}
+                    ]}
+                />
+                }
+                {saleRent == 'rent' &&
+                <Helmet
+                    title={rentTitle}
+                    meta={[
+                        {"name": "url", "content": `${cityOg.url}`},
+                        {"name": "type", "content": `${appType}`},
+                        {"name": "title", "content": `${rentTitle}`},
+                        {"name": "image", "content": `${fbImage}`},
+                        {"name": "description", "content": `${cityOg.description}`},
+                        {"property": "og:url", "content": `${cityOg.url}`},
+                        {"property": "og:type", "content": `${appType}`},
+                        {"property": "og:title", "content": `${saleTitle}`},
+                        {"property": "og:image", "content": `${fbImage}`},
+                        {"property": "og:description", "content": `${cityOg.description}`}
+                    ]}
+                />
+                }
+
                 {house &&
                 <div>
                     <ul
@@ -301,7 +343,6 @@ class HousePage extends Component {
                                 </ul>
                             </article>
                         }
-
                         {
                             house.agent &&
                             <article style={{margin: '0px 10px', paddingBottom: 16}}>
@@ -313,7 +354,6 @@ class HousePage extends Component {
 
                     </Card>
                 </div>
-
                 }
             </div>
 
