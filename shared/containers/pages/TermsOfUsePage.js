@@ -12,6 +12,7 @@ export default class TermsOfUsePage extends React.Component {
         const terms = ogProps.termsOfUsePage;
         return (
             <div>
+
                 <Helmet
                     title={terms.title}
                     meta={[
