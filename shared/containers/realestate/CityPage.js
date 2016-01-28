@@ -28,11 +28,13 @@ class cityPage extends Component {
         this.city = this.props.params.city;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        this.props.getCityInfoIfNeeded(this.saleRent, this.city);
+        this.props.getCityInfoIfNeeded(this.props.params,this.props.location);
     }
 
-    componentWillReceiveProps(nextProps) {
-        let cityInfo = nextProps.cityInfo;
+
+
+    render() {
+        let cityInfo = this.props.cityInfo;
         let types = [];
         _.values(_.values(cityInfo)).forEach(zip=> {
             let houses = (_.map(_.values(zip), 'type'));
@@ -42,9 +44,6 @@ class cityPage extends Component {
 
         this.zips = _.keys(cityInfo);
 
-    }
-
-    render() {
         const cityOg = ogProps.cityPage;
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
 

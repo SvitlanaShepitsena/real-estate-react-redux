@@ -21,7 +21,7 @@ class ZipTypePage extends Component {
         this.city = this.props.params.city;
         this.zipType = this.props.params.zipType;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-        this.props.getHousesIfNeeded(this.saleRent, this.city, this.zipType);
+        this.props.getHousesIfNeeded(this.props.params,this.props.location);
     }
 
     render() {

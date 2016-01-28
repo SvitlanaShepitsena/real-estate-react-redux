@@ -15,7 +15,9 @@ export function cityInfoGet(saleRent,city) {
     };
 }
 
-export function getCityInfoIfNeeded(saleRent,city) {
+export function getCityInfoIfNeeded(params, location) {
+    const saleRent = location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+    const city = params.city;
     return (dispatch, getState) => {
             return dispatch(cityInfoGet(saleRent,city));
 
