@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class TermsOfUsePage extends React.Component {
     // Constructor
@@ -32,7 +33,7 @@ export default class TermsOfUsePage extends React.Component {
 
                     <p class="ml mr">Information about you is subject to our Privacy Policy. For more information,
                         please review our
-                        full <span> <a href="http://localhost:3001/privacy-policy">Privacy Policy.</a></span></p>
+                        full <span> <Link to="/privacy-policy">Privacy Policy.</Link></span></p>
                     <h4>Links</h4>
 
                     <p class="ml mr">The Web Site contains links to third party web sites and may redirect you to
