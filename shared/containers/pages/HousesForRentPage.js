@@ -15,12 +15,6 @@ import CityCard from '../../components/City/CityCard';
 import * as citiesActions from '../../actions/cities';
 
 class HousesForRentPageContainer extends Component {
-
-    state = {
-        linkToShare: '',
-        isSharing: false
-    };
-
     componentDidMount() {
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         this.props.getCitiesIfNeeded(this.saleRent);

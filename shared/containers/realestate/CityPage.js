@@ -87,7 +87,7 @@ class cityPage extends Component {
                             </span>
                         </li>
                     </ul>
-                    <h1 style={{fontSize:28}}>
+                    <h1 style={{fontSize:32}}>
                         {_.startCase(city)} Houses for Sale </h1>
                     <hr/>
                     <Grid>
