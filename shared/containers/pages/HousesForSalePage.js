@@ -49,7 +49,7 @@ class HousesForSalePageContainer extends Component {
 
                 {!this.props.params.city && this.cities &&
                 <div>
-                    <h1 style={{fontSize:28}}>Chicago North
+                    <h1 style={{fontSize:34}}>Chicago North
                         Suburbs {this.saleRent === 'sale' ? "Houses for Sale" : 'Apartments for Rent'} </h1>
                     <hr/>
                     <Grid>
