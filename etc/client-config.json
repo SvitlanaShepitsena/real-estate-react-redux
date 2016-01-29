@@ -3,7 +3,7 @@
   "fireDb": "https://real-estate-react.firebaseio.com/",
   "backgroundImagesPrefix": "https://real-estate-redux.herokuapp.com/tutorials",
   "staticUrl": "http://localhost:8050",
-  "appTitle": "Houses apartments for Sale Rent Chicago North Suburbs",
+  "appTitle": "Houses Apartments for Sale Rent Chicago North Suburbs",
   "appType": "website",
   "appUrl": "https://real-estate-redux.herokuapp.com",
   "appImage": "https://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
@@ -19,7 +19,7 @@
   "ogProps": {
     "homePage": {
       "image": "https://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
-      "description": "Buy or sell home, rent apartment or house in North or Northwest Chicago Suburbs."
+      "description": "Buy or sell home, rent apartment or house in North or Northwest Chicago Suburbs. Skokie Northbrook Glenview Evanston houses apartments for sale rent"
     },
     "aboutPage": {
       "url": "https://real-estate-redux.herokuapp.com/about",
