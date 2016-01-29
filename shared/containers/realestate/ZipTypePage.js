@@ -17,27 +17,28 @@ class ZipTypePage extends Component {
     constructor(props) {
         super(props);
     }
+
     componentDidMount() {
         this.props.getHousesIfNeeded(this.props.params, this.props.location);
     }
 
     render() {
 
-        let zipType = this.props.params.zipType;
+        let zipType = _.startCase(this.props.params.zipType.replace(/-+/g, ' '));
 
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        let metaTitleSale = (city + ', ' + zipType + " properties FOR SALE! | Re/Max 1st Class Realty");
-        let metaTitleRent = (city + ', ' + zipType + " properties FOR RENT! | Re/Max 1st Class Realty");
+        let metaTitleSale = (city + ' ' + zipType + " properties FOR SALE! | Re/Max 1st Class Realty");
+        let metaTitleRent = (city + ' ' + zipType + " properties FOR RENT! | Re/Max 1st Class Realty");
 
-        let ogTitleSale = (city + ', ' + zipType + " properties FOR SALE! ☆ Re/Max 1st Class Realty");
-        let ogTitleRent = (city + ', ' + zipType + " properties FOR RENT! ☆ Re/Max 1st Class Realty");
+        let ogTitleSale = (city + ' ' + zipType + " properties FOR SALE! ☆ Re/Max 1st Class Realty");
+        let ogTitleRent = (city + ' ' + zipType + " properties FOR RENT! ☆ Re/Max 1st Class Realty");
 
-        let metaDescriptionSale = ('Browse ' + city + ', ' + zipType + ' homes for sale. Call us for a free consultation and schedule a showing!');
-        let metaDescriptionRent = ('Browse ' + city + ', ' + zipType + ' homes for rent. Call us for a free consultation and schedule a showing!');
-        let ogDescriptionSale = ('✔ Browse ' + city + ', ' + zipType + ' homes for sale. ☏   Call us for a free consultation and schedule a showing!');
-        let ogDescriptionRent = ('✔ Browse ' + city + ', ' + zipType + ' homes for rent. ☏   Call us for a free consultation and schedule a showing!');
+        let metaDescriptionSale = ('Browse ' + city + ', IL ' + zipType + ' homes for sale. Call us for a free consultation and schedule a showing!');
+        let metaDescriptionRent = ('Browse ' + city + ', IL ' + zipType + ' homes for rent. Call us for a free consultation and schedule a showing!');
+        let ogDescriptionSale = ('✔ Browse ' + city + ', IL ' + zipType + ' homes for sale. ☏   Call us for a free consultation and schedule a showing!');
+        let ogDescriptionRent = ('✔ Browse ' + city + ', IL ' + zipType + ' homes for rent. ☏   Call us for a free consultation and schedule a showing!');
 
         return (
             <div style={{width:'100%'}}>
