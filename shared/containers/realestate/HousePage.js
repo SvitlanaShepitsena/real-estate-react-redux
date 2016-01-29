@@ -35,6 +35,7 @@ class HousePage extends Component {
         if (house) {
 
             var price = this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+            var mls = 'MLS#: ' + this.props.house.mls;
 
             var metaImage = house.images[0];
             var metaDescription = 'Check out and schedule a showing! ' + this.props.house.description;
@@ -45,7 +46,7 @@ class HousePage extends Component {
             var ogTitleSale = (house.type + " FOR SALE! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
             var ogTitleRent = (house.type + " FOR RENT! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
 
-            var ogDescription = '✔ Check out and schedule a showing!  ☏  ' + this.props.house.description;
+            var ogDescription = mls + '✔ Check out and schedule a showing! ☏  ' + this.props.house.description;
         }
 
         return (
