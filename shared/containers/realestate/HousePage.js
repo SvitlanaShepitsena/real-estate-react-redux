@@ -99,12 +99,12 @@ class HousePage extends Component {
                             <li style={{display:'inline-block'}}>
                                 {saleRent == 'sale' &&
                                 <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                      to={`/houses-for-sale/${city}`}>
+                                      to={`/houses-for-sale/${city.toLowerCase().replace(/\s+/g,'-')}`}>
                                     {city}
                                 </Link>}
                                 {saleRent == 'rent' &&
                                 <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                      to={`/apartments-for-rent/${city}`}>
+                                      to={`/apartments-for-rent/${city.toLowerCase().replace(/\s+/g,'-')}`}>
                                     {city}
                                 </Link>}
                                 <span> / </span>

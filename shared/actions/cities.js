@@ -1,5 +1,6 @@
 //axios - Promise based HTTP client for the browser and node.js
 import request from 'axios';
+import config from '../config'
 
 export const CITIES_GET = 'CITIES_GET';
 export const CITIES_GET_REQUEST = 'CITIES_GET_REQUEST';
@@ -10,7 +11,7 @@ export const CITIES_GET_FAILURE = 'CITIES_GET_FAILURE';
 export function citiesGet(saleRent) {
     return {
         type: CITIES_GET,
-        promise: request.get(`https://real-estate-react.firebaseio.com/${saleRent}.json?shallow=true`),
+        promise: request.get(`${config.fireDb}${saleRent}.json?shallow=true`),
         obj: true
     };
 }
