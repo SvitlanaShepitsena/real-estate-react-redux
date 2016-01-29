@@ -1,5 +1,6 @@
 {
   "apiPrefix": "https://real-estate-redux.herokuapp.com/api",
+  "fireDb": "https://real-estate-react.firebaseio.com/",
   "backgroundImagesPrefix": "https://real-estate-redux.herokuapp.com/tutorials",
   "staticUrl": "http://localhost:8050",
   "appTitle": "Re/Max 1st Class Realty, Skokie Homes for Sale, Skokie Real Estate",
