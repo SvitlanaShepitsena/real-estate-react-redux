@@ -18,7 +18,7 @@
     "deploy": "npm run git",
     "postdeploy": "git push heroku master",
     "dev": "set NODE_ENV=development&&npm-run-all --parallel devp nodemon",
-    "pre start": "npm run build",
+    "prestart": "npm run build",
     "start": "NODE_ENV=production node server/runner.js",
     "r": "set NODE_ENV=production&&node server/runner.js",
     "nodemon": "nodemon --exec babel-node -- server/runner.js",
