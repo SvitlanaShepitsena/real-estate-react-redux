@@ -2,9 +2,7 @@
 import React from 'react';
 import Button      from 'react-mdl/lib/Button';
 
-if (process.env.BROWSER) {
-    require('./AppBarUser.less');
-}
+
 export default class AppBarUser extends React.Component {
 
     constructor(props) {
