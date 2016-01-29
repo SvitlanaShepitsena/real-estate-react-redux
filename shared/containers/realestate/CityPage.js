@@ -1,17 +1,12 @@
 'use strict';
-
-
 import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
 import {appUrl, fbImage, appType, ogProps} from "../../config.js";
+
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-
-import strformat from 'strformat';
-import _ from 'lodash';
-
 import {Link} from 'react-router';
-import config from '../../config';
+import _ from 'lodash';
 
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardActions, CardText} from 'react-mdl/lib/Card';
@@ -25,49 +20,62 @@ class cityPage extends Component {
         this.city = this.props.params.city;
         this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        this.props.getCityInfoIfNeeded(this.props.params,this.props.location);
+        this.props.getCityInfoIfNeeded(this.props.params, this.props.location);
     }
-
-
 
     render() {
         let cityInfo = this.props.cityInfo;
+        const house = this.props.house;
         let types = [];
         _.values(_.values(cityInfo)).forEach(zip=> {
             let houses = (_.map(_.values(zip), 'type'));
             types = _.union(houses, types);
         });
+
         this.types = types.map(type=>type + 's');
-
         this.zips = _.keys(cityInfo);
-
-        const cityOg = ogProps.cityPage;
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
-
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+
+        let metaTitleSale = ("Re/Max 1st Class | " + city + "Properties FOR SALE!");
+        let metaDescriptionSale = (city + 'Homes for' + ' Sale' + 'sorted by zip code or property type.');
+
+        let metaTitleRent = ("Re/Max 1st Class | " + city + "Properties FOR RENT!");
+        let metaDescriptionRent = (city + 'Homes for' + ' Rent' + 'sorted by zip code or property type.');
 
         return (
             <div>
+                {saleRent == 'sale' &&
                 <Helmet
-                    title={cityOg.title}
+                    title={metaTitleSale}
                     meta={[
-                    {"name": "url", "content": `${cityOg.url}`},
-                    {"name": "type", "content": `${appType}`},
-                    {"name": "title", "content": `${cityOg.title}`},
-                    {"name": "image", "content": `${fbImage}`},
-                    {"name": "description", "content": `${cityOg.description}`},
-                    {"property": "og:url", "content": `${cityOg.url}`},
-                    {"property": "og:type", "content": `${appType}`},
-                    {"property": "og:title", "content": `${cityOg.title}`},
-                    {"property": "og:image", "content": `${fbImage}`},
-                    {"property": "og:description", "content": `${cityOg.description}`}
-                ]}
+                        {"name": "image", "content": `${fbImage}`},
+                        {"name": "description", "content": `${metaDescriptionSale}`},
+                        {"property": "og:title", "content": `${metaTitleSale}`},
+                        {"property": "og:image", "content": `${fbImage}`},
+                        {"property": "og:description", "content": `${metaDescriptionSale}`}
+                    ]}
                 />
+                }
+                {saleRent == 'rent' &&
+                <Helmet
+                    title={metaTitleRent}
+                    meta={[
+                        {"name": "image", "content": `${fbImage}`},
+                        {"name": "description", "content": `${metaDescriptionRent}`},
+                        {"property": "og:title", "content": `${metaTitleRent}`},
+                        {"property": "og:image", "content": `${fbImage}`},
+                        {"property": "og:description", "content": `${metaDescriptionRent}`}
+                    ]}
+                />
+                }
+
                 {this.props.params.zipType &&
                 <div>
                     {this.props.children}
                 </div>
                 }
+
                 {!this.props.params.zipType &&
                 <div>
                     <ul

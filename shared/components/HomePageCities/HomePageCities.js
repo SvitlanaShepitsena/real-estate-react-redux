@@ -21,7 +21,7 @@ export default class HomePageCities extends React.Component {
                         <Link to="/houses-for-sale/skokie" style={{textDecoration:'none'}}>
                             <Card shadow={0}
                                   className="HomePageCities__card-image"
-                                  style={{ background: 'url(http://farm3.static.flickr.com/2711/4369664710_3c94dbffbc.jpg) center / cover' }}>
+                                  style={{ background: 'url(http://res.cloudinary.com/svitlana/image/upload/v1453658894/skokie-downtown_rdnonv.jpg) center / cover' }}>
                                 <CardTitle expand/>
                                 <CardActions
                                     style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>
@@ -55,7 +55,7 @@ export default class HomePageCities extends React.Component {
                         <Link to="/houses-for-sale/glenview" style={{textDecoration:'none'}}>
                             <Card shadow={0}
                                   className="HomePageCities__card-image"
-                                  style={{ background: 'url(http://i287.photobucket.com/albums/ll152/urbansurfin/Chicago08013.jpg) center / cover' }}>
+                                  style={{ background: 'url(http://res.cloudinary.com/svitlana/image/upload/v1454078423/glenview-mockup_zniuuy.jpg) center / cover' }}>
                                 <CardTitle expand/>
                                 <CardActions
                                     style={{height: '52px', padding: '16px', background: 'rgba(0,0,0,0.2)'}}>

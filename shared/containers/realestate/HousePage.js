@@ -7,11 +7,12 @@ import {appUrl, fbImage, appType, ogProps} from "../../config.js";
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardText, CardActions} from 'react-mdl/lib/Card';
 
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import {bindActionCreators} from 'redux';
 import _ from 'lodash';
 
+/*Components*/
 import * as houseActions from '../../actions/house';
 
 class HousePage extends Component {
@@ -41,7 +42,7 @@ class HousePage extends Component {
 
         return (
             <div style={{width:'100%'}}>
-                {saleRent == 'sale' &&
+                {saleRent == 'sale' && house &&
                 <Helmet
                     title={metaTitleSale}
                     meta={[
@@ -54,7 +55,7 @@ class HousePage extends Component {
                     ]}
                 />
                 }
-                {saleRent == 'rent' &&
+                {saleRent == 'rent' && house &&
                 <Helmet
                     title={metaTitleRent}
                     meta={[
