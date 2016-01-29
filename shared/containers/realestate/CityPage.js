@@ -43,8 +43,12 @@ class cityPage extends Component {
         let ogTitleSale = (city + " properties FOR SALE! ☆ Re/Max 1st Class Realty");
         let ogTitleRent = (city + " properties FOR RENT! ☆ Re/Max 1st Class Realty");
 
-        let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type. ☏   Call us for a free consultation and schedule a showing!');
-        let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type. ☏   Call us for a free consultation and schedule a showing!');
+        let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type. Call us for a free consultation and schedule a showing!');
+        let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type. Call us for a free consultation and schedule a showing!');
+
+        let ogDescriptionSale = ('✔ Browse ' + city + ' homes for sale, sorted by zip code or property type. ☏   Call us for a free consultation and schedule a showing!');
+        let ogDescriptionRent = ('✔ Browse ' + city + ' homes for rent, sorted by zip code or property type. ☏   Call us for a free consultation and schedule a showing!');
+
         return (
             <div>
                 {saleRent == 'sale' &&
@@ -55,7 +59,7 @@ class cityPage extends Component {
                         {"name": "description", "content": `${metaDescriptionSale}`},
                         {"property": "og:title", "content": `${ogTitleSale}`},
                         {"property": "og:image", "content": `${fbImage}`},
-                        {"property": "og:description", "content": `${metaDescriptionSale}`}
+                        {"property": "og:description", "content": `${ogDescriptionSale}`}
                     ]}
                 />
                 }
@@ -67,7 +71,7 @@ class cityPage extends Component {
                         {"name": "description", "content": `${metaDescriptionRent}`},
                         {"property": "og:title", "content": `${ogTitleRent}`},
                         {"property": "og:image", "content": `${fbImage}`},
-                        {"property": "og:description", "content": `${metaDescriptionRent}`}
+                        {"property": "og:description", "content": `${ogDescriptionRent}`}
                     ]}
                 />
                 }
