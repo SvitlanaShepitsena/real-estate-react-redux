@@ -20,7 +20,6 @@ export default function(app, passport, config) {
   });
 
   //use the following strategies
-  passport.use(local);
   passport.use(google);
   passport.use(facebook);
 };
