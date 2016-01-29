@@ -28,12 +28,22 @@ export default class Footer extends Component {
                     <Cell col={3}>
                         <div className="Footer__menu">
                             <h3 className="Footer__menu-header">Re/Max 1st Class</h3>
-                            <ul className="Footer__menu-items">
+                            <ul className="Footer__address">
                                 <li>
-                                    <span>4023 W. Church St.</span>
+                                    <span >4023 W. Church St.</span>
                                 </li>
                                 <li>
-                                    <span>Skokie, IL</span>
+                                    <span>Skokie, IL, 60076</span>
+                                </li>
+                                <li>
+                                    <span>
+                                        Phone: (847) 674-9797
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        Fax: (847) 674-0411
+                                    </span>
                                 </li>
                             </ul>
                         </div>
