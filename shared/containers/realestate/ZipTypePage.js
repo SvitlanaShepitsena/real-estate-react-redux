@@ -17,7 +17,6 @@ class ZipTypePage extends Component {
     constructor(props) {
         super(props);
     }
-
     componentDidMount() {
         this.props.getHousesIfNeeded(this.props.params, this.props.location);
     }
