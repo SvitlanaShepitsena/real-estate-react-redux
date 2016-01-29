@@ -38,10 +38,13 @@ class cityPage extends Component {
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
         let metaTitleSale = (city + " properties FOR SALE! | Re/Max 1st Class Realty");
-        let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type.');
-
         let metaTitleRent = (city + " properties FOR RENT! | Re/Max 1st Class Realty");
-        let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type.');
+
+        let ogTitleSale = (city + " properties FOR SALE! ☆ Re/Max 1st Class Realty");
+        let ogTitleRent = (city + " properties FOR RENT! ☆ Re/Max 1st Class Realty");
+
+        let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type. Call us for a free consultation!');
+        let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type. Call us for a free consultation!');
 
         return (
             <div>
@@ -51,7 +54,7 @@ class cityPage extends Component {
                     meta={[
                         {"name": "image", "content": `${fbImage}`},
                         {"name": "description", "content": `${metaDescriptionSale}`},
-                        {"property": "og:title", "content": `${metaTitleSale}`},
+                        {"property": "og:title", "content": `${ogTitleSale}`},
                         {"property": "og:image", "content": `${fbImage}`},
                         {"property": "og:description", "content": `${metaDescriptionSale}`}
                     ]}
@@ -63,7 +66,7 @@ class cityPage extends Component {
                     meta={[
                         {"name": "image", "content": `${fbImage}`},
                         {"name": "description", "content": `${metaDescriptionRent}`},
-                        {"property": "og:title", "content": `${metaTitleRent}`},
+                        {"property": "og:title", "content": `${ogTitleRent}`},
                         {"property": "og:image", "content": `${fbImage}`},
                         {"property": "og:description", "content": `${metaDescriptionRent}`}
                     ]}
