@@ -7,11 +7,11 @@ import {appUrl, fbImage, appType, ogProps} from "../../config.js";
 import Grid, {Cell} from 'react-mdl/lib/Grid';
 import {Card, CardTitle, CardText, CardActions} from 'react-mdl/lib/Card';
 
+import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import {connect}                   from 'react-redux';
+import {bindActionCreators} from 'redux';
 import _ from 'lodash';
 
-import {bindActionCreators} from 'redux';
 import * as houseActions from '../../actions/house';
 
 class HousePage extends Component {
@@ -24,18 +24,22 @@ class HousePage extends Component {
     }
 
     render() {
-        const house = this.props.house;
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let zipType = this.props.params.zipType;
         let street = this.props.params.street.replace(/-+/g, '-');
+
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+        const house = this.props.house;
 
         let price = this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
         const housePageOg = ogProps.cityPage;
 
-        let metaTitle = ("Re/Max 1st Class | " + house.type + " FOR SALE! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
-        let ogTitle = ("Re/Max 1st Class ☆ " + house.type + " FOR SALE! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+        let metaTitleSale = ("Re/Max 1st Class | " + house.type + " FOR SALE! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+        let ogTitleSale = ("Re/Max 1st Class ☆ " + house.type + " FOR SALE! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+        let metaTitleRent = ("Re/Max 1st Class | " + house.type + " FOR RENT! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+        let ogTitleRent = ("Re/Max 1st Class ☆ " + house.type + " FOR RENT! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+        let ogDescription = '✔ Check out and schedule a showing!  ☏  ' + this.props.house.description;
 
         console.log(ogTitle);
 
@@ -45,16 +49,12 @@ class HousePage extends Component {
                 <Helmet
                     title={metaTitle}
                     meta={[
-                        {"name": "url", "content": `${housePageOg.url}`},
-                        {"name": "type", "content": `${appType}`},
-                        {"name": "title", "content": `${metaTitle}`},
+                        {"name": "title", "content": `${metaTitleSale}`},
                         {"name": "image", "content": `${fbImage}`},
-                        {"name": "description", "content": `${housePageOg.description}`},
-                        {"property": "og:url", "content": `${housePageOg.url}`},
-                        {"property": "og:type", "content": `${appType}`},
-                        {"property": "og:title", "content": `${ogTitle}`},
+                        {"name": "description", "content": `${ogDescription}`},
+                        {"property": "og:title", "content": `${ogTitleSale}`},
                         {"property": "og:image", "content": `${fbImage}`},
-                        {"property": "og:description", "content": `${housePageOg.description}`}
+                        {"property": "og:description", "content": `${ogDescription}`}
                     ]}
                 />
                 }
@@ -62,16 +62,12 @@ class HousePage extends Component {
                 <Helmet
                     title={ogTitle}
                     meta={[
-                        {"name": "url", "content": `${housePageOg.url}`},
-                        {"name": "type", "content": `${appType}`},
-                        {"name": "title", "content": `${ogTitle}`},
+                        {"name": "title", "content": `${metaTitleRent}`},
                         {"name": "image", "content": `${fbImage}`},
-                        {"name": "description", "content": `${housePageOg.description}`},
-                        {"property": "og:url", "content": `${housePageOg.url}`},
-                        {"property": "og:type", "content": `${appType}`},
-                        {"property": "og:title", "content": `${ogTitle}`},
+                        {"name": "description", "content": `${ogDescription}`},
+                        {"property": "og:title", "content": `${ogTitleRent}`},
                         {"property": "og:image", "content": `${fbImage}`},
-                        {"property": "og:description", "content": `${housePageOg.description}`}
+                        {"property": "og:description", "content": `${ogDescription}`}
                     ]}
                 />
                 }
