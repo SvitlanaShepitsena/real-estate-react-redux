@@ -43,8 +43,8 @@ class cityPage extends Component {
         let ogTitleSale = (city + " properties FOR SALE! ☆ Re/Max 1st Class Realty");
         let ogTitleRent = (city + " properties FOR RENT! ☆ Re/Max 1st Class Realty");
 
-        let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type. Call us for a free consultation and schedule a showing!');
-        let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type. Call us for a free consultation and schedule a showing!');
+        let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type. ☏   Call us for a free consultation and schedule a showing!');
+        let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type. ☏   Call us for a free consultation and schedule a showing!');
         return (
             <div>
                 {saleRent == 'sale' &&
