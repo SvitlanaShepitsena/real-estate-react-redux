@@ -45,7 +45,6 @@ class cityPage extends Component {
 
         let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type. Call us for a free consultation and schedule a showing!');
         let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type. Call us for a free consultation and schedule a showing!');
-
         return (
             <div>
                 {saleRent == 'sale' &&
