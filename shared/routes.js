@@ -41,7 +41,7 @@ export default (
                 <Route component={HousePage} path='/apartments-for-rent/:city/:zipType/:street'/>
                 <Route component={ZipTypePage} path='/apartments-for-rent/:city/:zipType'/>
                 <Route component={CityPage} path='/apartments-for-rent/:city'/>
-                <Route component={HousesForSalePageContainer} path='/apartments-for-rent'/>
+                <Route component={HousesForRentPageContainer} path='/apartments-for-rent'/>
 
 
 
