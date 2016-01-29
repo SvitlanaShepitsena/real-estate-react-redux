@@ -34,10 +34,10 @@ class HousePage extends Component {
 
         let price = this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
-        let metaTitleSale = ("Re/Max 1st Class | " + house.type + " FOR SALE! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
-        let ogTitleSale = ("Re/Max 1st Class ☆ " + house.type + " FOR SALE! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
-        let metaTitleRent = ("Re/Max 1st Class | " + house.type + " FOR RENT! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
-        let ogTitleRent = ("Re/Max 1st Class ☆ " + house.type + " FOR RENT! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+        let metaTitleSale = (house.type + " FOR SALE! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
+        let ogTitleSale = (house.type + " FOR SALE! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+        let metaTitleRent = (house.type + " FOR RENT! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
+        let ogTitleRent = (house.type + " FOR RENT! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
         let ogDescription = '✔ Check out and schedule a showing!  ☏  ' + this.props.house.description;
 
         return (
@@ -46,7 +46,6 @@ class HousePage extends Component {
                 <Helmet
                     title={metaTitleSale}
                     meta={[
-                        {"name": "title", "content": `${metaTitleSale}`},
                         {"name": "image", "content": `${fbImage}`},
                         {"name": "description", "content": `${ogDescription}`},
                         {"property": "og:title", "content": `${ogTitleSale}`},
@@ -59,7 +58,6 @@ class HousePage extends Component {
                 <Helmet
                     title={metaTitleRent}
                     meta={[
-                        {"name": "title", "content": `${metaTitleRent}`},
                         {"name": "image", "content": `${fbImage}`},
                         {"name": "description", "content": `${ogDescription}`},
                         {"property": "og:title", "content": `${ogTitleRent}`},

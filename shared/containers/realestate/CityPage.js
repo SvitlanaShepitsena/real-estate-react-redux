@@ -37,11 +37,11 @@ class cityPage extends Component {
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        let metaTitleSale = ("Re/Max 1st Class | " + city + "Properties FOR SALE!");
-        let metaDescriptionSale = (city + 'Homes for' + ' Sale' + 'sorted by zip code or property type.');
+        let metaTitleSale = (city + " properties FOR SALE! | Re/Max 1st Class Realty");
+        let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type.');
 
-        let metaTitleRent = ("Re/Max 1st Class | " + city + "Properties FOR RENT!");
-        let metaDescriptionRent = (city + 'Homes for' + ' Rent' + 'sorted by zip code or property type.');
+        let metaTitleRent = (city + " properties FOR RENT! | Re/Max 1st Class Realty");
+        let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type.');
 
         return (
             <div>
