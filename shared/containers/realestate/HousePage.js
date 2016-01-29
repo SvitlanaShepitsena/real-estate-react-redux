@@ -25,321 +25,334 @@ class HousePage extends Component {
     }
 
     render() {
-        let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
-        let zipType = this.props.params.zipType;
-        let street = this.props.params.street.replace(/-+/g, '-');
+        var city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
+        var zipType = this.props.params.zipType;
+        var street = this.props.params.street.replace(/-+/g, '-');
 
-        let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-        const house = this.props.house;
+        var saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
+        var house = this.props.house;
 
-        let price = this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+        if (house) {
 
-        let metaImage = house.images[0];
-        let metaDescription = 'Check out and schedule a showing! ' + this.props.house.description;
+            var price = this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
-        let metaTitleSale = (house.type + " FOR SALE! | $" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
-        let metaTitleRent = (house.type + " FOR RENT! | $" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
+            var metaImage = house.images[0];
+            var metaDescription = 'Check out and schedule a showing! ' + this.props.house.description;
 
-        let ogTitleSale = (house.type + " FOR SALE! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
-        let ogTitleRent = (house.type + " FOR RENT! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+            var metaTitleSale = (house.type + " FOR SALE! | $" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
+            var metaTitleRent = (house.type + " FOR RENT! | $" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
 
-        let ogDescription = '✔ Check out and schedule a showing!  ☏  ' + this.props.house.description;
+            var ogTitleSale = (house.type + " FOR SALE! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+            var ogTitleRent = (house.type + " FOR RENT! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+
+            var ogDescription = '✔ Check out and schedule a showing!  ☏  ' + this.props.house.description;
+        }
 
         return (
-            <div style={{width:'100%'}}>
-                {saleRent == 'sale' && house &&
-                <Helmet
-                    title={metaTitleSale}
-                    meta={[
+            <div>
+
+                {this.props.house &&
+                <div style={{width:'100%'}}>
+                    {saleRent == 'sale' && house &&
+                    <Helmet
+                        title={metaTitleSale}
+                        meta={[
                         {"name": "image", "content": `${metaImage}`},
                         {"name": "description", "content": `${metaDescription}`},
                         {"property": "og:title", "content": `${ogTitleSale}`},
                         {"property": "og:image", "content": `${metaImage}`},
                         {"property": "og:description", "content": `${ogDescription}`}
                     ]}
-                />
-                }
-                {saleRent == 'rent' && house &&
-                <Helmet
-                    title={metaTitleRent}
-                    meta={[
+                    />
+                    }
+                    {saleRent == 'rent' && house &&
+                    <Helmet
+                        title={metaTitleRent}
+                        meta={[
                         {"name": "image", "content": `${metaImage}`},
                         {"name": "description", "content": `${metaDescription}`},
                         {"property": "og:title", "content": `${ogTitleRent}`},
                         {"property": "og:image", "content": `${metaImage}`},
                         {"property": "og:description", "content": `${ogDescription}`}
                     ]}
-                />
-                }
+                    />
+                    }
 
-                {house &&
-                <div>
-                    <ul
-                        style={{listStyle:'none', margin:'0px', padding:'0px'}}>
-                        <li style={{display:'inline-block'}}>
-                            {saleRent == 'sale' &&
-                            <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}} to="/houses-for-sale">Houses
-                                For Sale
-                            </Link>}
-                            {saleRent == 'rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to="/apartments-for-rent">Apartments
-                                For Rent
-                            </Link>}
-                            <span> / </span>
-                        </li>
-                        <li style={{display:'inline-block'}}>
-                            {saleRent == 'sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to={`/houses-for-sale/${city}`}>
-                                {city}
-                            </Link>}
-                            {saleRent == 'rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to={`/apartments-for-rent/${city}`}>
-                                {city}
-                            </Link>}
-                            <span> / </span>
-                        </li>
-                        <li style={{display:'inline-block'}}>
-                            {saleRent == 'sale' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to={`/houses-for-sale/${city}/${zipType}`}>
-                                {zipType}
+                    {house &&
+                    <div>
+                        <ul
+                            style={{listStyle:'none', margin:'0px', padding:'0px'}}>
+                            <li style={{display:'inline-block'}}>
+                                {saleRent == 'sale' &&
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to="/houses-for-sale">Houses
+                                    For Sale
+                                </Link>}
+                                {saleRent == 'rent' &&
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to="/apartments-for-rent">Apartments
+                                    For Rent
+                                </Link>}
+                                <span> / </span>
+                            </li>
+                            <li style={{display:'inline-block'}}>
+                                {saleRent == 'sale' &&
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to={`/houses-for-sale/${city}`}>
+                                    {city}
+                                </Link>}
+                                {saleRent == 'rent' &&
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to={`/apartments-for-rent/${city}`}>
+                                    {city}
+                                </Link>}
+                                <span> / </span>
+                            </li>
+                            <li style={{display:'inline-block'}}>
+                                {saleRent == 'sale' &&
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to={`/houses-for-sale/${city}/${zipType}`}>
+                                    {zipType}
 
-                            </Link>}
-                            {saleRent == 'rent' && <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
-                                                         to={`/apartments-for-rent/${city}/${zipType}`}>
-                                {zipType}
-                            </Link>}
-                            <span> / </span>
-                        </li>
-                        <li style={{display:'inline-block'}}>
-                            {house.address.street &&
-                            <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
+                                </Link>}
+                                {saleRent == 'rent' &&
+                                <Link style={{textDecoration:'none', fontSize:13, color:'#424242'}}
+                                      to={`/apartments-for-rent/${city}/${zipType}`}>
+                                    {zipType}
+                                </Link>}
+                                <span> / </span>
+                            </li>
+                            <li style={{display:'inline-block'}}>
+                                {house.address.street &&
+                                <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
                                 {house.address.street}
                             </span>
-                            }
-                            {house.mls &&
-                            <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
-                             {" - MLS#" + house.mls  }
-                            </span>
-                            }
-                        </li>
-                    </ul>
-                    <br/>
-                    <Card shadow={0} style={{width:'100%'}}>
-                        <ul style={{listStyle:'none',padding:0}}>
-                            <li style={{display:'block',float:'left', padding:'0px 16px'}}>
-                                {/*=Address*/}
-                                <h1 style={{fontSize:22,marginBottom:5}}>
-                                    {house.address.street &&
-                                    <span>{house.address.street}</span>
-                                    }
-                                    <br/>
-
-                                    {house.address.city &&
-                                    <span> {house.address.city + ", "} </span>
-                                    }
-
-                                    {house.address.state &&
-                                    <span> {house.address.state } </span>
-                                    }
-                                </h1>
-                                {house.type &&
-                                <p> {house.type} </p>
-                                }
-                            </li>
-                            <li style={{display:'block',float:'right', padding:'0px 16px'}}>
-                                {house.price &&
-                                <h4> ${house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")} </h4>
-                                }
-                                {house.shortSale &&
-                                <div> Short Sale </div>
                                 }
                                 {house.mls &&
-                                <div> MLS#: {house.mls} </div>
-                                }
-                                {house.year &&
-                                <div> Year: {house.year} </div>
+                                <span style={{textDecoration:'none', fontSize:13, color:'#757575'}}>
+                             {" - MLS#" + house.mls  }
+                            </span>
                                 }
                             </li>
                         </ul>
-                        <div>
-                            {house.images && house.images.length &&
-                            <img style={{width:'100%',height:'auto'}} src={house.images[0]} alt=""/>
-                            }
-                        </div>
-                        <article style={{margin:'0px 10px'}}>
-                            {house.description &&
-                            <div>
-                                <h5 >Description</h5>
-                                <p> {house.description} </p>
-                            </div>
-                            }
-                        </article>
-                        <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13, width:"100%"}}>
-                            <h5>Key Facts:</h5>
-                            <Grid>
-                                <Cell
-                                    col={6}
-                                    phone={1}
-                                >
-                                    {house.type &&
-                                    <p> Type: {house.type} </p>
-                                    }
+                        <br/>
+                        <Card shadow={0} style={{width:'100%'}}>
+                            <ul style={{listStyle:'none',padding:0}}>
+                                <li style={{display:'block',float:'left', padding:'0px 16px'}}>
+                                    {/*=Address*/}
+                                    <h1 style={{fontSize:22,marginBottom:5}}>
+                                        {house.address.street &&
+                                        <span>{house.address.street}</span>
+                                        }
+                                        <br/>
 
-                                    {house.exteriorDetails && house.exteriorDetails['Lot Size'] &&
-                                    <p> Lot Size: {house.exteriorDetails['Lot Size']} </p>
+                                        {house.address.city &&
+                                        <span> {house.address.city + ", "} </span>
+                                        }
+
+                                        {house.address.state &&
+                                        <span> {house.address.state } </span>
+                                        }
+                                    </h1>
+                                    {house.type &&
+                                    <p> {house.type} </p>
                                     }
+                                </li>
+                                <li style={{display:'block',float:'right', padding:'0px 16px'}}>
                                     {house.price &&
-                                    <p> Price: ${house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")} </p>
+                                    <h4> ${house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")} </h4>
+                                    }
+                                    {house.shortSale &&
+                                    <div> Short Sale </div>
+                                    }
+                                    {house.mls &&
+                                    <div> MLS#: {house.mls} </div>
                                     }
                                     {house.year &&
-                                    <p> Year Built: {house.year} </p>
+                                    <div> Year: {house.year} </div>
                                     }
-                                </Cell>
-                                <Cell
-                                    col={6}
-                                    phone={1}
-                                >
-                                    {house.beds &&
-                                    <p> Beds: {house.beds} </p>
-                                    }
-                                    {house.bath &&
-                                    <p> Baths: {house.bath} </p>
-                                    }
-                                    {house.exteriorDetails && house.exteriorDetails['Parking'] &&
-                                    <p> Parking: {house.exteriorDetails['Parking']} </p>
-                                    }
-                                </Cell>
+                                </li>
+                            </ul>
+                            <div>
+                                {house.images && house.images.length &&
+                                <img style={{width:'100%',height:'auto'}} src={house.images[0]} alt=""/>
+                                }
+                            </div>
+                            <article style={{margin:'0px 10px'}}>
+                                {house.description &&
+                                <div>
+                                    <h5 >Description</h5>
+                                    <p> {house.description} </p>
+                                </div>
+                                }
+                            </article>
+                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13, width:"100%"}}>
+                                <h5>Key Facts:</h5>
+                                <Grid>
+                                    <Cell
+                                        col={6}
+                                        phone={1}
+                                    >
+                                        {house.type &&
+                                        <p> Type: {house.type} </p>
+                                        }
 
-                            </Grid>
-                        </article>
-                        {
-                            house.exteriorDetails &&
-                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
-                                <h5>Exterior Details</h5>
-                                <ul style={{fontSize: 16}}>
-                                    {
-                                        Object.keys(house.exteriorDetails).map(extDetail => {
-                                            const val = house.exteriorDetails[extDetail];
-                                            return (
-                                                <li key={extDetail}>
+                                        {house.exteriorDetails && house.exteriorDetails['Lot Size'] &&
+                                        <p> Lot Size: {house.exteriorDetails['Lot Size']} </p>
+                                        }
+                                        {house.price &&
+                                        <p> Price: ${house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")} </p>
+                                        }
+                                        {house.year &&
+                                        <p> Year Built: {house.year} </p>
+                                        }
+                                    </Cell>
+                                    <Cell
+                                        col={6}
+                                        phone={1}
+                                    >
+                                        {house.beds &&
+                                        <p> Beds: {house.beds} </p>
+                                        }
+                                        {house.bath &&
+                                        <p> Baths: {house.bath} </p>
+                                        }
+                                        {house.exteriorDetails && house.exteriorDetails['Parking'] &&
+                                        <p> Parking: {house.exteriorDetails['Parking']} </p>
+                                        }
+                                    </Cell>
+
+                                </Grid>
+                            </article>
+                            {
+                                house.exteriorDetails &&
+                                <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                    <h5>Exterior Details</h5>
+                                    <ul style={{fontSize: 16}}>
+                                        {
+                                            Object.keys(house.exteriorDetails).map(extDetail => {
+                                                const val = house.exteriorDetails[extDetail];
+                                                return (
+                                                    <li key={extDetail}>
                                                     <span>
                                                         {extDetail + ": "}
                                                     </span>
                                                     <span>
                                                         {val}
                                                     </span>
-                                                </li>
-                                            );
-                                        })
-                                    }
-                                </ul>
+                                                    </li>
+                                                );
+                                            })
+                                        }
+                                    </ul>
 
-                            </article>
-                        }
-                        {
-                            house.interiorDetails &&
-                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
-                                <h5>Interior Details</h5>
-                                <ul style={{fontSize: 16}}>
-                                    {
-                                        Object.keys(house.interiorDetails).map(intDetail => {
-                                            const val = house.interiorDetails[intDetail];
-                                            return (
-                                                <li key={intDetail}>
+                                </article>
+                            }
+                            {
+                                house.interiorDetails &&
+                                <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                    <h5>Interior Details</h5>
+                                    <ul style={{fontSize: 16}}>
+                                        {
+                                            Object.keys(house.interiorDetails).map(intDetail => {
+                                                const val = house.interiorDetails[intDetail];
+                                                return (
+                                                    <li key={intDetail}>
                                                     <span>
                                                         {intDetail + ": "}
                                                     </span>
                                                     <span>
                                                         {val}
                                                     </span>
-                                                </li>
-                                            );
-                                        })
-                                    }
-                                </ul>
-                            </article>
-                        }
-                        {
-                            house.utilities &&
-                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
-                                <h5>Utilities</h5>
-                                <ul style={{fontSize: 16}}>
-                                    {
-                                        Object.keys(house.utilities).map(util => {
-                                            const val = house.utilities[util];
-                                            return (
-                                                <li key={util}>
+                                                    </li>
+                                                );
+                                            })
+                                        }
+                                    </ul>
+                                </article>
+                            }
+                            {
+                                house.utilities &&
+                                <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                    <h5>Utilities</h5>
+                                    <ul style={{fontSize: 16}}>
+                                        {
+                                            Object.keys(house.utilities).map(util => {
+                                                const val = house.utilities[util];
+                                                return (
+                                                    <li key={util}>
                                                     <span>
                                                         {util + ": "}
                                                     </span>
                                                     <span>
                                                         {val}
                                                     </span>
-                                                </li>
-                                            );
-                                        })
-                                    }
-                                </ul>
-                            </article>
-                        }
-                        {
-                            house.publicFacts &&
-                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
-                                <h5>Public Facts</h5>
-                                <ul style={{fontSize: 16}}>
-                                    {
-                                        Object.keys(house.publicFacts).map(publicFact => {
-                                            const val = house.publicFacts[publicFact];
-                                            return (
-                                                <li key={publicFact}>
+                                                    </li>
+                                                );
+                                            })
+                                        }
+                                    </ul>
+                                </article>
+                            }
+                            {
+                                house.publicFacts &&
+                                <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                    <h5>Public Facts</h5>
+                                    <ul style={{fontSize: 16}}>
+                                        {
+                                            Object.keys(house.publicFacts).map(publicFact => {
+                                                const val = house.publicFacts[publicFact];
+                                                return (
+                                                    <li key={publicFact}>
                                                     <span>
                                                         {publicFact + ": "}
                                                     </span>
                                                     <span>
                                                         {val}
                                                     </span>
-                                                </li>
-                                            );
-                                        })
-                                    }
-                                </ul>
-                            </article>
-                        }
-                        {
-                            house.taxes &&
-                            <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
-                                <h5>Taxes</h5>
-                                <ul style={{fontSize: 16}}>
-                                    {
-                                        Object.keys(house.taxes).map(tax => {
-                                            const val = house.taxes[tax];
-                                            return (
-                                                <li key={tax}>
+                                                    </li>
+                                                );
+                                            })
+                                        }
+                                    </ul>
+                                </article>
+                            }
+                            {
+                                house.taxes &&
+                                <article style={{margin:'0px 10px', paddingBottom:16, fontSize:13}}>
+                                    <h5>Taxes</h5>
+                                    <ul style={{fontSize: 16}}>
+                                        {
+                                            Object.keys(house.taxes).map(tax => {
+                                                const val = house.taxes[tax];
+                                                return (
+                                                    <li key={tax}>
                                                     <span>
                                                         {tax + ": "}
                                                     </span>
                                                     <span>
                                                         {val}
                                                     </span>
-                                                </li>
-                                            );
-                                        })
-                                    }
-                                </ul>
-                            </article>
-                        }
-                        {
-                            house.agent &&
-                            <article style={{margin: '0px 10px', paddingBottom: 16}}>
-                                <p> Listing
-                                    Broker: {house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
-                                </p>
-                            </article>
-                        }
+                                                    </li>
+                                                );
+                                            })
+                                        }
+                                    </ul>
+                                </article>
+                            }
+                            {
+                                house.agent &&
+                                <article style={{margin: '0px 10px', paddingBottom: 16}}>
+                                    <p> Listing
+                                        Broker: {house.agent.split('_').map(init=>init[0].toUpperCase() + init.slice(1)).join(' ')}
+                                    </p>
+                                </article>
+                            }
 
-                    </Card>
-                </div>
-                }
+                        </Card>
+                    </div>
+                    }
+                </div>}
             </div>
 
         );
