@@ -176,7 +176,9 @@ class HousePage extends Component {
                             </ul>
                             <div>
                                 {house.images && house.images.length &&
-                                <img style={{width:'100%',height:'auto'}} src={house.images[0]} alt=""/>
+                                <img style={{width: 'auto',maxHeight:400,display:'block',margin:'0px auto'}}
+                                     src={house.images[0]}
+                                     alt={mls + " " + house.type}/>
                                 }
                             </div>
                             <article style={{margin:'0px 10px'}}>

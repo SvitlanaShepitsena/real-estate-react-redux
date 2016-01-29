@@ -11,8 +11,6 @@ if (process.env.BROWSER) {
 }
 class ContactAgentList extends Component {
     constructor(props) {
-        // Running constructor of Parent (React.Component) for binding this to object.
-        // Dynamically assigned global property This is always a component itself.
         super(props);
     }
 
@@ -28,7 +26,6 @@ class ContactAgentList extends Component {
         console.log('Your message have been sent');
         //this.props.resetForm();
     }
-
     render() {
         const {
             fields: {name, email, message},
