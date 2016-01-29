@@ -36,12 +36,14 @@ class HousePage extends Component {
 
         let metaImage = house.images[0];
         let metaDescription = 'Check out and schedule a showing! ' + this.props.house.description;
-        let ogDescription = '✔ Check out and schedule a showing!  ☏  ' + this.props.house.description;
 
-        let metaTitleSale = (house.type + " FOR SALE! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
-        let ogTitleSale = (house.type + " FOR SALE! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
-        let metaTitleRent = (house.type + " FOR RENT! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
-        let ogTitleRent = (house.type + " FOR RENT! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+        let metaTitleSale = (house.type + " FOR SALE! | $" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
+        let metaTitleRent = (house.type + " FOR RENT! | $" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " | Re/Max 1st Class");
+
+        let ogTitleSale = (house.type + " FOR SALE! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+        let ogTitleRent = (house.type + " FOR RENT! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+
+        let ogDescription = '✔ Check out and schedule a showing!  ☏  ' + this.props.house.description;
 
         return (
             <div style={{width:'100%'}}>
@@ -49,10 +51,10 @@ class HousePage extends Component {
                 <Helmet
                     title={metaTitleSale}
                     meta={[
-                        {"name": "image", "content": `${fbImage}`},
+                        {"name": "image", "content": `${metaImage}`},
                         {"name": "description", "content": `${metaDescription}`},
                         {"property": "og:title", "content": `${ogTitleSale}`},
-                        {"property": "og:image", "content": `${fbImage}`},
+                        {"property": "og:image", "content": `${metaImage}`},
                         {"property": "og:description", "content": `${ogDescription}`}
                     ]}
                 />
