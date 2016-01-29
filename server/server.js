@@ -59,6 +59,17 @@ const app = express();
 app.use(compress({
     threshold: 0
 }));
+
+app.all(/.*/, function (req, res, next) {
+    var host = req.header("host");
+    console.log(host);
+    if (host.indexOf('local') > -1 || host.match(/^www\..*/i)) {
+        next();
+    } else {
+        res.redirect(301, req.protocol + "://www." + host);
+    }
+});
+
 app.use('/static', express.static('public/static', {maxAge: 8640000}));
 app.use(cookieParser());
 
@@ -69,18 +80,6 @@ configGmail(app);
 
 app.use((req, res) => {
     // Process old links like /en/articles
-
-    if (req.url.match(/\/[a-z]{2}\//i)) {
-        const noLangUrl = req.url.replace(/^\/[a-z]{2}/i, '');
-        return res.redirect(302, noLangUrl);
-    }
-
-    // If user is authenticated redirect him to the wall embedded into the main app
-    if (req.cookies.authenticated && !req.url.match('embed')) {
-        const redirectUrl = makeRedirectUrl({originalUrl: req.url});
-        return res.redirect(302, redirectUrl);
-    }
-
     const locale = detectLocale(req);
     if (req.user) {
         console.log(req.user);
@@ -151,6 +150,12 @@ function renderHTML(helmet, {componentHTML, initialState, metaData, config}) {
             ${helmet.title}
             ${helmet.meta}
             <meta property="fb:app_id" content="${_.escape(config.facebookAppId)}" />
+ <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            </script>
 
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
