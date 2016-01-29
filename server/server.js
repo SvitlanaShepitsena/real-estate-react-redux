@@ -69,17 +69,14 @@ configGmail(app);
 
 app.use((req, res) => {
     // Process old links like /en/articles
-
-    if (req.url.match(/\/[a-z]{2}\//i)) {
-        const noLangUrl = req.url.replace(/^\/[a-z]{2}/i, '');
-        return res.redirect(302, noLangUrl);
-    }
-
-    // If user is authenticated redirect him to the wall embedded into the main app
-    if (req.cookies.authenticated && !req.url.match('embed')) {
-        const redirectUrl = makeRedirectUrl({originalUrl: req.url});
-        return res.redirect(302, redirectUrl);
-    }
+    app.all(/.*/, function (req, res, next) {
+        var host = req.header("host");
+        if (!host.match('localhost') && host.match(/^www\..*/i)) {
+            next();
+        } else {
+            res.redirect(301, req.protocol+"://www." + host);
+        }
+    });
 
     const locale = detectLocale(req);
     if (req.user) {
