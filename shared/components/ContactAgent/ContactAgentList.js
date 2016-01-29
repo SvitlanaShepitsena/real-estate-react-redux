@@ -39,18 +39,20 @@ class ContactAgentList extends Component {
             <form action="/gmail" method="post">
                 <Card shadow={1} className="ContactAgentList">
                     <CardTitle>
-                        Contact Our Agent
+                        Contact Us
                     </CardTitle>
                     <CardText>
-                        <ul style={{listStyle:"none", textAlign:"left", margin:0, padding:"0px 20px 0px 0px", width:"100%"}}>
-                            <li style={{display:'inline-block'}}>
-                                <Checkbox ripple defaultChecked/>
-                            </li>
-                            <li style={{display:'inline-block'}}>
-                                <AgentThumb></AgentThumb>
-                            </li>
-                        </ul>
-                        <hr/>
+                        {/*
+                         <ul style={{listStyle:"none", textAlign:"left", margin:0, padding:"0px 20px 0px 0px", width:"100%"}}>
+                         <li style={{display:'inline-block'}}>
+                         <Checkbox ripple defaultChecked/>
+                         </li>
+                         <li style={{display:'inline-block'}}>
+                         <AgentThumb></AgentThumb>
+                         </li>
+                         </ul>
+                         <hr/>
+                        */}
                         <br/>
                         <div className="ContactAgentList__input-container">
                             <input className="mdl-textfield__input" type="text" placeholder="Your Name" {...name}/>
