@@ -33,21 +33,17 @@ class HousePage extends Component {
 
         let price = this.props.house.price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
-        const housePageOg = ogProps.cityPage;
-
         let metaTitleSale = ("Re/Max 1st Class | " + house.type + " FOR SALE! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
         let ogTitleSale = ("Re/Max 1st Class ☆ " + house.type + " FOR SALE! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
         let metaTitleRent = ("Re/Max 1st Class | " + house.type + " FOR RENT! | " + "$" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
         let ogTitleRent = ("Re/Max 1st Class ☆ " + house.type + " FOR RENT! ☆ " + "$" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
         let ogDescription = '✔ Check out and schedule a showing!  ☏  ' + this.props.house.description;
 
-        console.log(ogTitle);
-
         return (
             <div style={{width:'100%'}}>
                 {saleRent == 'sale' &&
                 <Helmet
-                    title={metaTitle}
+                    title={metaTitleSale}
                     meta={[
                         {"name": "title", "content": `${metaTitleSale}`},
                         {"name": "image", "content": `${fbImage}`},
@@ -60,7 +56,7 @@ class HousePage extends Component {
                 }
                 {saleRent == 'rent' &&
                 <Helmet
-                    title={ogTitle}
+                    title={metaTitleRent}
                     meta={[
                         {"name": "title", "content": `${metaTitleRent}`},
                         {"name": "image", "content": `${fbImage}`},
@@ -128,7 +124,7 @@ class HousePage extends Component {
                         <ul style={{listStyle:'none',padding:0}}>
                             <li style={{display:'block',float:'left', padding:'0px 16px'}}>
                                 {/*=Address*/}
-                                <h4 style={{fontSize:22,marginBottom:5}}>
+                                <h1 style={{fontSize:22,marginBottom:5}}>
                                     {house.address.street &&
                                     <span>{house.address.street}</span>
                                     }
@@ -141,7 +137,7 @@ class HousePage extends Component {
                                     {house.address.state &&
                                     <span> {house.address.state } </span>
                                     }
-                                </h4>
+                                </h1>
                                 {house.type &&
                                 <p> {house.type} </p>
                                 }
