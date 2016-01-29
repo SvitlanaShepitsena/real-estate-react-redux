@@ -59,6 +59,16 @@ const app = express();
 app.use(compress({
     threshold: 0
 }));
+
+app.all(/.*/, function (req, res, next) {
+    var host = req.header("host");
+    if (!host.match('localhost') && host.match(/^www\..*/i)) {
+        next();
+    } else {
+        res.redirect(301, req.protocol+"://www." + host);
+    }
+});
+
 app.use('/static', express.static('public/static', {maxAge: 8640000}));
 app.use(cookieParser());
 
@@ -69,15 +79,6 @@ configGmail(app);
 
 app.use((req, res) => {
     // Process old links like /en/articles
-    app.all(/.*/, function (req, res, next) {
-        var host = req.header("host");
-        if (!host.match('localhost') && host.match(/^www\..*/i)) {
-            next();
-        } else {
-            res.redirect(301, req.protocol+"://www." + host);
-        }
-    });
-
     const locale = detectLocale(req);
     if (req.user) {
         console.log(req.user);
