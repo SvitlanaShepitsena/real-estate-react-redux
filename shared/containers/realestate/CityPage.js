@@ -17,9 +17,6 @@ class cityPage extends Component {
     static contextTypes = {i18n: PropTypes.object};
 
     componentDidMount() {
-        this.city = this.props.params.city;
-        this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
-
         this.props.getCityInfoIfNeeded(this.props.params, this.props.location);
     }
 

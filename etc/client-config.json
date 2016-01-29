@@ -56,12 +56,6 @@
       "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
       "description": "Homes for sale sorted by zip code or property type in a Chicago North suburb city. "
     },
-    "zipPage": {
-      "url": "https://real-estate-redux.herokuapp.com/houses-for-sale",
-      "title": "North Chicago Suburbs Properties for sale by Zip Code.",
-      "image": "http://res.cloudinary.com/svitlana/image/upload/v1454000456/220-Remax-1st-class-logo_a4xb5o.jpg",
-      "description": "Houses for sale in your favorite Chicago North suburb city sorted by a zip code."
-    },
     "propertyTypePage": {
       "url": "https://real-estate-redux.herokuapp.com/houses-for-sale",
       "title": "North Chicago Suburbs Houses for sale by Property Type.",

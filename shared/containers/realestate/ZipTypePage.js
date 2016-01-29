@@ -19,35 +19,54 @@ class ZipTypePage extends Component {
     }
 
     componentDidMount() {
-        this.city = this.props.params.city;
-        this.zipType = this.props.params.zipType;
-        this.saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
         this.props.getHousesIfNeeded(this.props.params, this.props.location);
     }
 
     render() {
-        const zipOg = ogProps.zipPage;
+
+        let zipType = this.props.params.zipType;
 
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
+        let metaTitleSale = (city + ', ' + zipType + " properties FOR SALE! | Re/Max 1st Class Realty");
+        let metaTitleRent = (city + ', ' + zipType + " properties FOR RENT! | Re/Max 1st Class Realty");
+
+        let ogTitleSale = (city + ', ' + zipType + " properties FOR SALE! ☆ Re/Max 1st Class Realty");
+        let ogTitleRent = (city + ', ' + zipType + " properties FOR RENT! ☆ Re/Max 1st Class Realty");
+
+        let metaDescriptionSale = ('Browse ' + city + ', ' + zipType + ' homes for sale. Call us for a free consultation and schedule a showing!');
+        let metaDescriptionRent = ('Browse ' + city + ', ' + zipType + ' homes for rent. Call us for a free consultation and schedule a showing!');
+        let ogDescriptionSale = ('✔ Browse ' + city + ', ' + zipType + ' homes for sale. ☏   Call us for a free consultation and schedule a showing!');
+        let ogDescriptionRent = ('✔ Browse ' + city + ', ' + zipType + ' homes for rent. ☏   Call us for a free consultation and schedule a showing!');
+
         return (
             <div style={{width:'100%'}}>
-                <Helmet
-                    title={zipOg.title}
+                {saleRent == 'sale' && city &&
+                < Helmet
+                    title={metaTitleSale}
                     meta={[
-                    {"name": "url", "content": `${zipOg.url}`},
-                    {"name": "type", "content": `${appType}`},
-                    {"name": "title", "content": `${zipOg.title}`},
-                    {"name": "image", "content": `${fbImage}`},
-                    {"name": "description", "content": `${zipOg.description}`},
-                    {"property": "og:url", "content": `${zipOg.url}`},
-                    {"property": "og:type", "content": `${appType}`},
-                    {"property": "og:title", "content": `${zipOg.title}`},
-                    {"property": "og:image", "content": `${fbImage}`},
-                    {"property": "og:description", "content": `${zipOg.description}`}
-                ]}
+                {"name": "image", "content": `${fbImage}`},
+                {"name": "description", "content": `${metaDescriptionSale}`},
+                {"property": "og:title", "content": `${ogTitleSale}`},
+                {"property": "og:image", "content": `${fbImage}`},
+                {"property": "og:description", "content": `${ogDescriptionSale}`}
+                    ]}
                 />
+                }
+                {saleRent == 'rent' &&
+                <Helmet
+                    title={metaTitleRent}
+                    meta={[
+                        {"name": "image", "content": `${fbImage}`},
+                        {"name": "description", "content": `${metaDescriptionRent}`},
+                        {"property": "og:title", "content": `${ogTitleRent}`},
+                        {"property": "og:image", "content": `${fbImage}`},
+                        {"property": "og:description", "content": `${ogDescriptionRent}`}
+                    ]}
+                />
+                }
+
                 {this.props.params.street &&
                 <div>
                     {this.props.children}
