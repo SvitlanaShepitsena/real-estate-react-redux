@@ -38,9 +38,9 @@ class HousePage extends Component {
             var mls = 'MLS#:' + this.props.house.mls;
 
             var metaImage = house.images[0];
-            var metaDescription = house.type + ' | ' + mls + ' | Check out and schedule a showing! ' + this.props.house.description;
+            var metaDescription = mls + ' | Check out and schedule a showing! ' + this.props.house.description;
 
-            var metaTitleSale = ("FOR SALE! | $" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
+            var metaTitleSale = (house.address.city + ' ' + "home for sale | " + house.address.street + ". ID:" + house.mls);
             var metaTitleRent = ("FOR RENT! | $" + price + " | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
 
             var ogTitleSale = ("FOR SALE! ☆ $" + price + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
