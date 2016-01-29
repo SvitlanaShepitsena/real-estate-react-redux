@@ -3,12 +3,12 @@
 import { gaTrackingCode } from '../config.js';
 
 export function initialize() {
-    //ga('create', gaTrackingCode, 'auto');
+    ga('create', gaTrackingCode, 'auto');
 }
 
 export function navigate(pageData) {
-    //ga('set', pageData);
-    //ga('send', 'pageview');
+    ga('set', pageData);
+    ga('send', 'pageview');
 }
 
 export function sendEvent(category, action, label, value) {
