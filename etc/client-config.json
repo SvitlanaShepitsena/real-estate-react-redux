@@ -23,7 +23,7 @@
     "aboutPage": {
       "url": "https://real-estate-redux.herokuapp.com/about",
       "title": "About Re/Max 1st Class Realty, Illinois Real Estate",
-      "description": "Re/Max 1st Class Realty offers one stop service for home selling or purchase.We can help you find the right specialist to get the lowest mortgage rate and move you to your new home as fast as possible. Our clients always have all papers signed on time with all details covered."
+      "description": "We will help you find the right specialist to get the lowest mortgage rate and move you to your new home as fast as possible."
     },
     "contactsPage": {
       "url": "https://real-estate-redux.herokuapp.com/contacts",
@@ -33,7 +33,7 @@
     "privacyPolicyPage": {
       "url": "https://real-estate-redux.herokuapp.com/contacts",
       "title": "Your privacy is very important for Re/Max 1st Class",
-      "description": "The purpose of this privacy policy is to provide you with a description of the types of information we collect about you when you visit the Re/Max 1st Class Website, and how we use that information. "
+      "description": "Description of the types of information we collect about you when you visit the Re/Max 1st Class Website, and how we use that information. "
     },
     "termsOfUsePage": {
       "url": "https://real-estate-redux.herokuapp.com/contacts",
