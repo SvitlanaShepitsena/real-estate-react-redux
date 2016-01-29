@@ -44,9 +44,6 @@ export default (
                 <Route component={HousesForRentPageContainer} path='/apartments-for-rent'/>
 
 
-
-
-
                 <Route component={ArticlesPageContainer} path='/blog'/>
                 <Route component={TermsOfUsePageContainer} path='/terms-of-use'/>
                 <Route component={PrivacyPolicyPageContainer} path='/privacy-policy'/>

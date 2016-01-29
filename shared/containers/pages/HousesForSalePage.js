@@ -30,6 +30,7 @@ class HousesForSalePageContainer extends Component {
     componentWillReceiveProps(nextProps) {
         this.cities = _.keys(nextProps.cities);
     }
+
     render() {
         const sale = ogProps.housesForSalePage;
         return (

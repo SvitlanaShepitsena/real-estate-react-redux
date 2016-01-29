@@ -34,11 +34,11 @@ class cityPage extends Component {
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        let metaTitleSale = (city + " properties FOR SALE! | Re/Max 1st Class Realty");
-        let metaTitleRent = (city + " properties FOR RENT! | Re/Max 1st Class Realty");
+        let metaTitleSale = (city + " properties for sale! | North Illinois Realty");
+        let metaTitleRent = (city + " properties for rent! | North Illinois Realty");
 
-        let ogTitleSale = (city + " properties FOR SALE! ☆ Re/Max 1st Class Realty");
-        let ogTitleRent = (city + " properties FOR RENT! ☆ Re/Max 1st Class Realty");
+        let ogTitleSale = (city + " properties for sale! ☆ North Illinois Realty");
+        let ogTitleRent = (city + " properties for rent! ☆ North Illinois Realty");
 
         let metaDescriptionSale = ('Browse ' + city + ' homes for sale, sorted by zip code or property type. Call us for a free consultation and schedule a showing!');
         let metaDescriptionRent = ('Browse ' + city + ' homes for rent, sorted by zip code or property type. Call us for a free consultation and schedule a showing!');

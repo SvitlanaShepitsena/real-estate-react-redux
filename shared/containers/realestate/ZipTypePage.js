@@ -29,11 +29,11 @@ class ZipTypePage extends Component {
         let city = _.startCase(this.props.params.city.replace(/-+/g, ' '));
         let saleRent = this.props.location.pathname.indexOf('sale') > -1 ? 'sale' : 'rent';
 
-        let metaTitleSale = (city + ' ' + zipType + " properties FOR SALE! | Re/Max 1st Class Realty");
-        let metaTitleRent = (city + ' ' + zipType + " properties FOR RENT! | Re/Max 1st Class Realty");
+        let metaTitleSale = (city + ' ' + zipType + " properties for sale! | North Illinois Realty");
+        let metaTitleRent = (city + ' ' + zipType + " properties for rent! | North Illinois Realty");
 
-        let ogTitleSale = (city + ' ' + zipType + " properties FOR SALE! ☆ Re/Max 1st Class Realty");
-        let ogTitleRent = (city + ' ' + zipType + " properties FOR RENT! ☆ Re/Max 1st Class Realty");
+        let ogTitleSale = (city + ' ' + zipType + " properties for sale! | North Illinois Realty ");
+        let ogTitleRent = (city + ' ' + zipType + " properties for rent! | North Illinois Realty");
 
         let metaDescriptionSale = ('Browse ' + city + ', IL ' + zipType + ' homes for sale. Call us for a free consultation and schedule a showing!');
         let metaDescriptionRent = ('Browse ' + city + ', IL ' + zipType + ' homes for rent. Call us for a free consultation and schedule a showing!');
