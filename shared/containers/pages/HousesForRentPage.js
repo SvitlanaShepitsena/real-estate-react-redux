@@ -27,13 +27,8 @@ class HousesForRentPageContainer extends Component {
                 <Helmet
                     title={rent.title}
                     meta={[
-                    {"name": "url", "content": `${rent.url}`},
-                    {"name": "type", "content": `${appType}`},
-                    {"name": "title", "content": `${rent.title}`},
                     {"name": "image", "content": `${fbImage}`},
                     {"name": "description", "content": `${rent.description}`},
-                    {"property": "og:url", "content": `${rent.url}`},
-                    {"property": "og:type", "content": `${appType}`},
                     {"property": "og:title", "content": `${rent.title}`},
                     {"property": "og:image", "content": `${fbImage}`},
                     {"property": "og:description", "content": `${rent.description}`}

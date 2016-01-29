@@ -22,7 +22,7 @@ class cityPage extends Component {
 
     render() {
         let cityInfo = this.props.cityInfo;
-        const house = this.props.house;
+
         let types = [];
         _.values(_.values(cityInfo)).forEach(zip=> {
             let houses = (_.map(_.values(zip), 'type'));
@@ -48,7 +48,7 @@ class cityPage extends Component {
 
         return (
             <div>
-                {saleRent == 'sale' &&
+                {saleRent == 'sale' && city &&
                 <Helmet
                     title={metaTitleSale}
                     meta={[
