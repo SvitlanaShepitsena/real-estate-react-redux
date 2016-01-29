@@ -43,8 +43,8 @@ class HousePage extends Component {
             var metaTitleSale = (house.address.city + ' ' + "home for sale | " + house.address.street + ". ID:" + house.mls);
             var metaTitleRent = ("FOR RENT! | " + house.address.street + ", " + house.address.city + ", " + house.address.zip);
 
-            var ogTitleSale = ("FOR SALE! ☆ $" + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
-            var ogTitleRent = ("FOR RENT! ☆ $" + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+            var ogTitleSale = ("FOR SALE! ☆ " + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
+            var ogTitleRent = ("FOR RENT! ☆ " + " ☆ " + house.address.street + ", " + house.address.city + ", " + house.address.zip + " ☆ Re/Max 1st Class");
 
             var ogDescription = house.type + ' ' + mls + ' ✔ Check out and schedule a showing! ☏  ' + this.props.house.description;
         }
