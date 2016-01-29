@@ -1,6 +1,4 @@
-var mongoose = require('mongoose');
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
-var User = require('../../models/user');
 var secrets = require('../secrets');
 
 /*

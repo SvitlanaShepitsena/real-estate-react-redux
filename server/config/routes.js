@@ -1,5 +1,4 @@
 var users = require('../controllers/users');
-var mongoose = require('mongoose');
 var _ = require('lodash');
 import list from './youtube/youtube-lists';
 

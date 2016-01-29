@@ -1,6 +1,4 @@
-var mongoose = require('mongoose');
 var facebookStrategy = require('passport-facebook').Strategy;
-var User = require('../../models/user');
 var secrets = require('../secrets');
 
 export default new facebookStrategy({
