@@ -84,7 +84,7 @@
     "redux-devtools-log-monitor": "^1.0.1",
     "redux-form": "^4.1.5",
     "redux-logger": "^2.0.3",
-    "redux-router": "^0.1.0",
+    "redux-router": "^1.0.0-beta7",
     "redux-thunk": "^1.0.0",
     "secrets": "^0.1.0",
     "strformat": "0.0.7"

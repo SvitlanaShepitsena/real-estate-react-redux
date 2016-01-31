@@ -1,4 +1,5 @@
 import {createStore, applyMiddleware, compose} from 'redux';
+import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-router';
 import rootReducer from '../reducers/rootReducer';
 import middlewares from './composeMiddlewares';
 

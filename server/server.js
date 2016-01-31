@@ -59,15 +59,24 @@ const app = express();
 app.use(compress({
     threshold: 0
 }));
+var hostUrl;
 
 app.all(/.*/, function (req, res, next) {
+
     var host = req.header("host");
-    console.log(host);
     if (host.indexOf('local') > -1 || host.match(/^www\..*/i)) {
+
         next();
     } else {
         res.redirect(301, req.protocol + "://www." + host);
     }
+});
+app.all(/.*/, function (req, res, next) {
+
+    var host = req.header("host");
+    hostUrl = req.protocol + "://www." + host
+    console.log(hostUrl);
+    next();
 });
 
 app.use('/static', express.static('public/static', {maxAge: 8640000}));
@@ -81,10 +90,13 @@ configGmail(app);
 app.use((req, res) => {
     // Process old links like /en/articles
     const locale = detectLocale(req);
+
+
+
     if (req.user) {
         console.log(req.user);
     }
-    const store = configureStore({user: req.user});
+    const store = configureStore({user: req.user,url:hostUrl.toString()});
 
     const i18nTools = i18nToolsRegistry[locale];
     // Method of React-router that provides renderProp with property components consisting of all components for the particular view
