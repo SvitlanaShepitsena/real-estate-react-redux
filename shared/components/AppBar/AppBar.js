@@ -94,7 +94,9 @@ class AppBar extends Component {
                      <LanguageSwitch className='AppBar__lang'/>
                      */}
                 </Navigation>
-                <AppBarUser user={user} handleLogin={this.handleLogin}/>
+                {/*
+                 <AppBarUser user={user} handleLogin={this.handleLogin}/>
+                 */}
             </Header>
         );
     }
